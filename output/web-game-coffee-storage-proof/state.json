@@ -1,0 +1,757 @@
+{
+  "errors": [],
+  "userId": "coffee-storage-proof-user",
+  "layered": {
+    "coffeeStorage": {
+      "rackCupCount": 60,
+      "freezerCupCount": 0,
+      "rackCapacity": 100,
+      "transferCount": 0,
+      "cycleCount": 60,
+      "freezerBatchCount": 0,
+      "displayedRackCups": 60,
+      "displayedFreezerBatches": 0,
+      "rack": {
+        "x": -18.4,
+        "z": -5.8
+      },
+      "freezer": {
+        "x": -16.88,
+        "z": -5.8
+      }
+    },
+    "sql": {
+      "table": "user_scene_coffee_storage_states",
+      "row": {
+        "user_id": "coffee-storage-proof-user",
+        "scene_id": "office-floor",
+        "rack_ref": "coffee-storage-rack-01",
+        "freezer_ref": "coffee-storage-freezer-01",
+        "rack_capacity": 100,
+        "rack_layers": 5,
+        "rack_columns": 5,
+        "rack_rows": 4,
+        "rack_cup_count": 60,
+        "freezer_cup_count": 0,
+        "freezer_batch_count": 0,
+        "transfer_count": 0,
+        "cycle_count": 60,
+        "service_phase": "pickup",
+        "updated_at": "2026-03-31T18:31:21.092Z"
+      }
+    },
+    "storedSnapshot": {
+      "controlledActor": "human",
+      "updatedAt": "2026-03-31T18:31:21.062Z",
+      "outfit": {
+        "hair": "BLACK",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "BLACK",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "carryables": {
+        "pantry-jar-1": {
+          "x": -13.45,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.4
+        },
+        "pantry-jar-2": {
+          "x": -12.89,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.7
+        },
+        "pantry-jar-3": {
+          "x": -12.33,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.4
+        },
+        "pantry-jar-4": {
+          "x": -11.77,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.7
+        },
+        "pantry-jar-5": {
+          "x": -11.21,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.4
+        },
+        "coffee-mug-1": {
+          "x": -13.96,
+          "y": 1.67,
+          "z": 6.4,
+          "rot": 1.57,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 0.4
+        },
+        "coffee-mug-2": {
+          "x": -13.91,
+          "y": 1.67,
+          "z": 6.31,
+          "rot": 1.81,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 0.4
+        },
+        "coffee-mug-3": {
+          "x": -13.86,
+          "y": 1.67,
+          "z": 6.22,
+          "rot": 2.05,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 0.4
+        },
+        "spare-boots": {
+          "x": -14.85,
+          "y": 0,
+          "z": 7.02,
+          "rot": -1.57,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 1.8
+        }
+      },
+      "coffeeStorage": {
+        "rackCupCount": 60,
+        "freezerCupCount": 0,
+        "transferCount": 0,
+        "cycleCount": 60
+      },
+      "blackjack": {
+        "playerCredits": 5000,
+        "bankCredits": 1000000,
+        "currentBet": 100,
+        "roundCounter": 0,
+        "resultHistory": []
+      },
+      "passiveRobots": {
+        "serviceRobot": {
+          "x": -7.2,
+          "y": 0,
+          "z": 5,
+          "rot": 1.45,
+          "routeIndex": 1,
+          "pauseTimer": 0.35
+        },
+        "serviceRobot01": {
+          "x": 17.6,
+          "y": 0,
+          "z": 18.6,
+          "rot": 3.83,
+          "routeIndex": 1,
+          "pauseTimer": 0.55
+        },
+        "serviceRobot02": {
+          "x": 14.2,
+          "y": 0,
+          "z": 9,
+          "rot": 3.14,
+          "routeIndex": 1,
+          "pauseTimer": 0.75
+        },
+        "coffeeServiceRobot": {
+          "x": -15.02,
+          "y": 0,
+          "z": 6.44,
+          "rot": 1.57,
+          "routeIndex": 0,
+          "pauseTimer": 0.35
+        },
+        "tableTennisExpert": {
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "rot": 3.14,
+          "routeIndex": 0,
+          "pauseTimer": 0
+        }
+      },
+      "actors": {
+        "human": {
+          "x": 0,
+          "y": 0,
+          "z": 2,
+          "rot": 0,
+          "seat": null
+        },
+        "robot": {
+          "x": -6.7,
+          "y": 0,
+          "z": 9.25,
+          "rot": 0.69,
+          "seat": null
+        }
+      }
+    }
+  },
+  "afterTransfer": {
+    "coffeeStorage": {
+      "rackCupCount": 0,
+      "freezerCupCount": 100,
+      "rackCapacity": 100,
+      "transferCount": 1,
+      "cycleCount": 100,
+      "freezerBatchCount": 1,
+      "displayedRackCups": 0,
+      "displayedFreezerBatches": 1,
+      "rack": {
+        "x": -18.4,
+        "z": -5.8
+      },
+      "freezer": {
+        "x": -16.88,
+        "z": -5.8
+      }
+    },
+    "coffeeService": {
+      "active": true,
+      "phase": "freeze-batch",
+      "cupMode": "none",
+      "brewProgress": 0,
+      "cycleCount": 100,
+      "rackCupCount": 0,
+      "freezerCupCount": 100,
+      "transferCount": 1
+    },
+    "coffeeServiceRobot": {
+      "x": -16.85,
+      "y": 0,
+      "z": -4.82,
+      "vx": 0.02,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 0,
+      "controlled": false,
+      "task": "freeze-batch",
+      "cupMode": "none",
+      "brewProgress": 0,
+      "cycleCount": 100,
+      "name": "coffee-service-robot",
+      "label": "COFFEE BOT",
+      "chestCode": "CF"
+    },
+    "sql": {
+      "table": "user_scene_coffee_storage_states",
+      "row": {
+        "user_id": "coffee-storage-proof-user",
+        "scene_id": "office-floor",
+        "rack_ref": "coffee-storage-rack-01",
+        "freezer_ref": "coffee-storage-freezer-01",
+        "rack_capacity": 100,
+        "rack_layers": 5,
+        "rack_columns": 5,
+        "rack_rows": 4,
+        "rack_cup_count": 0,
+        "freezer_cup_count": 100,
+        "freezer_batch_count": 1,
+        "transfer_count": 1,
+        "cycle_count": 100,
+        "service_phase": "freeze-batch",
+        "updated_at": "2026-03-31T18:31:27.867Z"
+      }
+    },
+    "timeline": [
+      {
+        "step": 0,
+        "phase": "to-freezer",
+        "rackCupCount": 100,
+        "freezerCupCount": 0,
+        "robotX": -15.01,
+        "robotZ": 5.95
+      },
+      {
+        "step": 8,
+        "phase": "to-freezer",
+        "rackCupCount": 100,
+        "freezerCupCount": 0,
+        "robotX": -15.84,
+        "robotZ": 1.43
+      },
+      {
+        "step": 16,
+        "phase": "to-freezer",
+        "rackCupCount": 100,
+        "freezerCupCount": 0,
+        "robotX": -17.08,
+        "robotZ": -2.91
+      },
+      {
+        "step": 20,
+        "phase": "freeze-batch",
+        "rackCupCount": 0,
+        "freezerCupCount": 100,
+        "robotX": -16.85,
+        "robotZ": -4.82
+      }
+    ]
+  },
+  "beforeReload": {
+    "coffeeStorage": {
+      "rackCupCount": 32,
+      "freezerCupCount": 100,
+      "rackCapacity": 100,
+      "transferCount": 1,
+      "cycleCount": 132,
+      "freezerBatchCount": 1,
+      "displayedRackCups": 32,
+      "displayedFreezerBatches": 1,
+      "rack": {
+        "x": -18.4,
+        "z": -5.8
+      },
+      "freezer": {
+        "x": -16.88,
+        "z": -5.8
+      }
+    },
+    "sql": {
+      "table": "user_scene_coffee_storage_states",
+      "row": {
+        "user_id": "coffee-storage-proof-user",
+        "scene_id": "office-floor",
+        "rack_ref": "coffee-storage-rack-01",
+        "freezer_ref": "coffee-storage-freezer-01",
+        "rack_capacity": 100,
+        "rack_layers": 5,
+        "rack_columns": 5,
+        "rack_rows": 4,
+        "rack_cup_count": 32,
+        "freezer_cup_count": 100,
+        "freezer_batch_count": 1,
+        "transfer_count": 1,
+        "cycle_count": 132,
+        "service_phase": "pickup",
+        "updated_at": "2026-03-31T18:31:32.530Z"
+      }
+    }
+  },
+  "restored": {
+    "coffeeStorage": {
+      "rackCupCount": 32,
+      "freezerCupCount": 100,
+      "rackCapacity": 100,
+      "transferCount": 1,
+      "cycleCount": 132,
+      "freezerBatchCount": 1,
+      "displayedRackCups": 32,
+      "displayedFreezerBatches": 1,
+      "rack": {
+        "x": -18.4,
+        "z": -5.8
+      },
+      "freezer": {
+        "x": -16.88,
+        "z": -5.8
+      }
+    },
+    "persistence": {
+      "activeUserId": "coffee-storage-proof-user",
+      "restored": true,
+      "storage": "localStorage",
+      "backendTable": "user_scene_locations",
+      "backendTables": {
+        "location": "user_scene_locations",
+        "outfit": "user_scene_outfits",
+        "carryables": "user_scene_carryable_prop_locations",
+        "coffeeStorage": "user_scene_coffee_storage_states",
+        "passiveRobots": "user_scene_passive_robot_locations",
+        "blackjack": "user_scene_blackjack_states",
+        "blackjackHistory": "user_scene_blackjack_result_history"
+      },
+      "blackjackResultsSaved": 0,
+      "lastSavedAt": "2026-03-31T18:31:44.491Z"
+    },
+    "sql": {
+      "table": "user_scene_coffee_storage_states",
+      "row": {
+        "user_id": "coffee-storage-proof-user",
+        "scene_id": "office-floor",
+        "rack_ref": "coffee-storage-rack-01",
+        "freezer_ref": "coffee-storage-freezer-01",
+        "rack_capacity": 100,
+        "rack_layers": 5,
+        "rack_columns": 5,
+        "rack_rows": 4,
+        "rack_cup_count": 32,
+        "freezer_cup_count": 100,
+        "freezer_batch_count": 1,
+        "transfer_count": 1,
+        "cycle_count": 132,
+        "service_phase": "pickup",
+        "updated_at": "2026-03-31T18:31:48.196Z"
+      }
+    },
+    "storedSnapshot": {
+      "controlledActor": "human",
+      "updatedAt": "2026-03-31T18:31:44.491Z",
+      "outfit": {
+        "hair": "BLACK",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "BLACK",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "carryables": {
+        "pantry-jar-1": {
+          "x": -13.45,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.4
+        },
+        "pantry-jar-2": {
+          "x": -12.89,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.7
+        },
+        "pantry-jar-3": {
+          "x": -12.33,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.4
+        },
+        "pantry-jar-4": {
+          "x": -11.77,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.7
+        },
+        "pantry-jar-5": {
+          "x": -11.21,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 2.4
+        },
+        "coffee-mug-1": {
+          "x": -13.96,
+          "y": 1.67,
+          "z": 6.4,
+          "rot": 1.57,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 0.4
+        },
+        "coffee-mug-2": {
+          "x": -13.91,
+          "y": 1.67,
+          "z": 6.31,
+          "rot": 1.81,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 0.4
+        },
+        "coffee-mug-3": {
+          "x": -13.86,
+          "y": 1.67,
+          "z": 6.22,
+          "rot": 2.05,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 0.4
+        },
+        "spare-boots": {
+          "x": -14.85,
+          "y": 0,
+          "z": 7.02,
+          "rot": -1.57,
+          "carried": false,
+          "carrier": null,
+          "weightKg": 1.8
+        }
+      },
+      "coffeeStorage": {
+        "rackCupCount": 32,
+        "freezerCupCount": 100,
+        "transferCount": 1,
+        "cycleCount": 132
+      },
+      "blackjack": {
+        "playerCredits": 5000,
+        "bankCredits": 1000000,
+        "currentBet": 100,
+        "roundCounter": 0,
+        "resultHistory": []
+      },
+      "passiveRobots": {
+        "serviceRobot": {
+          "x": -7.89,
+          "y": 0,
+          "z": 8.37,
+          "rot": -1.25,
+          "routeIndex": 2,
+          "pauseTimer": 0
+        },
+        "serviceRobot01": {
+          "x": 15.77,
+          "y": 0,
+          "z": 19.34,
+          "rot": -2.98,
+          "routeIndex": 4,
+          "pauseTimer": 0
+        },
+        "serviceRobot02": {
+          "x": 14.18,
+          "y": 0,
+          "z": 11.32,
+          "rot": 7.87,
+          "routeIndex": 3,
+          "pauseTimer": 0
+        },
+        "coffeeServiceRobot": {
+          "x": -16.85,
+          "y": 0,
+          "z": -4.82,
+          "rot": 3.14,
+          "routeIndex": 0,
+          "pauseTimer": 0.87
+        },
+        "tableTennisExpert": {
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "rot": 3.14,
+          "routeIndex": 0,
+          "pauseTimer": 0
+        }
+      },
+      "actors": {
+        "human": {
+          "x": 0,
+          "y": 0,
+          "z": 2,
+          "rot": 0,
+          "seat": null
+        },
+        "robot": {
+          "x": -6.7,
+          "y": 0,
+          "z": 9.25,
+          "rot": 0.69,
+          "seat": null
+        }
+      }
+    }
+  },
+  "storageKeys": [
+    "version",
+    "activeUserId",
+    "users"
+  ],
+  "rawUserSnapshot": {
+    "controlledActor": "human",
+    "updatedAt": "2026-03-31T18:31:44.491Z",
+    "outfit": {
+      "hair": "BLACK",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "BLACK",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "carryables": {
+      "pantry-jar-1": {
+        "x": -13.45,
+        "y": 1.12,
+        "z": 6.38,
+        "rot": 0,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 2.4
+      },
+      "pantry-jar-2": {
+        "x": -12.89,
+        "y": 1.12,
+        "z": 6.38,
+        "rot": 0,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 2.7
+      },
+      "pantry-jar-3": {
+        "x": -12.33,
+        "y": 1.12,
+        "z": 6.38,
+        "rot": 0,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 2.4
+      },
+      "pantry-jar-4": {
+        "x": -11.77,
+        "y": 1.12,
+        "z": 6.38,
+        "rot": 0,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 2.7
+      },
+      "pantry-jar-5": {
+        "x": -11.21,
+        "y": 1.12,
+        "z": 6.38,
+        "rot": 0,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 2.4
+      },
+      "coffee-mug-1": {
+        "x": -13.96,
+        "y": 1.67,
+        "z": 6.4,
+        "rot": 1.57,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 0.4
+      },
+      "coffee-mug-2": {
+        "x": -13.91,
+        "y": 1.67,
+        "z": 6.31,
+        "rot": 1.81,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 0.4
+      },
+      "coffee-mug-3": {
+        "x": -13.86,
+        "y": 1.67,
+        "z": 6.22,
+        "rot": 2.05,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 0.4
+      },
+      "spare-boots": {
+        "x": -14.85,
+        "y": 0,
+        "z": 7.02,
+        "rot": -1.57,
+        "carried": false,
+        "carrier": null,
+        "weightKg": 1.8
+      }
+    },
+    "coffeeStorage": {
+      "rackCupCount": 32,
+      "freezerCupCount": 100,
+      "transferCount": 1,
+      "cycleCount": 132
+    },
+    "blackjack": {
+      "playerCredits": 5000,
+      "bankCredits": 1000000,
+      "currentBet": 100,
+      "roundCounter": 0,
+      "resultHistory": []
+    },
+    "passiveRobots": {
+      "serviceRobot": {
+        "x": -7.89,
+        "y": 0,
+        "z": 8.37,
+        "rot": -1.25,
+        "routeIndex": 2,
+        "pauseTimer": 0
+      },
+      "serviceRobot01": {
+        "x": 15.77,
+        "y": 0,
+        "z": 19.34,
+        "rot": -2.98,
+        "routeIndex": 4,
+        "pauseTimer": 0
+      },
+      "serviceRobot02": {
+        "x": 14.18,
+        "y": 0,
+        "z": 11.32,
+        "rot": 7.87,
+        "routeIndex": 3,
+        "pauseTimer": 0
+      },
+      "coffeeServiceRobot": {
+        "x": -16.85,
+        "y": 0,
+        "z": -4.82,
+        "rot": 3.14,
+        "routeIndex": 0,
+        "pauseTimer": 0.87
+      },
+      "tableTennisExpert": {
+        "x": 13.4,
+        "y": 0,
+        "z": -13.15,
+        "rot": 3.14,
+        "routeIndex": 0,
+        "pauseTimer": 0
+      }
+    },
+    "actors": {
+      "human": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "rot": 0,
+        "seat": null
+      },
+      "robot": {
+        "x": -6.7,
+        "y": 0,
+        "z": 9.25,
+        "rot": 0.69,
+        "seat": null
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "before": {
+    "visibleRows": [
+      "✦ MOVES ▼",
+      "▣ PANELS ▲"
+    ],
+    "panelActive": false,
+    "cameraRadius": 8.06,
+    "targetRadius": 8.06
+  },
+  "afterOpen": {
+    "visibleRows": [
+      "✦ MOVES ▲",
+      "▣ PANELS ▲"
+    ],
+    "panelActive": true,
+    "panelButtons": [
+      "⬆ JUMP",
+      "👋 WAVE",
+      "🏃 RUN",
+      "↺ VIEW",
+      "－ ZOOM",
+      "＋ ZOOM",
+      "MOONWALK · 3S",
+      "SPIN · 2S"
+    ],
+    "idsInsidePanel": {
+      "btn-jump": true,
+      "btn-wave": true,
+      "btn-run": true,
+      "btn-reset-view": true,
+      "btn-zoom-out": true,
+      "btn-zoom-in": true,
+      "btn-special-moonwalk": true,
+      "btn-special-spin": true
+    },
+    "runActive": true,
+    "cameraRadius": 6.83,
+    "targetRadius": 6.83,
+    "specialMoves": {
+      "expanded": true,
+      "active": false,
+      "current": null,
+      "remaining": 0,
+      "coreOptions": [
+        "JUMP",
+        "WAVE",
+        "RUN",
+        "VIEW",
+        "ZOOM OUT",
+        "ZOOM IN"
+      ],
+      "performanceOptions": [
+        {
+          "name": "MOONWALK",
+          "duration": 3
+        },
+        {
+          "name": "SPIN",
+          "duration": 2
+        }
+      ]
+    }
+  }
+}

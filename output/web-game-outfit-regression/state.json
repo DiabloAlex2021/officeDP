@@ -1,0 +1,29 @@
+{
+  "base": {
+    "character": "HUMAN",
+    "shades": "OFF",
+    "top": "BIKER BLK",
+    "shirt": "MIDNIGHT",
+    "hat": "OFF",
+    "pose": "STAND",
+    "boots": "EQSTRN BLK"
+  },
+  "hat": {
+    "character": "HUMAN",
+    "shades": "OFF",
+    "top": "BIKER BLK",
+    "shirt": "MIDNIGHT",
+    "hat": "CAP",
+    "pose": "STAND",
+    "boots": "EQSTRN BLK"
+  },
+  "shades": {
+    "character": "HUMAN",
+    "shades": "BLACK",
+    "top": "BIKER BLK",
+    "shirt": "MIDNIGHT",
+    "hat": "CAP",
+    "pose": "STAND",
+    "boots": "EQSTRN BLK"
+  }
+}

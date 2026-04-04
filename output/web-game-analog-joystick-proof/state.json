@@ -1,0 +1,51 @@
+{
+  "errors": [],
+  "samples": [
+    {
+      "name": "upper-right",
+      "joystick": {
+        "active": true,
+        "cssX": "25.53380214490298px",
+        "cssY": "-23.937939510846544px",
+        "thumbOffsetX": 25.53,
+        "thumbOffsetY": -23.94
+      },
+      "player": {
+        "x": 0,
+        "z": 2,
+        "vx": 0,
+        "vz": 0,
+        "action": "idle"
+      }
+    },
+    {
+      "name": "lower-left",
+      "joystick": {
+        "active": true,
+        "cssX": "-23.937939510846544px",
+        "cssY": "25.53380214490298px",
+        "thumbOffsetX": -23.94,
+        "thumbOffsetY": 25.53
+      },
+      "player": {
+        "x": 0.06,
+        "z": 1.94,
+        "vx": 1.44,
+        "vz": -1.53,
+        "action": "walk"
+      }
+    }
+  ],
+  "releasedState": {
+    "active": false,
+    "cssX": "0px",
+    "cssY": "0px"
+  },
+  "finalPlayer": {
+    "x": 0.92,
+    "z": 1.02,
+    "vx": 0.67,
+    "vz": -0.71,
+    "action": "walk"
+  }
+}

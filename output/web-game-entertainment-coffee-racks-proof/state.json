@@ -1,0 +1,49 @@
+{
+  "errors": [],
+  "summary": {
+    "blackjackSelection": {
+      "type": "object",
+      "kind": "blackjack-board",
+      "name": "blackjack-wall",
+      "label": "BLACKJACK WALL",
+      "zone": "floor",
+      "x": 25.92,
+      "y": 0.07,
+      "z": -6.2,
+      "phase": "betting",
+      "bet": 100,
+      "playerCredits": 5000,
+      "bankCredits": 1000000
+    },
+    "chessSelection": {
+      "type": "object",
+      "kind": "magic-chess-board",
+      "name": "magic-chess-board",
+      "label": "MAGIC CHESS",
+      "zone": "floor",
+      "x": 19.3,
+      "y": 0.03,
+      "z": -17.2,
+      "phase": "idle",
+      "active": false,
+      "turn": "white",
+      "cursor": "E2",
+      "selected": null,
+      "winner": null
+    },
+    "racks": {
+      "blackjack": {
+        "x": 24.88,
+        "z": -9.54,
+        "scale": 0.74,
+        "cupCount": 18
+      },
+      "chess": {
+        "x": 22.96,
+        "z": -17.02,
+        "scale": 0.74,
+        "cupCount": 20
+      }
+    }
+  }
+}

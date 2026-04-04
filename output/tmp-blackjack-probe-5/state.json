@@ -1,0 +1,189 @@
+{
+  "resolvedState": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "round-over",
+    "phaseLabel": "ROUND OVER",
+    "playerCredits": 5000,
+    "bankCredits": 1000000,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "Dealer 20. H1 WIN · H2 LOSE",
+    "round": 1,
+    "dealerHoleHidden": false,
+    "dealer": {
+      "total": 20,
+      "cards": [
+        {
+          "rank": "6",
+          "suit": "C",
+          "code": "6C",
+          "value": 6
+        },
+        {
+          "rank": "10",
+          "suit": "D",
+          "code": "10D",
+          "value": 10
+        },
+        {
+          "rank": "4",
+          "suit": "D",
+          "code": "4D",
+          "value": 4
+        }
+      ]
+    },
+    "hands": [
+      {
+        "index": 0,
+        "active": false,
+        "bet": 100,
+        "total": 21,
+        "soft": false,
+        "blackjack": false,
+        "busted": false,
+        "standing": true,
+        "resolved": true,
+        "wasSplit": true,
+        "doubled": false,
+        "outcome": "win",
+        "net": 100,
+        "cards": [
+          {
+            "rank": "8",
+            "suit": "H",
+            "code": "8H",
+            "value": 8
+          },
+          {
+            "rank": "3",
+            "suit": "H",
+            "code": "3H",
+            "value": 3
+          },
+          {
+            "rank": "10",
+            "suit": "C",
+            "code": "10C",
+            "value": 10
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "active": false,
+        "bet": 100,
+        "total": 18,
+        "soft": false,
+        "blackjack": false,
+        "busted": false,
+        "standing": false,
+        "resolved": true,
+        "wasSplit": true,
+        "doubled": false,
+        "outcome": "lose",
+        "net": -100,
+        "cards": [
+          {
+            "rank": "8",
+            "suit": "S",
+            "code": "8S",
+            "value": 8
+          },
+          {
+            "rank": "K",
+            "suit": "S",
+            "code": "KS",
+            "value": 10
+          }
+        ]
+      }
+    ],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  },
+  "doubleState": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "round-over",
+    "phaseLabel": "ROUND OVER",
+    "playerCredits": 5200,
+    "bankCredits": 999800,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "Dealer 17. H1 WIN",
+    "round": 1,
+    "dealerHoleHidden": false,
+    "dealer": {
+      "total": 17,
+      "cards": [
+        {
+          "rank": "6",
+          "suit": "C",
+          "code": "6C",
+          "value": 6
+        },
+        {
+          "rank": "9",
+          "suit": "D",
+          "code": "9D",
+          "value": 9
+        },
+        {
+          "rank": "2",
+          "suit": "C",
+          "code": "2C",
+          "value": 2
+        }
+      ]
+    },
+    "hands": [
+      {
+        "index": 0,
+        "active": false,
+        "bet": 200,
+        "total": 21,
+        "soft": false,
+        "blackjack": false,
+        "busted": false,
+        "standing": true,
+        "resolved": true,
+        "wasSplit": false,
+        "doubled": true,
+        "outcome": "win",
+        "net": 200,
+        "cards": [
+          {
+            "rank": "5",
+            "suit": "H",
+            "code": "5H",
+            "value": 5
+          },
+          {
+            "rank": "6",
+            "suit": "S",
+            "code": "6S",
+            "value": 6
+          },
+          {
+            "rank": "10",
+            "suit": "H",
+            "code": "10H",
+            "value": 10
+          }
+        ]
+      }
+    ],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  }
+}

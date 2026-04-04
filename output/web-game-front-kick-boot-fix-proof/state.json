@@ -1,0 +1,225 @@
+{
+  "errors": [],
+  "captures": [
+    {
+      "label": "front-kick-left",
+      "yaw": -1.5707963267948966,
+      "moveType": "kick",
+      "advanceMs": 230,
+      "actorPoint": {
+        "x": 700,
+        "y": 519.23
+      },
+      "clip": {
+        "x": 480,
+        "y": 339,
+        "width": 440,
+        "height": 560
+      },
+      "camera": {
+        "x": -3.25,
+        "y": 0.8,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.24,
+        "radius": 3.35,
+        "targetRadius": 3.35,
+        "mode": "orbit"
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "hair": "BLACK",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "WHITE",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "kick",
+        "specialMove": "kick",
+        "specialMoveRemaining": 0.33,
+        "seated": false,
+        "seat": null,
+        "carrying": null,
+        "controlled": true
+      }
+    },
+    {
+      "label": "front-kick-right",
+      "yaw": 1.5707963267948966,
+      "moveType": "kick",
+      "advanceMs": 230,
+      "actorPoint": {
+        "x": 700,
+        "y": 519.23
+      },
+      "clip": {
+        "x": 480,
+        "y": 339,
+        "width": 440,
+        "height": 560
+      },
+      "camera": {
+        "x": 3.25,
+        "y": 0.8,
+        "z": 2,
+        "yaw": 1.57,
+        "pitch": 0.24,
+        "radius": 3.35,
+        "targetRadius": 3.35,
+        "mode": "orbit"
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "hair": "BLACK",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "WHITE",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "kick",
+        "specialMove": "kick",
+        "specialMoveRemaining": 0.33,
+        "seated": false,
+        "seat": null,
+        "carrying": null,
+        "controlled": true
+      }
+    },
+    {
+      "label": "full-kick-front-left",
+      "yaw": -1.5707963267948966,
+      "moveType": "full-kick",
+      "advanceMs": 780,
+      "actorPoint": {
+        "x": 700,
+        "y": 519.23
+      },
+      "clip": {
+        "x": 480,
+        "y": 339,
+        "width": 440,
+        "height": 560
+      },
+      "camera": {
+        "x": -3.25,
+        "y": 0.8,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.24,
+        "radius": 3.35,
+        "targetRadius": 3.35,
+        "mode": "orbit"
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "hair": "BLACK",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "WHITE",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "full-kick",
+        "specialMove": "full-kick",
+        "specialMoveRemaining": 0.3,
+        "seated": false,
+        "seat": null,
+        "carrying": null,
+        "controlled": true
+      }
+    },
+    {
+      "label": "full-kick-front-right",
+      "yaw": 1.5707963267948966,
+      "moveType": "full-kick",
+      "advanceMs": 780,
+      "actorPoint": {
+        "x": 700,
+        "y": 519.23
+      },
+      "clip": {
+        "x": 480,
+        "y": 339,
+        "width": 440,
+        "height": 560
+      },
+      "camera": {
+        "x": 3.25,
+        "y": 0.8,
+        "z": 2,
+        "yaw": 1.57,
+        "pitch": 0.24,
+        "radius": 3.35,
+        "targetRadius": 3.35,
+        "mode": "orbit"
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "hair": "BLACK",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "WHITE",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "full-kick",
+        "specialMove": "full-kick",
+        "specialMoveRemaining": 0.3,
+        "seated": false,
+        "seat": null,
+        "carrying": null,
+        "controlled": true
+      }
+    }
+  ]
+}

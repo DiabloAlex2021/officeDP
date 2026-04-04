@@ -1,0 +1,221 @@
+{
+  "alice": "outfit_alice_mn7u4g31",
+  "bob": "outfit_bob_mn7u4g31",
+  "afterSet": {
+    "character": "HUMAN",
+    "shades": "OFF",
+    "top": "BIKER BLK",
+    "shirt": "MIDNIGHT",
+    "pants": "WHITE",
+    "hat": "OFF",
+    "face": "HAPPY",
+    "pose": "STAND",
+    "boots": "WHITE SNKR"
+  },
+  "afterReload": {
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "WHITE",
+      "hat": "OFF",
+      "face": "HAPPY",
+      "pose": "STAND",
+      "boots": "WHITE SNKR"
+    },
+    "persistence": {
+      "activeUserId": "outfit_alice_mn7u4g31",
+      "restored": true,
+      "storage": "localStorage",
+      "backendTable": "user_scene_locations",
+      "backendTables": {
+        "location": "user_scene_locations",
+        "outfit": "user_scene_outfits"
+      },
+      "lastSavedAt": "2026-03-26T18:57:50.967Z"
+    }
+  },
+  "bobState": {
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "BLACK",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "persistence": {
+      "activeUserId": "outfit_bob_mn7u4g31",
+      "restored": false,
+      "storage": "localStorage",
+      "backendTable": "user_scene_locations",
+      "backendTables": {
+        "location": "user_scene_locations",
+        "outfit": "user_scene_outfits"
+      },
+      "lastSavedAt": "2026-03-26T18:57:55.970Z"
+    }
+  },
+  "aliceReturn": {
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "WHITE",
+      "hat": "OFF",
+      "face": "HAPPY",
+      "pose": "STAND",
+      "boots": "WHITE SNKR"
+    },
+    "persistence": {
+      "activeUserId": "outfit_alice_mn7u4g31",
+      "restored": true,
+      "storage": "localStorage",
+      "backendTable": "user_scene_locations",
+      "backendTables": {
+        "location": "user_scene_locations",
+        "outfit": "user_scene_outfits"
+      },
+      "lastSavedAt": "2026-03-26T18:57:57.474Z"
+    }
+  },
+  "sqlRecords": {
+    "location": {
+      "table": "user_scene_locations",
+      "row": {
+        "user_id": "outfit_alice_mn7u4g31",
+        "scene_id": "office-floor",
+        "controlled_actor": "human",
+        "human_x": 0,
+        "human_y": 0,
+        "human_z": 2,
+        "human_rot": 0,
+        "human_seat_name": null,
+        "robot_x": -6.7,
+        "robot_y": 0,
+        "robot_z": 9.25,
+        "robot_rot": 0.69,
+        "robot_seat_name": null,
+        "updated_at": "2026-03-26T18:57:50.180Z"
+      }
+    },
+    "outfit": {
+      "table": "user_scene_outfits",
+      "row": {
+        "user_id": "outfit_alice_mn7u4g31",
+        "scene_id": "office-floor",
+        "controlled_actor": "human",
+        "shades_name": "OFF",
+        "top_name": "BIKER BLK",
+        "shirt_name": "MIDNIGHT",
+        "pants_name": "WHITE",
+        "hat_name": "OFF",
+        "face_name": "HAPPY",
+        "pose_name": "STAND",
+        "boots_name": "WHITE SNKR",
+        "updated_at": "2026-03-26T18:57:50.180Z"
+      }
+    }
+  },
+  "store": {
+    "version": 1,
+    "activeUserId": "outfit_alice_mn7u4g31",
+    "users": {
+      "guest": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-26T18:57:49.637Z",
+        "outfit": {
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "actors": {
+          "human": {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "rot": 0,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      },
+      "outfit_alice_mn7u4g31": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-26T18:57:57.474Z",
+        "outfit": {
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "WHITE",
+          "hat": "OFF",
+          "face": "HAPPY",
+          "pose": "STAND",
+          "boots": "WHITE SNKR"
+        },
+        "actors": {
+          "human": {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "rot": 0,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      },
+      "outfit_bob_mn7u4g31": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-26T18:57:57.474Z",
+        "outfit": {
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "actors": {
+          "human": {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "rot": 0,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      }
+    }
+  }
+}

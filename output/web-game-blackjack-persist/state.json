@@ -1,0 +1,568 @@
+{
+  "aliceReloaded": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "betting",
+    "phaseLabel": "BETTING",
+    "playerCredits": 5150,
+    "bankCredits": 999850,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "Loaded 1 saved result. Adjust the wager or deal against the banker.",
+    "round": 1,
+    "dealerHoleHidden": false,
+    "roundNet": 0,
+    "result": {
+      "headline": "",
+      "detail": "",
+      "displayHeadline": "",
+      "displayDetail": "",
+      "tone": "neutral",
+      "active": false
+    },
+    "history": [
+      {
+        "round": 1,
+        "timestamp": "2026-03-27T00:19:55.911Z",
+        "headline": "PLAYER BLACKJACK +150",
+        "detail": "PLAYER BLACKJACK",
+        "tone": "player",
+        "net": 150,
+        "playerCredits": 5150,
+        "bankCredits": 999850,
+        "bet": 100
+      }
+    ],
+    "dealer": {
+      "total": 0,
+      "cards": []
+    },
+    "hands": [],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  },
+  "bobDefault": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "betting",
+    "phaseLabel": "BETTING",
+    "playerCredits": 5000,
+    "bankCredits": 1000000,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "Raise or lower the wager, then deal against the banker.",
+    "round": 0,
+    "dealerHoleHidden": false,
+    "roundNet": 0,
+    "result": {
+      "headline": "",
+      "detail": "",
+      "displayHeadline": "",
+      "displayDetail": "",
+      "tone": "neutral",
+      "active": false
+    },
+    "history": [],
+    "dealer": {
+      "total": 0,
+      "cards": []
+    },
+    "hands": [],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  },
+  "aliceSwitchBack": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "betting",
+    "phaseLabel": "BETTING",
+    "playerCredits": 5150,
+    "bankCredits": 999850,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "Loaded 1 saved result. Adjust the wager or deal against the banker.",
+    "round": 1,
+    "dealerHoleHidden": false,
+    "roundNet": 0,
+    "result": {
+      "headline": "",
+      "detail": "",
+      "displayHeadline": "",
+      "displayDetail": "",
+      "tone": "neutral",
+      "active": false
+    },
+    "history": [
+      {
+        "round": 1,
+        "timestamp": "2026-03-27T00:19:55.911Z",
+        "headline": "PLAYER BLACKJACK +150",
+        "detail": "PLAYER BLACKJACK",
+        "tone": "player",
+        "net": 150,
+        "playerCredits": 5150,
+        "bankCredits": 999850,
+        "bet": 100
+      }
+    ],
+    "dealer": {
+      "total": 0,
+      "cards": []
+    },
+    "hands": [],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  },
+  "sql": {
+    "alice": {
+      "location": {
+        "table": "user_scene_locations",
+        "row": {
+          "user_id": "alice",
+          "scene_id": "office-floor",
+          "controlled_actor": "human",
+          "human_x": 20.8,
+          "human_y": 0,
+          "human_z": -7.8,
+          "human_rot": 1.18,
+          "human_seat_name": null,
+          "robot_x": -6.7,
+          "robot_y": 0,
+          "robot_z": 9.25,
+          "robot_rot": 0.69,
+          "robot_seat_name": null,
+          "updated_at": "2026-03-27T00:20:01.990Z"
+        }
+      },
+      "outfit": {
+        "table": "user_scene_outfits",
+        "row": {
+          "user_id": "alice",
+          "scene_id": "office-floor",
+          "controlled_actor": "human",
+          "shades_name": "OFF",
+          "top_name": "BIKER BLK",
+          "shirt_name": "MIDNIGHT",
+          "pants_name": "BLACK",
+          "hat_name": "OFF",
+          "face_name": "NORMAL",
+          "pose_name": "STAND",
+          "boots_name": "EQSTRN BLK",
+          "updated_at": "2026-03-27T00:20:01.990Z"
+        }
+      },
+      "passiveRobots": [
+        {
+          "table": "user_scene_passive_robot_locations",
+          "row": {
+            "user_id": "alice",
+            "scene_id": "office-floor",
+            "robot_ref": "serviceRobot",
+            "robot_name": "service-robot",
+            "x": -7.52,
+            "y": 0,
+            "z": 7.97,
+            "rot": -1.08,
+            "route_index": 2,
+            "pause_timer": 0,
+            "updated_at": "2026-03-27T00:20:01.991Z"
+          }
+        },
+        {
+          "table": "user_scene_passive_robot_locations",
+          "row": {
+            "user_id": "alice",
+            "scene_id": "office-floor",
+            "robot_ref": "serviceRobot01",
+            "robot_name": "service-robot-01",
+            "x": 18.19,
+            "y": 0,
+            "z": 21.16,
+            "rot": -0.37,
+            "route_index": 3,
+            "pause_timer": 0.25,
+            "updated_at": "2026-03-27T00:20:01.991Z"
+          }
+        },
+        {
+          "table": "user_scene_passive_robot_locations",
+          "row": {
+            "user_id": "alice",
+            "scene_id": "office-floor",
+            "robot_ref": "serviceRobot02",
+            "robot_name": "service-robot-02",
+            "x": 12.77,
+            "y": 0,
+            "z": 10.31,
+            "rot": 6.31,
+            "route_index": 2,
+            "pause_timer": 0,
+            "updated_at": "2026-03-27T00:20:01.991Z"
+          }
+        }
+      ],
+      "blackjack": {
+        "table": "user_scene_blackjack_states",
+        "row": {
+          "user_id": "alice",
+          "scene_id": "office-floor",
+          "player_credits": 5150,
+          "bank_credits": 999850,
+          "current_bet": 100,
+          "round_counter": 1,
+          "saved_results_count": 1,
+          "latest_result_headline": "PLAYER BLACKJACK +150",
+          "latest_result_detail": "PLAYER BLACKJACK",
+          "latest_result_tone": "player",
+          "latest_result_net": 150,
+          "updated_at": "2026-03-27T00:20:01.991Z"
+        }
+      },
+      "blackjackHistory": [
+        {
+          "table": "user_scene_blackjack_result_history",
+          "row": {
+            "user_id": "alice",
+            "scene_id": "office-floor",
+            "history_index": 0,
+            "round_no": 1,
+            "headline": "PLAYER BLACKJACK +150",
+            "detail": "PLAYER BLACKJACK",
+            "tone": "player",
+            "net": 150,
+            "bet": 100,
+            "player_credits": 5150,
+            "bank_credits": 999850,
+            "result_timestamp": "2026-03-27T00:19:55.911Z",
+            "updated_at": "2026-03-27T00:20:01.991Z"
+          }
+        }
+      ]
+    },
+    "bob": {
+      "location": {
+        "table": "user_scene_locations",
+        "row": {
+          "user_id": "bob",
+          "scene_id": "office-floor",
+          "controlled_actor": "human",
+          "human_x": 20.8,
+          "human_y": 0,
+          "human_z": -7.8,
+          "human_rot": 1.18,
+          "human_seat_name": null,
+          "robot_x": -6.7,
+          "robot_y": 0,
+          "robot_z": 9.25,
+          "robot_rot": 0.69,
+          "robot_seat_name": null,
+          "updated_at": "2026-03-27T00:20:04.012Z"
+        }
+      },
+      "outfit": {
+        "table": "user_scene_outfits",
+        "row": {
+          "user_id": "bob",
+          "scene_id": "office-floor",
+          "controlled_actor": "human",
+          "shades_name": "OFF",
+          "top_name": "BIKER BLK",
+          "shirt_name": "MIDNIGHT",
+          "pants_name": "BLACK",
+          "hat_name": "OFF",
+          "face_name": "NORMAL",
+          "pose_name": "STAND",
+          "boots_name": "EQSTRN BLK",
+          "updated_at": "2026-03-27T00:20:04.012Z"
+        }
+      },
+      "passiveRobots": [
+        {
+          "table": "user_scene_passive_robot_locations",
+          "row": {
+            "user_id": "bob",
+            "scene_id": "office-floor",
+            "robot_ref": "serviceRobot",
+            "robot_name": "service-robot",
+            "x": -7.2,
+            "y": 0,
+            "z": 5,
+            "rot": 1.45,
+            "route_index": 1,
+            "pause_timer": 0.17,
+            "updated_at": "2026-03-27T00:20:04.012Z"
+          }
+        },
+        {
+          "table": "user_scene_passive_robot_locations",
+          "row": {
+            "user_id": "bob",
+            "scene_id": "office-floor",
+            "robot_ref": "serviceRobot01",
+            "robot_name": "service-robot-01",
+            "x": 17.6,
+            "y": 0,
+            "z": 18.6,
+            "rot": 3.83,
+            "route_index": 1,
+            "pause_timer": 0.37,
+            "updated_at": "2026-03-27T00:20:04.012Z"
+          }
+        },
+        {
+          "table": "user_scene_passive_robot_locations",
+          "row": {
+            "user_id": "bob",
+            "scene_id": "office-floor",
+            "robot_ref": "serviceRobot02",
+            "robot_name": "service-robot-02",
+            "x": 14.2,
+            "y": 0,
+            "z": 9,
+            "rot": 3.14,
+            "route_index": 1,
+            "pause_timer": 0.57,
+            "updated_at": "2026-03-27T00:20:04.012Z"
+          }
+        }
+      ],
+      "blackjack": {
+        "table": "user_scene_blackjack_states",
+        "row": {
+          "user_id": "bob",
+          "scene_id": "office-floor",
+          "player_credits": 5000,
+          "bank_credits": 1000000,
+          "current_bet": 100,
+          "round_counter": 0,
+          "saved_results_count": 0,
+          "latest_result_headline": null,
+          "latest_result_detail": null,
+          "latest_result_tone": null,
+          "latest_result_net": 0,
+          "updated_at": "2026-03-27T00:20:04.012Z"
+        }
+      },
+      "blackjackHistory": []
+    }
+  },
+  "storage": {
+    "version": 1,
+    "activeUserId": "alice",
+    "users": {
+      "guest": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-27T00:19:54.085Z",
+        "outfit": {
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "blackjack": {
+          "playerCredits": 5000,
+          "bankCredits": 1000000,
+          "currentBet": 100,
+          "roundCounter": 0,
+          "resultHistory": []
+        },
+        "passiveRobots": {
+          "serviceRobot": {
+            "x": -7.2,
+            "y": 0,
+            "z": 5,
+            "rot": 1.45,
+            "routeIndex": 1,
+            "pauseTimer": 0.35
+          },
+          "serviceRobot01": {
+            "x": 17.6,
+            "y": 0,
+            "z": 18.6,
+            "rot": 3.83,
+            "routeIndex": 1,
+            "pauseTimer": 0.55
+          },
+          "serviceRobot02": {
+            "x": 14.2,
+            "y": 0,
+            "z": 9,
+            "rot": 3.14,
+            "routeIndex": 1,
+            "pauseTimer": 0.75
+          }
+        },
+        "actors": {
+          "human": {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "rot": 0,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      },
+      "alice": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-27T00:20:05.932Z",
+        "outfit": {
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "blackjack": {
+          "playerCredits": 5150,
+          "bankCredits": 999850,
+          "currentBet": 100,
+          "roundCounter": 1,
+          "resultHistory": [
+            {
+              "round": 1,
+              "timestamp": "2026-03-27T00:19:55.911Z",
+              "headline": "PLAYER BLACKJACK +150",
+              "detail": "PLAYER BLACKJACK",
+              "tone": "player",
+              "net": 150,
+              "playerCredits": 5150,
+              "bankCredits": 999850,
+              "bet": 100
+            }
+          ]
+        },
+        "passiveRobots": {
+          "serviceRobot": {
+            "x": -7.53,
+            "y": 0,
+            "z": 8.02,
+            "rot": -1.13,
+            "routeIndex": 2,
+            "pauseTimer": 0
+          },
+          "serviceRobot01": {
+            "x": 18.04,
+            "y": 0,
+            "z": 21.15,
+            "rot": -1.23,
+            "routeIndex": 3,
+            "pauseTimer": 0
+          },
+          "serviceRobot02": {
+            "x": 12.79,
+            "y": 0,
+            "z": 10.82,
+            "rot": 6.32,
+            "routeIndex": 3,
+            "pauseTimer": 0.24
+          }
+        },
+        "actors": {
+          "human": {
+            "x": 20.8,
+            "y": 0,
+            "z": -7.8,
+            "rot": 1.18,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      },
+      "bob": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-27T00:20:05.129Z",
+        "outfit": {
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "blackjack": {
+          "playerCredits": 5000,
+          "bankCredits": 1000000,
+          "currentBet": 100,
+          "roundCounter": 0,
+          "resultHistory": []
+        },
+        "passiveRobots": {
+          "serviceRobot": {
+            "x": -7.19,
+            "y": 0,
+            "z": 5.12,
+            "rot": 0.58,
+            "routeIndex": 1,
+            "pauseTimer": 0
+          },
+          "serviceRobot01": {
+            "x": 17.6,
+            "y": 0,
+            "z": 18.6,
+            "rot": 3.83,
+            "routeIndex": 1,
+            "pauseTimer": 0.12
+          },
+          "serviceRobot02": {
+            "x": 14.2,
+            "y": 0,
+            "z": 9,
+            "rot": 3.14,
+            "routeIndex": 1,
+            "pauseTimer": 0.32
+          }
+        },
+        "actors": {
+          "human": {
+            "x": 20.8,
+            "y": 0,
+            "z": -7.8,
+            "rot": 1.18,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1272 @@
+{
+  "errors": [],
+  "pickup": {
+    "pickedUp": true,
+    "carrying": {
+      "name": "spare-boots",
+      "label": "SPARE BOOTS",
+      "category": "boots",
+      "weightKg": 1.8,
+      "carrier": "human",
+      "x": -15,
+      "y": 0.89,
+      "z": 7.03
+    },
+    "selection": null
+  },
+  "carryingState": {
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": {
+        "active": true,
+        "label": "SPARE BOOTS",
+        "task": "CARRYING",
+        "weightKg": 1.8,
+        "carried": true,
+        "carrier": "human",
+        "options": [
+          "DROP"
+        ]
+      },
+      "carrying": {
+        "name": "spare-boots",
+        "label": "SPARE BOOTS",
+        "category": "boots",
+        "weightKg": 1.8,
+        "carrier": "human",
+        "x": -15,
+        "y": 0.89,
+        "z": 7.03
+      },
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "coreOptions": [
+          "JUMP",
+          "WAVE",
+          "RUN",
+          "VIEW",
+          "ZOOM OUT",
+          "ZOOM IN"
+        ],
+        "performanceOptions": [
+          {
+            "name": "KICK",
+            "duration": 0.56
+          },
+          {
+            "name": "BACK KICK",
+            "duration": 0.56
+          },
+          {
+            "name": "FULL KICK",
+            "duration": 1.08
+          },
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "player": {
+      "x": -15.4,
+      "y": 0,
+      "z": 6.87,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "carrying": "SPARE BOOTS",
+      "controlled": true
+    },
+    "carryables": [
+      {
+        "name": "spare-boots",
+        "label": "SPARE BOOTS",
+        "category": "boots",
+        "weightKg": 1.8,
+        "carried": true,
+        "carrier": "human",
+        "x": -15,
+        "y": 0.89,
+        "z": 7.03
+      }
+    ]
+  },
+  "drop": {
+    "dropped": true,
+    "carrying": null,
+    "selection": null
+  },
+  "droppedState": {
+    "interaction": {
+      "mode": "drag",
+      "selection": {
+        "type": "object",
+        "kind": "carryable-prop",
+        "name": "spare-boots",
+        "label": "SPARE BOOTS",
+        "zone": "floor",
+        "x": 0,
+        "y": 0.47,
+        "z": 0.98,
+        "weightKg": 1.8,
+        "carried": false,
+        "carrier": null
+      },
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "carrying": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "coreOptions": [
+          "JUMP",
+          "WAVE",
+          "RUN",
+          "VIEW",
+          "ZOOM OUT",
+          "ZOOM IN"
+        ],
+        "performanceOptions": [
+          {
+            "name": "KICK",
+            "duration": 0.56
+          },
+          {
+            "name": "BACK KICK",
+            "duration": 0.56
+          },
+          {
+            "name": "FULL KICK",
+            "duration": 1.08
+          },
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "carrying": null,
+      "controlled": true
+    },
+    "carryables": [
+      {
+        "name": "spare-boots",
+        "label": "SPARE BOOTS",
+        "category": "boots",
+        "weightKg": 1.8,
+        "carried": false,
+        "carrier": null,
+        "x": 0,
+        "y": 0.12,
+        "z": 0.88
+      }
+    ],
+    "persistence": {
+      "activeUserId": "carry-proof-user",
+      "restored": false,
+      "storage": "localStorage",
+      "backendTable": "user_scene_locations",
+      "backendTables": {
+        "location": "user_scene_locations",
+        "outfit": "user_scene_outfits",
+        "carryables": "user_scene_carryable_prop_locations",
+        "passiveRobots": "user_scene_passive_robot_locations",
+        "blackjack": "user_scene_blackjack_states",
+        "blackjackHistory": "user_scene_blackjack_result_history"
+      },
+      "blackjackResultsSaved": 0,
+      "lastSavedAt": "2026-03-31T17:38:11.766Z"
+    }
+  },
+  "restoredState": {
+    "interaction": {
+      "mode": "drag",
+      "selection": {
+        "type": "object",
+        "kind": "carryable-prop",
+        "name": "spare-boots",
+        "label": "SPARE BOOTS",
+        "zone": "floor",
+        "x": 0,
+        "y": 0.47,
+        "z": 0.98,
+        "weightKg": 1.8,
+        "carried": false,
+        "carrier": null
+      },
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "carrying": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "coreOptions": [
+          "JUMP",
+          "WAVE",
+          "RUN",
+          "VIEW",
+          "ZOOM OUT",
+          "ZOOM IN"
+        ],
+        "performanceOptions": [
+          {
+            "name": "KICK",
+            "duration": 0.56
+          },
+          {
+            "name": "BACK KICK",
+            "duration": 0.56
+          },
+          {
+            "name": "FULL KICK",
+            "duration": 1.08
+          },
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "carrying": null,
+      "controlled": true
+    },
+    "carryables": [
+      {
+        "name": "spare-boots",
+        "label": "SPARE BOOTS",
+        "category": "boots",
+        "weightKg": 1.8,
+        "carried": false,
+        "carrier": null,
+        "x": 0,
+        "y": 0.12,
+        "z": 0.88
+      }
+    ],
+    "persistence": {
+      "activeUserId": "carry-proof-user",
+      "restored": true,
+      "storage": "localStorage",
+      "backendTable": "user_scene_locations",
+      "backendTables": {
+        "location": "user_scene_locations",
+        "outfit": "user_scene_outfits",
+        "carryables": "user_scene_carryable_prop_locations",
+        "passiveRobots": "user_scene_passive_robot_locations",
+        "blackjack": "user_scene_blackjack_states",
+        "blackjackHistory": "user_scene_blackjack_result_history"
+      },
+      "blackjackResultsSaved": 0,
+      "lastSavedAt": "2026-03-31T17:38:14.120Z"
+    }
+  },
+  "sqlAfterDrop": {
+    "location": {
+      "table": "user_scene_locations",
+      "row": {
+        "user_id": "carry-proof-user",
+        "scene_id": "office-floor",
+        "controlled_actor": "human",
+        "human_x": 0,
+        "human_y": 0,
+        "human_z": 0,
+        "human_rot": 0,
+        "human_seat_name": null,
+        "robot_x": -6.7,
+        "robot_y": 0,
+        "robot_z": 9.25,
+        "robot_rot": 0.69,
+        "robot_seat_name": null,
+        "updated_at": "2026-03-31T17:38:13.478Z"
+      }
+    },
+    "outfit": {
+      "table": "user_scene_outfits",
+      "row": {
+        "user_id": "carry-proof-user",
+        "scene_id": "office-floor",
+        "controlled_actor": "human",
+        "hair_name": "BLACK",
+        "shades_name": "OFF",
+        "top_name": "BIKER BLK",
+        "shirt_name": "MIDNIGHT",
+        "pants_name": "BLACK",
+        "hat_name": "OFF",
+        "face_name": "NORMAL",
+        "pose_name": "STAND",
+        "boots_name": "EQSTRN BLK",
+        "updated_at": "2026-03-31T17:38:13.478Z"
+      }
+    },
+    "carryables": [
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-1",
+          "prop_label": "PANTRY JAR 1",
+          "category": "jar",
+          "weight_kg": 2.4,
+          "x": -13.45,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-2",
+          "prop_label": "PANTRY JAR 2",
+          "category": "jar",
+          "weight_kg": 2.7,
+          "x": -12.89,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-3",
+          "prop_label": "PANTRY JAR 3",
+          "category": "jar",
+          "weight_kg": 2.4,
+          "x": -12.33,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-4",
+          "prop_label": "PANTRY JAR 4",
+          "category": "jar",
+          "weight_kg": 2.7,
+          "x": -11.77,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-5",
+          "prop_label": "PANTRY JAR 5",
+          "category": "jar",
+          "weight_kg": 2.4,
+          "x": -11.21,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "coffee-mug-1",
+          "prop_label": "COFFEE MUG 1",
+          "category": "cup",
+          "weight_kg": 0.4,
+          "x": -13.96,
+          "y": 1.67,
+          "z": 6.4,
+          "rot": 1.57,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "coffee-mug-2",
+          "prop_label": "COFFEE MUG 2",
+          "category": "cup",
+          "weight_kg": 0.4,
+          "x": -13.91,
+          "y": 1.67,
+          "z": 6.31,
+          "rot": 1.81,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "coffee-mug-3",
+          "prop_label": "COFFEE MUG 3",
+          "category": "cup",
+          "weight_kg": 0.4,
+          "x": -13.86,
+          "y": 1.67,
+          "z": 6.22,
+          "rot": 2.05,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "spare-boots",
+          "prop_label": "SPARE BOOTS",
+          "category": "boots",
+          "weight_kg": 1.8,
+          "x": 0,
+          "y": 0.12,
+          "z": 0.88,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      }
+    ],
+    "passiveRobots": [
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "serviceRobot",
+          "robot_name": "service-robot",
+          "x": -7.2,
+          "y": 0,
+          "z": 5,
+          "rot": 1.45,
+          "route_index": 1,
+          "pause_timer": 0.35,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "serviceRobot01",
+          "robot_name": "service-robot-01",
+          "x": 17.6,
+          "y": 0,
+          "z": 18.6,
+          "rot": 3.83,
+          "route_index": 1,
+          "pause_timer": 0.55,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "serviceRobot02",
+          "robot_name": "service-robot-02",
+          "x": 14.2,
+          "y": 0,
+          "z": 9,
+          "rot": 3.14,
+          "route_index": 1,
+          "pause_timer": 0.75,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "coffeeServiceRobot",
+          "robot_name": "coffee-service-robot",
+          "x": -15.02,
+          "y": 0,
+          "z": 6.44,
+          "rot": 1.57,
+          "route_index": 0,
+          "pause_timer": 0.35,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "tableTennisExpert",
+          "robot_name": "table-tennis-expert",
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "rot": 3.14,
+          "route_index": 0,
+          "pause_timer": 0,
+          "updated_at": "2026-03-31T17:38:13.478Z"
+        }
+      }
+    ],
+    "blackjack": {
+      "table": "user_scene_blackjack_states",
+      "row": {
+        "user_id": "carry-proof-user",
+        "scene_id": "office-floor",
+        "player_credits": 5000,
+        "bank_credits": 1000000,
+        "current_bet": 100,
+        "round_counter": 0,
+        "saved_results_count": 0,
+        "latest_result_headline": null,
+        "latest_result_detail": null,
+        "latest_result_tone": null,
+        "latest_result_net": 0,
+        "updated_at": "2026-03-31T17:38:13.478Z"
+      }
+    },
+    "blackjackHistory": []
+  },
+  "sqlAfterReload": {
+    "location": {
+      "table": "user_scene_locations",
+      "row": {
+        "user_id": "carry-proof-user",
+        "scene_id": "office-floor",
+        "controlled_actor": "human",
+        "human_x": 0,
+        "human_y": 0,
+        "human_z": 0,
+        "human_rot": 0,
+        "human_seat_name": null,
+        "robot_x": -6.7,
+        "robot_y": 0,
+        "robot_z": 9.25,
+        "robot_rot": 0.69,
+        "robot_seat_name": null,
+        "updated_at": "2026-03-31T17:38:25.748Z"
+      }
+    },
+    "outfit": {
+      "table": "user_scene_outfits",
+      "row": {
+        "user_id": "carry-proof-user",
+        "scene_id": "office-floor",
+        "controlled_actor": "human",
+        "hair_name": "BLACK",
+        "shades_name": "OFF",
+        "top_name": "BIKER BLK",
+        "shirt_name": "MIDNIGHT",
+        "pants_name": "BLACK",
+        "hat_name": "OFF",
+        "face_name": "NORMAL",
+        "pose_name": "STAND",
+        "boots_name": "EQSTRN BLK",
+        "updated_at": "2026-03-31T17:38:25.748Z"
+      }
+    },
+    "carryables": [
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-1",
+          "prop_label": "PANTRY JAR 1",
+          "category": "jar",
+          "weight_kg": 2.4,
+          "x": -13.45,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-2",
+          "prop_label": "PANTRY JAR 2",
+          "category": "jar",
+          "weight_kg": 2.7,
+          "x": -12.89,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-3",
+          "prop_label": "PANTRY JAR 3",
+          "category": "jar",
+          "weight_kg": 2.4,
+          "x": -12.33,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-4",
+          "prop_label": "PANTRY JAR 4",
+          "category": "jar",
+          "weight_kg": 2.7,
+          "x": -11.77,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "pantry-jar-5",
+          "prop_label": "PANTRY JAR 5",
+          "category": "jar",
+          "weight_kg": 2.4,
+          "x": -11.21,
+          "y": 1.12,
+          "z": 6.38,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "coffee-mug-1",
+          "prop_label": "COFFEE MUG 1",
+          "category": "cup",
+          "weight_kg": 0.4,
+          "x": -13.96,
+          "y": 1.67,
+          "z": 6.4,
+          "rot": 1.57,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "coffee-mug-2",
+          "prop_label": "COFFEE MUG 2",
+          "category": "cup",
+          "weight_kg": 0.4,
+          "x": -13.91,
+          "y": 1.67,
+          "z": 6.31,
+          "rot": 1.81,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "coffee-mug-3",
+          "prop_label": "COFFEE MUG 3",
+          "category": "cup",
+          "weight_kg": 0.4,
+          "x": -13.86,
+          "y": 1.67,
+          "z": 6.22,
+          "rot": 2.05,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_carryable_prop_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "prop_ref": "spare-boots",
+          "prop_label": "SPARE BOOTS",
+          "category": "boots",
+          "weight_kg": 1.8,
+          "x": 0,
+          "y": 0.12,
+          "z": 0.88,
+          "rot": 0,
+          "is_carried": 0,
+          "carrier_actor": null,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      }
+    ],
+    "passiveRobots": [
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "serviceRobot",
+          "robot_name": "service-robot",
+          "x": -7.2,
+          "y": 0,
+          "z": 5,
+          "rot": 1.45,
+          "route_index": 1,
+          "pause_timer": 0.21,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "serviceRobot01",
+          "robot_name": "service-robot-01",
+          "x": 17.6,
+          "y": 0,
+          "z": 18.6,
+          "rot": 3.83,
+          "route_index": 1,
+          "pause_timer": 0.41,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "serviceRobot02",
+          "robot_name": "service-robot-02",
+          "x": 14.2,
+          "y": 0,
+          "z": 9,
+          "rot": 3.14,
+          "route_index": 1,
+          "pause_timer": 0.61,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "coffeeServiceRobot",
+          "robot_name": "coffee-service-robot",
+          "x": -15.02,
+          "y": 0,
+          "z": 6.44,
+          "rot": 1.57,
+          "route_index": 0,
+          "pause_timer": 0.21,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      },
+      {
+        "table": "user_scene_passive_robot_locations",
+        "row": {
+          "user_id": "carry-proof-user",
+          "scene_id": "office-floor",
+          "robot_ref": "tableTennisExpert",
+          "robot_name": "table-tennis-expert",
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "rot": 3.14,
+          "route_index": 0,
+          "pause_timer": 0,
+          "updated_at": "2026-03-31T17:38:25.748Z"
+        }
+      }
+    ],
+    "blackjack": {
+      "table": "user_scene_blackjack_states",
+      "row": {
+        "user_id": "carry-proof-user",
+        "scene_id": "office-floor",
+        "player_credits": 5000,
+        "bank_credits": 1000000,
+        "current_bet": 100,
+        "round_counter": 0,
+        "saved_results_count": 0,
+        "latest_result_headline": null,
+        "latest_result_detail": null,
+        "latest_result_tone": null,
+        "latest_result_net": 0,
+        "updated_at": "2026-03-31T17:38:25.748Z"
+      }
+    },
+    "blackjackHistory": []
+  },
+  "rawStore": {
+    "version": 1,
+    "activeUserId": "carry-proof-user",
+    "users": {
+      "guest": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-31T17:38:02.768Z",
+        "outfit": {
+          "hair": "BLACK",
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "carryables": {
+          "pantry-jar-1": {
+            "x": -13.45,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.4
+          },
+          "pantry-jar-2": {
+            "x": -12.89,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.7
+          },
+          "pantry-jar-3": {
+            "x": -12.33,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.4
+          },
+          "pantry-jar-4": {
+            "x": -11.77,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.7
+          },
+          "pantry-jar-5": {
+            "x": -11.21,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.4
+          },
+          "coffee-mug-1": {
+            "x": -13.96,
+            "y": 1.67,
+            "z": 6.4,
+            "rot": 1.57,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 0.4
+          },
+          "coffee-mug-2": {
+            "x": -13.91,
+            "y": 1.67,
+            "z": 6.31,
+            "rot": 1.81,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 0.4
+          },
+          "coffee-mug-3": {
+            "x": -13.86,
+            "y": 1.67,
+            "z": 6.22,
+            "rot": 2.05,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 0.4
+          },
+          "spare-boots": {
+            "x": -14.85,
+            "y": 0,
+            "z": 7.02,
+            "rot": -1.57,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 1.8
+          }
+        },
+        "blackjack": {
+          "playerCredits": 5000,
+          "bankCredits": 1000000,
+          "currentBet": 100,
+          "roundCounter": 0,
+          "resultHistory": []
+        },
+        "passiveRobots": {
+          "serviceRobot": {
+            "x": -7.2,
+            "y": 0,
+            "z": 5,
+            "rot": 1.45,
+            "routeIndex": 1,
+            "pauseTimer": 0.35
+          },
+          "serviceRobot01": {
+            "x": 17.6,
+            "y": 0,
+            "z": 18.6,
+            "rot": 3.83,
+            "routeIndex": 1,
+            "pauseTimer": 0.55
+          },
+          "serviceRobot02": {
+            "x": 14.2,
+            "y": 0,
+            "z": 9,
+            "rot": 3.14,
+            "routeIndex": 1,
+            "pauseTimer": 0.75
+          },
+          "coffeeServiceRobot": {
+            "x": -15.02,
+            "y": 0,
+            "z": 6.44,
+            "rot": 1.57,
+            "routeIndex": 0,
+            "pauseTimer": 0.35
+          },
+          "tableTennisExpert": {
+            "x": 13.4,
+            "y": 0,
+            "z": -13.15,
+            "rot": 3.14,
+            "routeIndex": 0,
+            "pauseTimer": 0
+          }
+        },
+        "actors": {
+          "human": {
+            "x": 0,
+            "y": 0,
+            "z": 2,
+            "rot": 0,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      },
+      "carry-proof-user": {
+        "controlledActor": "human",
+        "updatedAt": "2026-03-31T17:38:13.481Z",
+        "outfit": {
+          "hair": "BLACK",
+          "shades": "OFF",
+          "top": "BIKER BLK",
+          "shirt": "MIDNIGHT",
+          "pants": "BLACK",
+          "hat": "OFF",
+          "face": "NORMAL",
+          "pose": "STAND",
+          "boots": "EQSTRN BLK"
+        },
+        "carryables": {
+          "pantry-jar-1": {
+            "x": -13.45,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.4
+          },
+          "pantry-jar-2": {
+            "x": -12.89,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.7
+          },
+          "pantry-jar-3": {
+            "x": -12.33,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.4
+          },
+          "pantry-jar-4": {
+            "x": -11.77,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.7
+          },
+          "pantry-jar-5": {
+            "x": -11.21,
+            "y": 1.12,
+            "z": 6.38,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 2.4
+          },
+          "coffee-mug-1": {
+            "x": -13.96,
+            "y": 1.67,
+            "z": 6.4,
+            "rot": 1.57,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 0.4
+          },
+          "coffee-mug-2": {
+            "x": -13.91,
+            "y": 1.67,
+            "z": 6.31,
+            "rot": 1.81,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 0.4
+          },
+          "coffee-mug-3": {
+            "x": -13.86,
+            "y": 1.67,
+            "z": 6.22,
+            "rot": 2.05,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 0.4
+          },
+          "spare-boots": {
+            "x": 0,
+            "y": 0.12,
+            "z": 0.88,
+            "rot": 0,
+            "carried": false,
+            "carrier": null,
+            "weightKg": 1.8
+          }
+        },
+        "blackjack": {
+          "playerCredits": 5000,
+          "bankCredits": 1000000,
+          "currentBet": 100,
+          "roundCounter": 0,
+          "resultHistory": []
+        },
+        "passiveRobots": {
+          "serviceRobot": {
+            "x": -7.2,
+            "y": 0,
+            "z": 5,
+            "rot": 1.45,
+            "routeIndex": 1,
+            "pauseTimer": 0.35
+          },
+          "serviceRobot01": {
+            "x": 17.6,
+            "y": 0,
+            "z": 18.6,
+            "rot": 3.83,
+            "routeIndex": 1,
+            "pauseTimer": 0.55
+          },
+          "serviceRobot02": {
+            "x": 14.2,
+            "y": 0,
+            "z": 9,
+            "rot": 3.14,
+            "routeIndex": 1,
+            "pauseTimer": 0.75
+          },
+          "coffeeServiceRobot": {
+            "x": -15.02,
+            "y": 0,
+            "z": 6.44,
+            "rot": 1.57,
+            "routeIndex": 0,
+            "pauseTimer": 0.35
+          },
+          "tableTennisExpert": {
+            "x": 13.4,
+            "y": 0,
+            "z": -13.15,
+            "rot": 3.14,
+            "routeIndex": 0,
+            "pauseTimer": 0
+          }
+        },
+        "actors": {
+          "human": {
+            "x": 0,
+            "y": 0,
+            "z": 0,
+            "rot": 0,
+            "seat": null
+          },
+          "robot": {
+            "x": -6.7,
+            "y": 0,
+            "z": 9.25,
+            "rot": 0.69,
+            "seat": null
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "before": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "round-over",
+    "phaseLabel": "ROUND OVER",
+    "playerCredits": 5150,
+    "bankCredits": 999850,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "PLAYER BLACKJACK",
+    "round": 1,
+    "dealerHoleHidden": false,
+    "roundNet": 150,
+    "result": {
+      "headline": "PLAYER BLACKJACK +150",
+      "detail": "PLAYER BLACKJACK",
+      "displayHeadline": "PLAYER BLACKJACK +150",
+      "displayDetail": "PLAYER BLACKJACK",
+      "tone": "player",
+      "active": false
+    },
+    "dealer": {
+      "total": 16,
+      "cards": [
+        {
+          "rank": "6",
+          "suit": "C",
+          "code": "6C",
+          "value": 6
+        },
+        {
+          "rank": "10",
+          "suit": "D",
+          "code": "10D",
+          "value": 10
+        }
+      ]
+    },
+    "hands": [
+      {
+        "index": 0,
+        "active": false,
+        "bet": 100,
+        "total": 21,
+        "soft": true,
+        "blackjack": true,
+        "busted": false,
+        "standing": true,
+        "resolved": true,
+        "wasSplit": false,
+        "doubled": false,
+        "outcome": "blackjack",
+        "net": 150,
+        "cards": [
+          {
+            "rank": "A",
+            "suit": "H",
+            "code": "AH",
+            "value": 11
+          },
+          {
+            "rank": "K",
+            "suit": "H",
+            "code": "KH",
+            "value": 10
+          }
+        ]
+      }
+    ],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  },
+  "after": {
+    "wallLabel": "BLACKJACK WALL",
+    "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+    "phase": "betting",
+    "phaseLabel": "BETTING",
+    "playerCredits": 5150,
+    "bankCredits": 999850,
+    "currentBet": 100,
+    "shoeRemaining": 312,
+    "message": "Next hand ready. Adjust the wager or deal against the banker.",
+    "round": 1,
+    "dealerHoleHidden": false,
+    "roundNet": 0,
+    "result": {
+      "headline": "",
+      "detail": "",
+      "displayHeadline": "",
+      "displayDetail": "",
+      "tone": "neutral",
+      "active": false
+    },
+    "dealer": {
+      "total": 0,
+      "cards": []
+    },
+    "hands": [],
+    "availableActions": {
+      "deal": true,
+      "betDown": false,
+      "betUp": true,
+      "betPlusFive": true
+    }
+  }
+}

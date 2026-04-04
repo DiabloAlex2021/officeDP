@@ -1,0 +1,28 @@
+{
+  "cycleMetrics": {
+    "minSeen": 2.526395648239088e-9,
+    "minFrame": 201,
+    "rootAtMin": 0.24500000267540728
+  },
+  "standMetrics": {
+    "minY": 0.0025471475698169987,
+    "rootY": 0.24754714771882863,
+    "maxY": 2.156547145096224,
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    }
+  }
+}

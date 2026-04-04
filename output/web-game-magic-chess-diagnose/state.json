@@ -1,0 +1,8 @@
+{
+  "errors": [
+    "console: THREE.WebGLRenderer: Error creating WebGL context.",
+    "pageerror: Uncaught Error: Error creating WebGL context.",
+    "caught: TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+  ],
+  "snapshots": {}
+}

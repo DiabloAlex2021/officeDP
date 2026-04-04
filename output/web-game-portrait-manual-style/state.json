@@ -1,0 +1,31 @@
+{
+  "layout": {
+    "panel": {
+      "width": 202,
+      "height": 154,
+      "top": 14,
+      "right": 16
+    },
+    "canvas": {
+      "width": 166,
+      "height": 118
+    }
+  },
+  "captures": [
+    {
+      "face": "NORMAL",
+      "controller": "HUMAN",
+      "action": "idle"
+    },
+    {
+      "face": "HAPPY",
+      "controller": "HUMAN",
+      "action": "idle"
+    },
+    {
+      "face": "SURPRISED",
+      "controller": "HUMAN",
+      "action": "idle"
+    }
+  ]
+}

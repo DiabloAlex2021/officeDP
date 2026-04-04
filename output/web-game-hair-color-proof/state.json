@@ -1,0 +1,21 @@
+{
+  "errors": [],
+  "captures": [
+    {
+      "hair": "BLACK",
+      "screenshot": "hair-black.png"
+    },
+    {
+      "hair": "WHITE",
+      "screenshot": "hair-white.png"
+    },
+    {
+      "hair": "GOLD",
+      "screenshot": "hair-gold.png"
+    },
+    {
+      "hair": "PINK",
+      "screenshot": "hair-pink.png"
+    }
+  ]
+}

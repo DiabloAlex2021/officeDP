@@ -1,0 +1,24 @@
+{
+  "captures": [
+    {
+      "top": "DENIM JKT",
+      "shirt": "MIDNIGHT",
+      "file": "denim-jkt.png"
+    },
+    {
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "file": "biker-blk.png"
+    },
+    {
+      "top": "LTHR TRENCH",
+      "shirt": "MIDNIGHT",
+      "file": "lthr-trench.png"
+    }
+  ],
+  "regression": {
+    "score": 1,
+    "ballsRemaining": 2,
+    "bootsPrompt": false
+  }
+}

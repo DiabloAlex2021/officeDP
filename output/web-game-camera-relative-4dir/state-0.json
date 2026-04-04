@@ -1,0 +1,1194 @@
+{
+  "up": {
+    "before": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -7,
+        "y": 4.01,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "idle"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.15,
+          "z": 11.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 4.12
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "rock-2",
+          "x": 5,
+          "z": -4,
+          "distance": 7.81
+        },
+        {
+          "name": "boulder-stop-west",
+          "x": -5.2,
+          "z": 8.3,
+          "distance": 8.17
+        },
+        {
+          "name": "boulder-stop-east",
+          "x": 5.2,
+          "z": 8.3,
+          "distance": 8.17
+        }
+      ]
+    },
+    "after": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -5.22,
+        "y": 4.01,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 2.07,
+        "y": 0,
+        "z": 2,
+        "vx": 2.4,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "walk"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.04,
+          "z": 10.6,
+          "vx": 0,
+          "vy": 0,
+          "vz": -0.74,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 4.41
+        },
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 6.15
+        },
+        {
+          "name": "rock-2",
+          "x": 5,
+          "z": -4,
+          "distance": 6.68
+        },
+        {
+          "name": "boulder-stop-east",
+          "x": 5.2,
+          "z": 8.3,
+          "distance": 7.04
+        },
+        {
+          "name": "rock-4",
+          "x": 8,
+          "z": 7,
+          "distance": 7.76
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 8.31
+        }
+      ]
+    }
+  },
+  "down": {
+    "before": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -7,
+        "y": 4.01,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "idle"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.15,
+          "z": 11.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 4.12
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "rock-2",
+          "x": 5,
+          "z": -4,
+          "distance": 7.81
+        },
+        {
+          "name": "boulder-stop-west",
+          "x": -5.2,
+          "z": 8.3,
+          "distance": 8.17
+        },
+        {
+          "name": "boulder-stop-east",
+          "x": 5.2,
+          "z": 8.3,
+          "distance": 8.17
+        }
+      ]
+    },
+    "after": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -8.77,
+        "y": 4.01,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": -2.07,
+        "y": 0,
+        "z": 2,
+        "vx": -2.4,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "walk"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.04,
+          "z": 10.6,
+          "vx": 0,
+          "vy": 0,
+          "vz": -0.74,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 2.18
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 4.41
+        },
+        {
+          "name": "boulder-stop-west",
+          "x": -5.2,
+          "z": 8.3,
+          "distance": 7.04
+        },
+        {
+          "name": "tree-1",
+          "x": -9,
+          "z": 4,
+          "distance": 7.22
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 8.31
+        },
+        {
+          "name": "lamp-5",
+          "x": -6,
+          "z": 10,
+          "distance": 8.91
+        }
+      ]
+    }
+  },
+  "left": {
+    "before": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -7,
+        "y": 4.01,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "idle"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.15,
+          "z": 11.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 4.12
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "rock-2",
+          "x": 5,
+          "z": -4,
+          "distance": 7.81
+        },
+        {
+          "name": "boulder-stop-west",
+          "x": -5.2,
+          "z": 8.3,
+          "distance": 8.17
+        },
+        {
+          "name": "boulder-stop-east",
+          "x": 5.2,
+          "z": 8.3,
+          "distance": 8.17
+        }
+      ]
+    },
+    "after": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -7,
+        "y": 4.01,
+        "z": 0.22,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": -0.07,
+        "vx": 0,
+        "vy": 0,
+        "vz": -2.4,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "walk"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.04,
+          "z": 10.6,
+          "vx": 0,
+          "vy": 0,
+          "vz": -0.74,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 5.04
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 6
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 6
+        },
+        {
+          "name": "rock-2",
+          "x": 5,
+          "z": -4,
+          "distance": 6.36
+        },
+        {
+          "name": "rock-3",
+          "x": -7,
+          "z": -6,
+          "distance": 9.18
+        },
+        {
+          "name": "tree-5",
+          "x": -7,
+          "z": -7,
+          "distance": 9.85
+        }
+      ]
+    }
+  },
+  "right": {
+    "before": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -7,
+        "y": 4.01,
+        "z": 2,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 2,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "idle"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.15,
+          "z": 11.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 4.12
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 6.32
+        },
+        {
+          "name": "rock-2",
+          "x": 5,
+          "z": -4,
+          "distance": 7.81
+        },
+        {
+          "name": "boulder-stop-west",
+          "x": -5.2,
+          "z": 8.3,
+          "distance": 8.17
+        },
+        {
+          "name": "boulder-stop-east",
+          "x": 5.2,
+          "z": 8.3,
+          "distance": 8.17
+        }
+      ]
+    },
+    "after": {
+      "mode": "play",
+      "coordinateSystem": "origin near the meadow center, +x world-east, +y up, +z toward the stone ramp; camera yaw/pitch can orbit around the player",
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "camera": {
+        "x": -7,
+        "y": 4.01,
+        "z": 3.78,
+        "yaw": -1.57,
+        "pitch": 0.52
+      },
+      "player": {
+        "x": 0,
+        "y": 0,
+        "z": 4.07,
+        "vx": 0,
+        "vy": 0,
+        "vz": 2.4,
+        "grounded": true,
+        "zone": "meadow",
+        "action": "walk"
+      },
+      "outfit": {
+        "shades": "OFF",
+        "shirt": "MIDNIGHT",
+        "hat": "OFF",
+        "boots": "OBSIDIAN"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.04,
+          "z": 10.6,
+          "vx": 0,
+          "vy": 0,
+          "vz": -0.74,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "rock-1",
+          "x": -4,
+          "z": 3,
+          "distance": 4.14
+        },
+        {
+          "name": "boulder-stop-west",
+          "x": -5.2,
+          "z": 8.3,
+          "distance": 6.71
+        },
+        {
+          "name": "boulder-stop-east",
+          "x": 5.2,
+          "z": 8.3,
+          "distance": 6.71
+        },
+        {
+          "name": "lamp-1",
+          "x": -6,
+          "z": 0,
+          "distance": 7.25
+        },
+        {
+          "name": "lamp-2",
+          "x": 6,
+          "z": 0,
+          "distance": 7.25
+        },
+        {
+          "name": "lamp-5",
+          "x": -6,
+          "z": 10,
+          "distance": 8.44
+        }
+      ]
+    }
+  }
+}

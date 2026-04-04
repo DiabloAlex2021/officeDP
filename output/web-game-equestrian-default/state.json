@@ -1,0 +1,8 @@
+{
+  "initialBoots": "EQSTRN BLK",
+  "brownBoots": "EQSTRN BRN",
+  "promptTarget": "EQSTRN BLK",
+  "score": 1,
+  "ballsRemaining": 2,
+  "bootsPrompt": true
+}

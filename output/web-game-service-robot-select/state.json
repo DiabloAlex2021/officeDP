@@ -1,0 +1,214 @@
+{
+  "mode": "play",
+  "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+  "controller": "HUMAN",
+  "interaction": {
+    "mode": "select",
+    "selection": {
+      "type": "object",
+      "kind": "robot-npc",
+      "name": "service-robot",
+      "label": "SERVICE BOT",
+      "zone": "floor",
+      "x": -6.4,
+      "y": 0,
+      "z": 4,
+      "action": "idle"
+    },
+    "palette": null,
+    "bootsPrompt": null
+  },
+  "score": 0,
+  "aiScore": 0,
+  "level": 1,
+  "ballsRemaining": 3,
+  "environment": {
+    "sky": "DAY"
+  },
+  "camera": {
+    "x": -3.54,
+    "y": 1.05,
+    "z": 4.36,
+    "yaw": 1.28,
+    "pitch": 0.22,
+    "radius": 4.8,
+    "targetRadius": 4.8
+  },
+  "player": {
+    "x": -7.52,
+    "y": 0,
+    "z": 5.7,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "grounded": true,
+    "zone": "floor",
+    "action": "idle",
+    "seated": false,
+    "seat": null,
+    "controlled": true
+  },
+  "human": {
+    "x": -7.52,
+    "y": 0,
+    "z": 5.7,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "grounded": true,
+    "zone": "floor",
+    "action": "idle",
+    "seated": false,
+    "seat": null,
+    "controlled": true
+  },
+  "robot": {
+    "x": -6.7,
+    "y": 0,
+    "z": 9.25,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "grounded": true,
+    "zone": "floor",
+    "action": "idle",
+    "seated": false,
+    "seat": null,
+    "controlled": false
+  },
+  "serviceRobot": {
+    "x": -6.4,
+    "y": 0,
+    "z": 4,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "grounded": true,
+    "zone": "floor",
+    "action": "idle",
+    "routeIndex": 1,
+    "controlled": false
+  },
+  "outfit": {
+    "character": "HUMAN",
+    "shades": "OFF",
+    "top": "BIKER BLK",
+    "shirt": "MIDNIGHT",
+    "hat": "OFF",
+    "pose": "STAND",
+    "boots": "EQSTRN BLK"
+  },
+  "terrain": {
+    "ramp": {
+      "minX": -3.2,
+      "maxX": 3.2,
+      "startZ": 8,
+      "endZ": 15,
+      "topY": 1.6
+    },
+    "plateau": {
+      "minX": -3.2,
+      "maxX": 3.2,
+      "startZ": 15,
+      "endZ": 22,
+      "y": 1.6
+    },
+    "goal": {
+      "x": 0,
+      "floorY": 1.6,
+      "openingWidth": 3.3,
+      "openingHeight": 1.85,
+      "scoreFrontZ": 22.22,
+      "backZ": 23.55
+    }
+  },
+  "rival": {
+    "active": false,
+    "x": 0,
+    "y": -12,
+    "z": 0,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "action": "idle",
+    "targetBall": ""
+  },
+  "dynamicBodies": [
+    {
+      "name": "steel-1",
+      "active": true,
+      "x": -2.2,
+      "y": 1.14,
+      "z": 11.04,
+      "vx": 0,
+      "vy": 0,
+      "vz": -0.23,
+      "grounded": true,
+      "lastTouchedBy": ""
+    },
+    {
+      "name": "steel-2",
+      "active": true,
+      "x": 0,
+      "y": 2.05,
+      "z": 18.05,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "lastTouchedBy": ""
+    },
+    {
+      "name": "steel-3",
+      "active": true,
+      "x": 1.9,
+      "y": 0.5,
+      "z": 5.45,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "lastTouchedBy": ""
+    }
+  ],
+  "lastScorer": "",
+  "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+  "nearestObstacles": [
+    {
+      "name": "boulder-stop-west",
+      "x": -5.2,
+      "z": 8.3,
+      "distance": 3.48
+    },
+    {
+      "name": "rock-2",
+      "x": -11,
+      "z": 5,
+      "distance": 3.55
+    },
+    {
+      "name": "coffee-shop-main",
+      "x": -11.2,
+      "z": 5.6,
+      "distance": 3.68
+    },
+    {
+      "name": "tree-3",
+      "x": -10,
+      "z": 13,
+      "distance": 7.71
+    },
+    {
+      "name": "rock-3",
+      "x": -8,
+      "z": -2,
+      "distance": 7.71
+    },
+    {
+      "name": "rock-1",
+      "x": -15,
+      "z": 1,
+      "distance": 8.83
+    }
+  ]
+}

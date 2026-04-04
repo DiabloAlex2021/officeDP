@@ -1,0 +1,6 @@
+[
+  {
+    "type": "pageerror",
+    "text": "ReferenceError: BOOT_STYLE_LOOKUP is not defined"
+  }
+]

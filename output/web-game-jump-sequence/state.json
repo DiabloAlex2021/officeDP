@@ -1,0 +1,31 @@
+{
+  "preparing": {
+    "action": "jump",
+    "grounded": true,
+    "vy": 0,
+    "y": 0
+  },
+  "takeoff": {
+    "action": "jump",
+    "grounded": false,
+    "vy": 4.18,
+    "y": 0.26
+  },
+  "airborne": {
+    "action": "jump",
+    "grounded": false,
+    "vy": 2.13,
+    "y": 0.91
+  },
+  "landing": {
+    "action": "jump",
+    "grounded": true,
+    "vy": 0,
+    "y": 0
+  },
+  "regression": {
+    "score": 1,
+    "ballsRemaining": 2,
+    "bootsPrompt": true
+  }
+}

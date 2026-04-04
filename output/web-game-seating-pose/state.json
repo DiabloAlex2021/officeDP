@@ -1,0 +1,473 @@
+{
+  "sofaFront": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the player",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "palette": null,
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 9.66,
+      "y": 3.29,
+      "z": 9.61,
+      "yaw": 3.14,
+      "pitch": 0.42
+    },
+    "player": {
+      "x": 11.18,
+      "y": 0,
+      "z": 2.28,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "sit",
+      "seated": true,
+      "seat": "office-sofa"
+    },
+    "outfit": {
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "hat": "OFF",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.13,
+        "z": 11,
+        "vx": 0,
+        "vy": 0,
+        "vz": -0.41,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+    "nearestObstacles": [
+      {
+        "name": "rock-5",
+        "x": 15,
+        "z": 8,
+        "distance": 6.88
+      },
+      {
+        "name": "boulder-stop-east",
+        "x": 5.2,
+        "z": 8.3,
+        "distance": 8.49
+      },
+      {
+        "name": "lamp-3",
+        "x": 19,
+        "z": -2,
+        "distance": 8.91
+      },
+      {
+        "name": "tree-6",
+        "x": 18,
+        "z": -4,
+        "distance": 9.27
+      },
+      {
+        "name": "tree-5",
+        "x": 15,
+        "z": 11,
+        "distance": 9.52
+      },
+      {
+        "name": "lamp-4",
+        "x": 19,
+        "z": 8,
+        "distance": 9.69
+      }
+    ]
+  },
+  "chairSide": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the player",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "palette": null,
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 5.9,
+      "y": 2.38,
+      "z": 2.2,
+      "yaw": -1.62,
+      "pitch": 0.3
+    },
+    "player": {
+      "x": 13.97,
+      "y": 0,
+      "z": 1.74,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "sit",
+      "seated": true,
+      "seat": "office-chair-west"
+    },
+    "outfit": {
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "hat": "OFF",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.11,
+        "z": 10.88,
+        "vx": 0,
+        "vy": 0,
+        "vz": -0.58,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+    "nearestObstacles": [
+      {
+        "name": "lamp-3",
+        "x": 19,
+        "z": -2,
+        "distance": 6.27
+      },
+      {
+        "name": "rock-5",
+        "x": 15,
+        "z": 8,
+        "distance": 6.34
+      },
+      {
+        "name": "tree-6",
+        "x": 18,
+        "z": -4,
+        "distance": 7.02
+      },
+      {
+        "name": "lamp-4",
+        "x": 19,
+        "z": 8,
+        "distance": 8.03
+      },
+      {
+        "name": "tree-8",
+        "x": 20,
+        "z": 8,
+        "distance": 8.69
+      },
+      {
+        "name": "tree-5",
+        "x": 15,
+        "z": 11,
+        "distance": 9.32
+      }
+    ]
+  },
+  "finalState": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the player",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "palette": null,
+      "bootsPrompt": null
+    },
+    "score": 1,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 2,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 6.19,
+      "y": 2.38,
+      "z": 2.14,
+      "yaw": -1.62,
+      "pitch": 0.3
+    },
+    "player": {
+      "x": 13.97,
+      "y": 0,
+      "z": 1.74,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "sit",
+      "seated": true,
+      "seat": "office-chair-west"
+    },
+    "outfit": {
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "hat": "OFF",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.08,
+        "z": 10.76,
+        "vx": 0,
+        "vy": -0.08,
+        "vz": -0.65,
+        "grounded": false,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": false,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "YOU",
+    "statusMessage": "YOU SCORED STEEL-2",
+    "nearestObstacles": [
+      {
+        "name": "lamp-3",
+        "x": 19,
+        "z": -2,
+        "distance": 6.27
+      },
+      {
+        "name": "rock-5",
+        "x": 15,
+        "z": 8,
+        "distance": 6.34
+      },
+      {
+        "name": "tree-6",
+        "x": 18,
+        "z": -4,
+        "distance": 7.02
+      },
+      {
+        "name": "lamp-4",
+        "x": 19,
+        "z": 8,
+        "distance": 8.03
+      },
+      {
+        "name": "tree-8",
+        "x": 20,
+        "z": 8,
+        "distance": 8.69
+      },
+      {
+        "name": "tree-5",
+        "x": 15,
+        "z": 11,
+        "distance": 9.32
+      }
+    ]
+  }
+}

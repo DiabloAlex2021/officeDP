@@ -1,0 +1,31 @@
+{
+  "errors": [],
+  "coffeeServiceRobot": {
+    "x": -15.02,
+    "y": 0,
+    "z": 6.44,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "grounded": true,
+    "zone": "floor",
+    "action": "idle",
+    "routeIndex": 0,
+    "controlled": false,
+    "task": "pickup",
+    "cupMode": "none",
+    "brewProgress": 0,
+    "cycleCount": 0,
+    "name": "coffee-service-robot",
+    "label": "COFFEE BOT",
+    "chestCode": "CF"
+  },
+  "coffeeService": {
+    "active": true,
+    "phase": "pickup",
+    "cupMode": "none",
+    "brewProgress": 0,
+    "tableCupsVisible": 0,
+    "cycleCount": 0
+  }
+}

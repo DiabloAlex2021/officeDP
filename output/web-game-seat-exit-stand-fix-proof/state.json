@@ -1,0 +1,22 @@
+{
+  "player": {
+    "x": 7.25,
+    "y": 0,
+    "z": 4.26,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0,
+    "grounded": true,
+    "zone": "floor",
+    "action": "idle",
+    "specialMove": null,
+    "specialMoveRemaining": 0,
+    "seated": false,
+    "seat": null,
+    "controlled": true
+  },
+  "seatExit": {
+    "x": 7.25,
+    "z": 4.26
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "doorway": [
+    {
+      "x": 13.9,
+      "resolvedX": 13.9,
+      "resolvedZ": 2.7,
+      "hitX": false,
+      "hitZ": false
+    },
+    {
+      "x": 14.3,
+      "resolvedX": 14.3,
+      "resolvedZ": 2.7,
+      "hitX": false,
+      "hitZ": false
+    },
+    {
+      "x": 14.7,
+      "resolvedX": 14.7,
+      "resolvedZ": 2.7,
+      "hitX": false,
+      "hitZ": false
+    },
+    {
+      "x": 15.1,
+      "resolvedX": 15.1,
+      "resolvedZ": 2.7,
+      "hitX": false,
+      "hitZ": false
+    },
+    {
+      "x": 15.5,
+      "resolvedX": 15.5,
+      "resolvedZ": 2.7,
+      "hitX": false,
+      "hitZ": false
+    }
+  ],
+  "score": 1,
+  "ballsRemaining": 2,
+  "bootsPrompt": true
+}

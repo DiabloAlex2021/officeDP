@@ -1,0 +1,1957 @@
+{
+  "initial": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+    "controller": "HUMAN",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "options": [
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 0,
+      "y": 4,
+      "z": -5,
+      "yaw": 0,
+      "pitch": 0.52,
+      "radius": 8.06,
+      "targetRadius": 8.06
+    },
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "human": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "robot": {
+      "x": -6.7,
+      "y": 0,
+      "z": 9.25,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": false
+    },
+    "serviceRobot": {
+      "x": -7.2,
+      "y": 0,
+      "z": 5,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot",
+      "label": "SERVICE BOT"
+    },
+    "serviceRobot01": {
+      "x": 17.6,
+      "y": 0,
+      "z": 18.6,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-01",
+      "label": "BOT 01",
+      "chestCode": "01"
+    },
+    "serviceRobot02": {
+      "x": 14.2,
+      "y": 0,
+      "z": 9,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-02",
+      "label": "BOT 02",
+      "chestCode": "02"
+    },
+    "serviceRobots": [
+      {
+        "x": -7.2,
+        "y": 0,
+        "z": 5,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      {
+        "x": 17.6,
+        "y": 0,
+        "z": 18.6,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      {
+        "x": 14.2,
+        "y": 0,
+        "z": 9,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      }
+    ],
+    "coffeeArm": {
+      "x": -10.02,
+      "y": 1.18,
+      "z": 4.98,
+      "task": "READY",
+      "cupMode": "home",
+      "cleaningPad": false
+    },
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "BLACK",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.15,
+        "z": 11.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+    "nearestObstacles": [
+      {
+        "name": "boulder-stop-west",
+        "x": -5.2,
+        "z": 8.3,
+        "distance": 8.17
+      },
+      {
+        "name": "boulder-stop-east",
+        "x": 5.2,
+        "z": 8.3,
+        "distance": 8.17
+      },
+      {
+        "name": "rock-3",
+        "x": -8,
+        "z": -2,
+        "distance": 8.94
+      },
+      {
+        "name": "rock-2",
+        "x": -11,
+        "z": 5,
+        "distance": 11.4
+      },
+      {
+        "name": "coffee-shop-main",
+        "x": -11.2,
+        "z": 5.6,
+        "distance": 11.76
+      },
+      {
+        "name": "rock-6",
+        "x": 8,
+        "z": -10,
+        "distance": 14.42
+      }
+    ]
+  },
+  "afterMenu1": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+    "controller": "HUMAN",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "options": [
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 0,
+      "y": 4,
+      "z": -5,
+      "yaw": 0,
+      "pitch": 0.52,
+      "radius": 8.06,
+      "targetRadius": 8.06
+    },
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "human": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "robot": {
+      "x": -6.7,
+      "y": 0,
+      "z": 9.25,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": false
+    },
+    "serviceRobot": {
+      "x": -7.2,
+      "y": 0,
+      "z": 5,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot",
+      "label": "SERVICE BOT"
+    },
+    "serviceRobot01": {
+      "x": 17.6,
+      "y": 0,
+      "z": 18.6,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-01",
+      "label": "BOT 01",
+      "chestCode": "01"
+    },
+    "serviceRobot02": {
+      "x": 14.2,
+      "y": 0,
+      "z": 9,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-02",
+      "label": "BOT 02",
+      "chestCode": "02"
+    },
+    "serviceRobots": [
+      {
+        "x": -7.2,
+        "y": 0,
+        "z": 5,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      {
+        "x": 17.6,
+        "y": 0,
+        "z": 18.6,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      {
+        "x": 14.2,
+        "y": 0,
+        "z": 9,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      }
+    ],
+    "coffeeArm": {
+      "x": -10.02,
+      "y": 1.18,
+      "z": 4.98,
+      "task": "READY",
+      "cupMode": "home",
+      "cleaningPad": false
+    },
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "LT BLUE",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.15,
+        "z": 11.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+    "nearestObstacles": [
+      {
+        "name": "boulder-stop-west",
+        "x": -5.2,
+        "z": 8.3,
+        "distance": 8.17
+      },
+      {
+        "name": "boulder-stop-east",
+        "x": 5.2,
+        "z": 8.3,
+        "distance": 8.17
+      },
+      {
+        "name": "rock-3",
+        "x": -8,
+        "z": -2,
+        "distance": 8.94
+      },
+      {
+        "name": "rock-2",
+        "x": -11,
+        "z": 5,
+        "distance": 11.4
+      },
+      {
+        "name": "coffee-shop-main",
+        "x": -11.2,
+        "z": 5.6,
+        "distance": 11.76
+      },
+      {
+        "name": "rock-6",
+        "x": 8,
+        "z": -10,
+        "distance": 14.42
+      }
+    ]
+  },
+  "afterMenu2": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+    "controller": "HUMAN",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "options": [
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 0,
+      "y": 4,
+      "z": -5,
+      "yaw": 0,
+      "pitch": 0.52,
+      "radius": 8.06,
+      "targetRadius": 8.06
+    },
+    "player": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "human": {
+      "x": 0,
+      "y": 0,
+      "z": 2,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "robot": {
+      "x": -6.7,
+      "y": 0,
+      "z": 9.25,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": false
+    },
+    "serviceRobot": {
+      "x": -7.2,
+      "y": 0,
+      "z": 5,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot",
+      "label": "SERVICE BOT"
+    },
+    "serviceRobot01": {
+      "x": 17.6,
+      "y": 0,
+      "z": 18.6,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-01",
+      "label": "BOT 01",
+      "chestCode": "01"
+    },
+    "serviceRobot02": {
+      "x": 14.2,
+      "y": 0,
+      "z": 9,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-02",
+      "label": "BOT 02",
+      "chestCode": "02"
+    },
+    "serviceRobots": [
+      {
+        "x": -7.2,
+        "y": 0,
+        "z": 5,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      {
+        "x": 17.6,
+        "y": 0,
+        "z": 18.6,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      {
+        "x": 14.2,
+        "y": 0,
+        "z": 9,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      }
+    ],
+    "coffeeArm": {
+      "x": -10.02,
+      "y": 1.18,
+      "z": 4.98,
+      "task": "READY",
+      "cupMode": "home",
+      "cleaningPad": false
+    },
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "WHITE",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.15,
+        "z": 11.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+    "nearestObstacles": [
+      {
+        "name": "boulder-stop-west",
+        "x": -5.2,
+        "z": 8.3,
+        "distance": 8.17
+      },
+      {
+        "name": "boulder-stop-east",
+        "x": 5.2,
+        "z": 8.3,
+        "distance": 8.17
+      },
+      {
+        "name": "rock-3",
+        "x": -8,
+        "z": -2,
+        "distance": 8.94
+      },
+      {
+        "name": "rock-2",
+        "x": -11,
+        "z": 5,
+        "distance": 11.4
+      },
+      {
+        "name": "coffee-shop-main",
+        "x": -11.2,
+        "z": 5.6,
+        "distance": 11.76
+      },
+      {
+        "name": "rock-6",
+        "x": 8,
+        "z": -10,
+        "distance": 14.42
+      }
+    ]
+  },
+  "rackPoint": {
+    "x": 132.67,
+    "y": 316.93
+  },
+  "afterRackClick": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+    "controller": "HUMAN",
+    "interaction": {
+      "mode": "select",
+      "selection": {
+        "type": "object",
+        "kind": "style-display",
+        "name": "style-display-pants-1-4",
+        "label": "PANTS",
+        "zone": "floor",
+        "x": 17.9,
+        "y": 1.46,
+        "z": -12.68,
+        "part": "pants",
+        "style": "WHITE",
+        "styleIndex": 1
+      },
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "options": [
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 18.01,
+      "y": 1.21,
+      "z": -7.52,
+      "yaw": -2.48,
+      "pitch": 0.26,
+      "radius": 4.7,
+      "targetRadius": 4.7
+    },
+    "player": {
+      "x": 20.8,
+      "y": 0,
+      "z": -11.1,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "human": {
+      "x": 20.8,
+      "y": 0,
+      "z": -11.1,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "robot": {
+      "x": -6.7,
+      "y": 0,
+      "z": 9.25,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": false
+    },
+    "serviceRobot": {
+      "x": -7.2,
+      "y": 0,
+      "z": 5,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot",
+      "label": "SERVICE BOT"
+    },
+    "serviceRobot01": {
+      "x": 17.6,
+      "y": 0,
+      "z": 18.6,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-01",
+      "label": "BOT 01",
+      "chestCode": "01"
+    },
+    "serviceRobot02": {
+      "x": 14.2,
+      "y": 0,
+      "z": 9,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-02",
+      "label": "BOT 02",
+      "chestCode": "02"
+    },
+    "serviceRobots": [
+      {
+        "x": -7.2,
+        "y": 0,
+        "z": 5,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      {
+        "x": 17.6,
+        "y": 0,
+        "z": 18.6,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      {
+        "x": 14.2,
+        "y": 0,
+        "z": 9,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      }
+    ],
+    "coffeeArm": {
+      "x": -10.02,
+      "y": 1.18,
+      "z": 4.98,
+      "task": "READY",
+      "cupMode": "home",
+      "cleaningPad": false
+    },
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "WHITE",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.13,
+        "z": 10.98,
+        "vx": 0,
+        "vy": 0,
+        "vz": -0.44,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "PANTS · WHITE",
+    "nearestObstacles": [
+      {
+        "name": "tree-6",
+        "x": 18,
+        "z": -4,
+        "distance": 7.63
+      },
+      {
+        "name": "lamp-3",
+        "x": 19,
+        "z": -2,
+        "distance": 9.28
+      },
+      {
+        "name": "east-wall",
+        "x": 26.5,
+        "z": 0,
+        "distance": 12.48
+      },
+      {
+        "name": "rock-6",
+        "x": 8,
+        "z": -10,
+        "distance": 12.85
+      },
+      {
+        "name": "tree-8",
+        "x": 20,
+        "z": 8,
+        "distance": 19.12
+      },
+      {
+        "name": "lamp-4",
+        "x": 19,
+        "z": 8,
+        "distance": 19.18
+      }
+    ]
+  },
+  "bootsTucked": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+    "controller": "HUMAN",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "options": [
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 3.6,
+      "y": 0.94,
+      "z": -1.45,
+      "yaw": -1.56,
+      "pitch": 0.22,
+      "radius": 4.3,
+      "targetRadius": 4.3
+    },
+    "player": {
+      "x": 7.8,
+      "y": 0,
+      "z": -1.4,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "human": {
+      "x": 7.8,
+      "y": 0,
+      "z": -1.4,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "robot": {
+      "x": -6.7,
+      "y": 0,
+      "z": 9.25,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": false
+    },
+    "serviceRobot": {
+      "x": -7.16,
+      "y": 0,
+      "z": 5.8,
+      "vx": 0.08,
+      "vy": 0,
+      "vz": 1.82,
+      "grounded": true,
+      "zone": "floor",
+      "action": "walk",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot",
+      "label": "SERVICE BOT"
+    },
+    "serviceRobot01": {
+      "x": 17.93,
+      "y": 0,
+      "z": 18.88,
+      "vx": 1.39,
+      "vy": 0,
+      "vz": 1.18,
+      "grounded": true,
+      "zone": "floor",
+      "action": "walk",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-01",
+      "label": "BOT 01",
+      "chestCode": "01"
+    },
+    "serviceRobot02": {
+      "x": 14.15,
+      "y": 0,
+      "z": 9,
+      "vx": -1.63,
+      "vy": 0,
+      "vz": -0.1,
+      "grounded": true,
+      "zone": "floor",
+      "action": "walk",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-02",
+      "label": "BOT 02",
+      "chestCode": "02"
+    },
+    "serviceRobots": [
+      {
+        "x": -7.16,
+        "y": 0,
+        "z": 5.8,
+        "vx": 0.08,
+        "vy": 0,
+        "vz": 1.82,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      {
+        "x": 17.93,
+        "y": 0,
+        "z": 18.88,
+        "vx": 1.39,
+        "vy": 0,
+        "vz": 1.18,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      {
+        "x": 14.15,
+        "y": 0,
+        "z": 9,
+        "vx": -1.63,
+        "vy": 0,
+        "vz": -0.1,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      }
+    ],
+    "coffeeArm": {
+      "x": -10.02,
+      "y": 1.18,
+      "z": 4.98,
+      "task": "READY",
+      "cupMode": "home",
+      "cleaningPad": false
+    },
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "WHITE",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "EQSTRN BLK"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 1.06,
+        "z": 10.67,
+        "vx": 0,
+        "vy": 0,
+        "vz": -0.72,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "PANTS · WHITE",
+    "nearestObstacles": [
+      {
+        "name": "rock-6",
+        "x": 8,
+        "z": -10,
+        "distance": 8.6
+      },
+      {
+        "name": "boulder-stop-east",
+        "x": 5.2,
+        "z": 8.3,
+        "distance": 10.04
+      },
+      {
+        "name": "tree-6",
+        "x": 18,
+        "z": -4,
+        "distance": 10.53
+      },
+      {
+        "name": "lamp-3",
+        "x": 19,
+        "z": -2,
+        "distance": 11.22
+      },
+      {
+        "name": "rock-5",
+        "x": 15,
+        "z": 8,
+        "distance": 11.84
+      },
+      {
+        "name": "rock-4",
+        "x": 12,
+        "z": 12,
+        "distance": 14.04
+      }
+    ]
+  },
+  "sneakersUntucked": {
+    "mode": "play",
+    "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+    "controller": "HUMAN",
+    "interaction": {
+      "mode": "drag",
+      "selection": null,
+      "controlPanels": {
+        "expanded": true
+      },
+      "palette": null,
+      "objectActions": null,
+      "specialMoves": {
+        "expanded": false,
+        "active": false,
+        "current": null,
+        "remaining": 0,
+        "options": [
+          {
+            "name": "MOONWALK",
+            "duration": 3
+          },
+          {
+            "name": "SPIN",
+            "duration": 2
+          }
+        ]
+      },
+      "bootsPrompt": null
+    },
+    "score": 0,
+    "aiScore": 0,
+    "level": 1,
+    "ballsRemaining": 3,
+    "environment": {
+      "sky": "DAY"
+    },
+    "camera": {
+      "x": 3.6,
+      "y": 0.94,
+      "z": -1.45,
+      "yaw": -1.56,
+      "pitch": 0.22,
+      "radius": 4.3,
+      "targetRadius": 4.3
+    },
+    "player": {
+      "x": 7.8,
+      "y": 0,
+      "z": -1.4,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "human": {
+      "x": 7.8,
+      "y": 0,
+      "z": -1.4,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": true
+    },
+    "robot": {
+      "x": -6.7,
+      "y": 0,
+      "z": 9.25,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "controlled": false
+    },
+    "serviceRobot": {
+      "x": -7.11,
+      "y": 0,
+      "z": 6.89,
+      "vx": 0.08,
+      "vy": 0,
+      "vz": 1.69,
+      "grounded": true,
+      "zone": "floor",
+      "action": "walk",
+      "routeIndex": 2,
+      "controlled": false,
+      "name": "service-robot",
+      "label": "SERVICE BOT"
+    },
+    "serviceRobot01": {
+      "x": 18.73,
+      "y": 0,
+      "z": 19.56,
+      "vx": 0.66,
+      "vy": 0,
+      "vz": 0.56,
+      "grounded": true,
+      "zone": "floor",
+      "action": "walk",
+      "routeIndex": 2,
+      "controlled": false,
+      "name": "service-robot-01",
+      "label": "BOT 01",
+      "chestCode": "01"
+    },
+    "serviceRobot02": {
+      "x": 13.05,
+      "y": 0,
+      "z": 8.93,
+      "vx": -1.82,
+      "vy": 0,
+      "vz": -0.11,
+      "grounded": true,
+      "zone": "floor",
+      "action": "walk",
+      "routeIndex": 1,
+      "controlled": false,
+      "name": "service-robot-02",
+      "label": "BOT 02",
+      "chestCode": "02"
+    },
+    "serviceRobots": [
+      {
+        "x": -7.11,
+        "y": 0,
+        "z": 6.89,
+        "vx": 0.08,
+        "vy": 0,
+        "vz": 1.69,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 2,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      {
+        "x": 18.73,
+        "y": 0,
+        "z": 19.56,
+        "vx": 0.66,
+        "vy": 0,
+        "vz": 0.56,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 2,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      {
+        "x": 13.05,
+        "y": 0,
+        "z": 8.93,
+        "vx": -1.82,
+        "vy": 0,
+        "vz": -0.11,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      }
+    ],
+    "coffeeArm": {
+      "x": -10.02,
+      "y": 1.18,
+      "z": 4.98,
+      "task": "READY",
+      "cupMode": "home",
+      "cleaningPad": false
+    },
+    "outfit": {
+      "character": "HUMAN",
+      "shades": "OFF",
+      "top": "BIKER BLK",
+      "shirt": "MIDNIGHT",
+      "pants": "WHITE",
+      "hat": "OFF",
+      "face": "NORMAL",
+      "pose": "STAND",
+      "boots": "WHITE SNKR"
+    },
+    "terrain": {
+      "ramp": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 8,
+        "endZ": 15,
+        "topY": 1.6
+      },
+      "plateau": {
+        "minX": -3.2,
+        "maxX": 3.2,
+        "startZ": 15,
+        "endZ": 22,
+        "y": 1.6
+      },
+      "goal": {
+        "x": 0,
+        "floorY": 1.6,
+        "openingWidth": 3.3,
+        "openingHeight": 1.85,
+        "scoreFrontZ": 22.22,
+        "backZ": 23.55
+      }
+    },
+    "rival": {
+      "active": false,
+      "x": 0,
+      "y": -12,
+      "z": 0,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "action": "idle",
+      "targetBall": ""
+    },
+    "dynamicBodies": [
+      {
+        "name": "steel-1",
+        "active": true,
+        "x": -2.2,
+        "y": 0.95,
+        "z": 10.19,
+        "vx": 0,
+        "vy": -0.08,
+        "vz": -0.87,
+        "grounded": false,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-2",
+        "active": true,
+        "x": 0,
+        "y": 2.05,
+        "z": 18.05,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      },
+      {
+        "name": "steel-3",
+        "active": true,
+        "x": 1.9,
+        "y": 0.5,
+        "z": 5.45,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "lastTouchedBy": ""
+      }
+    ],
+    "lastScorer": "",
+    "statusMessage": "PANTS · WHITE",
+    "nearestObstacles": [
+      {
+        "name": "rock-6",
+        "x": 8,
+        "z": -10,
+        "distance": 8.6
+      },
+      {
+        "name": "boulder-stop-east",
+        "x": 5.2,
+        "z": 8.3,
+        "distance": 10.04
+      },
+      {
+        "name": "tree-6",
+        "x": 18,
+        "z": -4,
+        "distance": 10.53
+      },
+      {
+        "name": "lamp-3",
+        "x": 19,
+        "z": -2,
+        "distance": 11.22
+      },
+      {
+        "name": "rock-5",
+        "x": 15,
+        "z": 8,
+        "distance": 11.84
+      },
+      {
+        "name": "rock-4",
+        "x": 12,
+        "z": 12,
+        "distance": 14.04
+      }
+    ]
+  },
+  "errors": []
+}

@@ -1,0 +1,32 @@
+{
+  "title": {
+    "top": 0,
+    "bottom": 0,
+    "height": 0,
+    "display": "none"
+  },
+  "readout": {
+    "top": 0,
+    "bottom": 0,
+    "height": 0,
+    "display": "none"
+  },
+  "copy": {
+    "top": 0,
+    "bottom": 0,
+    "height": 0,
+    "display": "none"
+  },
+  "portrait": {
+    "top": 14,
+    "bottom": 168,
+    "height": 154,
+    "display": "block"
+  },
+  "styleMenu": {
+    "top": 178,
+    "bottom": 514,
+    "height": 336,
+    "display": "block"
+  }
+}

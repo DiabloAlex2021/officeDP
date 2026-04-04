@@ -1,0 +1,23 @@
+{
+  "layout": {
+    "panel": {
+      "width": 202,
+      "height": 154,
+      "top": 14,
+      "right": 16
+    },
+    "canvas": {
+      "width": 166,
+      "height": 118
+    }
+  },
+  "human": {
+    "controller": "HUMAN",
+    "face": "HAPPY",
+    "action": "idle"
+  },
+  "robot": {
+    "controller": "ROBOT",
+    "action": "idle"
+  }
+}

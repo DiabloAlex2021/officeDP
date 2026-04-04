@@ -1,0 +1,1419 @@
+{
+  "errors": [],
+  "selectedState": {
+    "label": "selected",
+    "payload": {
+      "mode": "play",
+      "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+      "controller": "HUMAN",
+      "interaction": {
+        "mode": "select",
+        "selection": {
+          "type": "object",
+          "kind": "table-tennis-table",
+          "name": "table-tennis-table",
+          "label": "TABLE TENNIS",
+          "zone": "floor",
+          "x": 13.4,
+          "y": -0.04,
+          "z": -17.4,
+          "phase": "idle",
+          "active": false,
+          "playerScore": 0,
+          "robotScore": 0,
+          "server": "player"
+        },
+        "controlPanels": {
+          "expanded": true
+        },
+        "palette": null,
+        "objectActions": {
+          "active": true,
+          "label": "TABLE TENNIS",
+          "task": "READY",
+          "activeMatch": false,
+          "playerScore": 0,
+          "robotScore": 0,
+          "server": "player",
+          "message": "Select TABLE TENNIS in select mode, then start the match.",
+          "options": [
+            "START MATCH",
+            "SERVE",
+            "RESET MATCH",
+            "LEAVE TABLE"
+          ]
+        },
+        "specialMoves": {
+          "expanded": false,
+          "active": false,
+          "current": null,
+          "remaining": 0,
+          "coreOptions": [
+            "JUMP",
+            "WAVE",
+            "RUN",
+            "VIEW",
+            "ZOOM OUT",
+            "ZOOM IN"
+          ],
+          "performanceOptions": [
+            {
+              "name": "MOONWALK",
+              "duration": 3
+            },
+            {
+              "name": "SPIN",
+              "duration": 2
+            }
+          ]
+        },
+        "bootsPrompt": null
+      },
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "persistence": {
+        "activeUserId": "guest",
+        "restored": false,
+        "storage": "localStorage",
+        "backendTable": "user_scene_locations",
+        "backendTables": {
+          "location": "user_scene_locations",
+          "outfit": "user_scene_outfits",
+          "passiveRobots": "user_scene_passive_robot_locations",
+          "blackjack": "user_scene_blackjack_states",
+          "blackjackHistory": "user_scene_blackjack_result_history"
+        },
+        "blackjackResultsSaved": 0,
+        "lastSavedAt": "2026-03-28T23:21:26.309Z"
+      },
+      "camera": {
+        "x": 17.5,
+        "y": 1.6,
+        "z": -24.68,
+        "yaw": 0.92,
+        "pitch": 0.3,
+        "radius": 5.4,
+        "targetRadius": 5.4
+      },
+      "player": {
+        "x": 13.4,
+        "y": 0,
+        "z": -21.55,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": true
+      },
+      "human": {
+        "x": 13.4,
+        "y": 0,
+        "z": -21.55,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": true
+      },
+      "robot": {
+        "x": -6.7,
+        "y": 0,
+        "z": 9.25,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": false
+      },
+      "serviceRobot": {
+        "x": -7.2,
+        "y": 0,
+        "z": 5,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      "serviceRobot01": {
+        "x": 17.6,
+        "y": 0,
+        "z": 18.6,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      "serviceRobot02": {
+        "x": 14.2,
+        "y": 0,
+        "z": 9,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      },
+      "tableTennisExpert": {
+        "x": 13.4,
+        "y": 0,
+        "z": -13.15,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 0,
+        "controlled": false,
+        "name": "table-tennis-expert",
+        "label": "PING BOT",
+        "chestCode": "TT"
+      },
+      "serviceRobots": [
+        {
+          "x": -7.2,
+          "y": 0,
+          "z": 5,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot",
+          "label": "SERVICE BOT"
+        },
+        {
+          "x": 17.6,
+          "y": 0,
+          "z": 18.6,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot-01",
+          "label": "BOT 01",
+          "chestCode": "01"
+        },
+        {
+          "x": 14.2,
+          "y": 0,
+          "z": 9,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot-02",
+          "label": "BOT 02",
+          "chestCode": "02"
+        },
+        {
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 0,
+          "controlled": false,
+          "name": "table-tennis-expert",
+          "label": "PING BOT",
+          "chestCode": "TT"
+        }
+      ],
+      "coffeeArm": {
+        "x": -10.02,
+        "y": 1.18,
+        "z": 4.98,
+        "task": "READY",
+        "cupMode": "home",
+        "cleaningPad": false
+      },
+      "blackjack": {
+        "wallLabel": "BLACKJACK WALL",
+        "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+        "phase": "betting",
+        "phaseLabel": "BETTING",
+        "playerCredits": 5000,
+        "bankCredits": 1000000,
+        "currentBet": 100,
+        "shoeRemaining": 312,
+        "message": "Raise or lower the wager, then deal against the banker.",
+        "round": 0,
+        "dealerHoleHidden": false,
+        "roundNet": 0,
+        "result": {
+          "headline": "",
+          "detail": "",
+          "displayHeadline": "",
+          "displayDetail": "",
+          "tone": "neutral",
+          "active": false
+        },
+        "history": [],
+        "dealer": {
+          "total": 0,
+          "cards": []
+        },
+        "hands": [],
+        "availableActions": {
+          "deal": true,
+          "betDown": false,
+          "betUp": true,
+          "betPlusFive": true
+        }
+      },
+      "tableTennis": {
+        "active": false,
+        "phase": "idle",
+        "phaseLabel": "READY",
+        "playerScore": 0,
+        "robotScore": 0,
+        "server": "player",
+        "message": "Select TABLE TENNIS in select mode, then start the match.",
+        "table": {
+          "x": 13.4,
+          "z": -17.4,
+          "width": 2.72,
+          "length": 5.1,
+          "topY": 0.76
+        },
+        "ball": {
+          "active": false,
+          "x": 0,
+          "y": 1.1,
+          "z": 2.42,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "lastHitBy": null,
+          "lastBounceSide": null,
+          "sideBounces": 0
+        }
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "BLACK",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.15,
+          "z": 11.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "table-tennis-table-solid",
+          "x": 13.4,
+          "z": -17.4,
+          "distance": 4.15
+        },
+        {
+          "name": "rock-6",
+          "x": 8,
+          "z": -10,
+          "distance": 12.75
+        },
+        {
+          "name": "south-wall",
+          "x": 0,
+          "z": -26.5,
+          "distance": 14.29
+        },
+        {
+          "name": "tree-6",
+          "x": 18,
+          "z": -4,
+          "distance": 18.14
+        },
+        {
+          "name": "lamp-3",
+          "x": 19,
+          "z": -2,
+          "distance": 20.34
+        },
+        {
+          "name": "east-wall",
+          "x": 26.5,
+          "z": 0,
+          "distance": 25.22
+        }
+      ]
+    }
+  },
+  "serveState": {
+    "label": "serve-ready",
+    "payload": {
+      "mode": "play",
+      "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+      "controller": "HUMAN",
+      "interaction": {
+        "mode": "select",
+        "selection": {
+          "type": "object",
+          "kind": "table-tennis-table",
+          "name": "table-tennis-table",
+          "label": "TABLE TENNIS",
+          "zone": "floor",
+          "x": 13.4,
+          "y": -0.04,
+          "z": -17.4,
+          "phase": "waiting-serve",
+          "active": true,
+          "playerScore": 0,
+          "robotScore": 0,
+          "server": "player"
+        },
+        "controlPanels": {
+          "expanded": true
+        },
+        "palette": null,
+        "objectActions": {
+          "active": true,
+          "label": "TABLE TENNIS",
+          "task": "SERVE",
+          "activeMatch": true,
+          "playerScore": 0,
+          "robotScore": 0,
+          "server": "player",
+          "message": "Move with W A S D or Arrow keys. Press SERVE or Space to start the rally.",
+          "options": [
+            "START MATCH",
+            "SERVE",
+            "RESET MATCH",
+            "LEAVE TABLE"
+          ]
+        },
+        "specialMoves": {
+          "expanded": false,
+          "active": false,
+          "current": null,
+          "remaining": 0,
+          "coreOptions": [
+            "JUMP",
+            "WAVE",
+            "RUN",
+            "VIEW",
+            "ZOOM OUT",
+            "ZOOM IN"
+          ],
+          "performanceOptions": [
+            {
+              "name": "MOONWALK",
+              "duration": 3
+            },
+            {
+              "name": "SPIN",
+              "duration": 2
+            }
+          ]
+        },
+        "bootsPrompt": null
+      },
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "persistence": {
+        "activeUserId": "guest",
+        "restored": false,
+        "storage": "localStorage",
+        "backendTable": "user_scene_locations",
+        "backendTables": {
+          "location": "user_scene_locations",
+          "outfit": "user_scene_outfits",
+          "passiveRobots": "user_scene_passive_robot_locations",
+          "blackjack": "user_scene_blackjack_states",
+          "blackjackHistory": "user_scene_blackjack_result_history"
+        },
+        "blackjackResultsSaved": 0,
+        "lastSavedAt": "2026-03-28T23:21:26.309Z"
+      },
+      "camera": {
+        "x": 17.5,
+        "y": 1.6,
+        "z": -24.68,
+        "yaw": 0.92,
+        "pitch": 0.3,
+        "radius": 5.4,
+        "targetRadius": 5.4
+      },
+      "player": {
+        "x": 13.4,
+        "y": 0,
+        "z": -21.55,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": true
+      },
+      "human": {
+        "x": 13.4,
+        "y": 0,
+        "z": -21.55,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": true
+      },
+      "robot": {
+        "x": -6.7,
+        "y": 0,
+        "z": 9.25,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": false
+      },
+      "serviceRobot": {
+        "x": -7.2,
+        "y": 0,
+        "z": 5,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      "serviceRobot01": {
+        "x": 17.6,
+        "y": 0,
+        "z": 18.6,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      "serviceRobot02": {
+        "x": 14.2,
+        "y": 0,
+        "z": 9,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      },
+      "tableTennisExpert": {
+        "x": 13.4,
+        "y": 0,
+        "z": -13.15,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 0,
+        "controlled": false,
+        "name": "table-tennis-expert",
+        "label": "PING BOT",
+        "chestCode": "TT"
+      },
+      "serviceRobots": [
+        {
+          "x": -7.2,
+          "y": 0,
+          "z": 5,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot",
+          "label": "SERVICE BOT"
+        },
+        {
+          "x": 17.6,
+          "y": 0,
+          "z": 18.6,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot-01",
+          "label": "BOT 01",
+          "chestCode": "01"
+        },
+        {
+          "x": 14.2,
+          "y": 0,
+          "z": 9,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot-02",
+          "label": "BOT 02",
+          "chestCode": "02"
+        },
+        {
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 0,
+          "controlled": false,
+          "name": "table-tennis-expert",
+          "label": "PING BOT",
+          "chestCode": "TT"
+        }
+      ],
+      "coffeeArm": {
+        "x": -10.02,
+        "y": 1.18,
+        "z": 4.98,
+        "task": "READY",
+        "cupMode": "home",
+        "cleaningPad": false
+      },
+      "blackjack": {
+        "wallLabel": "BLACKJACK WALL",
+        "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+        "phase": "betting",
+        "phaseLabel": "BETTING",
+        "playerCredits": 5000,
+        "bankCredits": 1000000,
+        "currentBet": 100,
+        "shoeRemaining": 312,
+        "message": "Raise or lower the wager, then deal against the banker.",
+        "round": 0,
+        "dealerHoleHidden": false,
+        "roundNet": 0,
+        "result": {
+          "headline": "",
+          "detail": "",
+          "displayHeadline": "",
+          "displayDetail": "",
+          "tone": "neutral",
+          "active": false
+        },
+        "history": [],
+        "dealer": {
+          "total": 0,
+          "cards": []
+        },
+        "hands": [],
+        "availableActions": {
+          "deal": true,
+          "betDown": false,
+          "betUp": true,
+          "betPlusFive": true
+        }
+      },
+      "tableTennis": {
+        "active": true,
+        "phase": "waiting-serve",
+        "phaseLabel": "SERVE",
+        "playerScore": 0,
+        "robotScore": 0,
+        "server": "player",
+        "message": "Move with W A S D or Arrow keys. Press SERVE or Space to start the rally.",
+        "table": {
+          "x": 13.4,
+          "z": -17.4,
+          "width": 2.72,
+          "length": 5.1,
+          "topY": 0.76
+        },
+        "ball": {
+          "active": false,
+          "x": 13.81,
+          "y": 1.39,
+          "z": -21.33,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "lastHitBy": null,
+          "lastBounceSide": null,
+          "sideBounces": 0
+        }
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "BLACK",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.15,
+          "z": 11.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "table-tennis-table-solid",
+          "x": 13.4,
+          "z": -17.4,
+          "distance": 4.15
+        },
+        {
+          "name": "rock-6",
+          "x": 8,
+          "z": -10,
+          "distance": 12.75
+        },
+        {
+          "name": "south-wall",
+          "x": 0,
+          "z": -26.5,
+          "distance": 14.29
+        },
+        {
+          "name": "tree-6",
+          "x": 18,
+          "z": -4,
+          "distance": 18.14
+        },
+        {
+          "name": "lamp-3",
+          "x": 19,
+          "z": -2,
+          "distance": 20.34
+        },
+        {
+          "name": "east-wall",
+          "x": 26.5,
+          "z": 0,
+          "distance": 25.22
+        }
+      ]
+    }
+  },
+  "rallyState": {
+    "label": "rally",
+    "payload": {
+      "mode": "play",
+      "coordinateSystem": "origin near the office floor center, +x world-east, +y up, +z toward the raised ramp and back wall opening; camera yaw/pitch can orbit around the controlled actor",
+      "controller": "HUMAN",
+      "interaction": {
+        "mode": "select",
+        "selection": {
+          "type": "object",
+          "kind": "table-tennis-table",
+          "name": "table-tennis-table",
+          "label": "TABLE TENNIS",
+          "zone": "floor",
+          "x": 13.4,
+          "y": -0.04,
+          "z": -17.4,
+          "phase": "rally",
+          "active": true,
+          "playerScore": 0,
+          "robotScore": 0,
+          "server": "player"
+        },
+        "controlPanels": {
+          "expanded": true
+        },
+        "palette": null,
+        "objectActions": {
+          "active": true,
+          "label": "TABLE TENNIS",
+          "task": "RALLY",
+          "activeMatch": true,
+          "playerScore": 0,
+          "robotScore": 0,
+          "server": "player",
+          "message": "Your serve is live.",
+          "options": [
+            "START MATCH",
+            "SERVE",
+            "RESET MATCH",
+            "LEAVE TABLE"
+          ]
+        },
+        "specialMoves": {
+          "expanded": false,
+          "active": false,
+          "current": null,
+          "remaining": 0,
+          "coreOptions": [
+            "JUMP",
+            "WAVE",
+            "RUN",
+            "VIEW",
+            "ZOOM OUT",
+            "ZOOM IN"
+          ],
+          "performanceOptions": [
+            {
+              "name": "MOONWALK",
+              "duration": 3
+            },
+            {
+              "name": "SPIN",
+              "duration": 2
+            }
+          ]
+        },
+        "bootsPrompt": null
+      },
+      "score": 0,
+      "aiScore": 0,
+      "level": 1,
+      "ballsRemaining": 3,
+      "environment": {
+        "sky": "DAY"
+      },
+      "persistence": {
+        "activeUserId": "guest",
+        "restored": false,
+        "storage": "localStorage",
+        "backendTable": "user_scene_locations",
+        "backendTables": {
+          "location": "user_scene_locations",
+          "outfit": "user_scene_outfits",
+          "passiveRobots": "user_scene_passive_robot_locations",
+          "blackjack": "user_scene_blackjack_states",
+          "blackjackHistory": "user_scene_blackjack_result_history"
+        },
+        "blackjackResultsSaved": 0,
+        "lastSavedAt": "2026-03-28T23:21:42.274Z"
+      },
+      "camera": {
+        "x": 17.5,
+        "y": 1.6,
+        "z": -24.68,
+        "yaw": 0.92,
+        "pitch": 0.3,
+        "radius": 5.4,
+        "targetRadius": 5.4
+      },
+      "player": {
+        "x": 13.4,
+        "y": 0,
+        "z": -21.55,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": true
+      },
+      "human": {
+        "x": 13.4,
+        "y": 0,
+        "z": -21.55,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": true
+      },
+      "robot": {
+        "x": -6.7,
+        "y": 0,
+        "z": 9.25,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "specialMove": null,
+        "specialMoveRemaining": 0,
+        "seated": false,
+        "seat": null,
+        "controlled": false
+      },
+      "serviceRobot": {
+        "x": -7.15,
+        "y": 0,
+        "z": 6,
+        "vx": 0.08,
+        "vy": 0,
+        "vz": 1.82,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot",
+        "label": "SERVICE BOT"
+      },
+      "serviceRobot01": {
+        "x": 18.08,
+        "y": 0,
+        "z": 19.01,
+        "vx": 1.39,
+        "vy": 0,
+        "vz": 1.18,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-01",
+        "label": "BOT 01",
+        "chestCode": "01"
+      },
+      "serviceRobot02": {
+        "x": 13.95,
+        "y": 0,
+        "z": 8.98,
+        "vx": -1.82,
+        "vy": 0,
+        "vz": -0.11,
+        "grounded": true,
+        "zone": "floor",
+        "action": "walk",
+        "routeIndex": 1,
+        "controlled": false,
+        "name": "service-robot-02",
+        "label": "BOT 02",
+        "chestCode": "02"
+      },
+      "tableTennisExpert": {
+        "x": 13.4,
+        "y": 0,
+        "z": -13.15,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "grounded": true,
+        "zone": "floor",
+        "action": "idle",
+        "routeIndex": 0,
+        "controlled": false,
+        "name": "table-tennis-expert",
+        "label": "PING BOT",
+        "chestCode": "TT"
+      },
+      "serviceRobots": [
+        {
+          "x": -7.15,
+          "y": 0,
+          "z": 6,
+          "vx": 0.08,
+          "vy": 0,
+          "vz": 1.82,
+          "grounded": true,
+          "zone": "floor",
+          "action": "walk",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot",
+          "label": "SERVICE BOT"
+        },
+        {
+          "x": 18.08,
+          "y": 0,
+          "z": 19.01,
+          "vx": 1.39,
+          "vy": 0,
+          "vz": 1.18,
+          "grounded": true,
+          "zone": "floor",
+          "action": "walk",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot-01",
+          "label": "BOT 01",
+          "chestCode": "01"
+        },
+        {
+          "x": 13.95,
+          "y": 0,
+          "z": 8.98,
+          "vx": -1.82,
+          "vy": 0,
+          "vz": -0.11,
+          "grounded": true,
+          "zone": "floor",
+          "action": "walk",
+          "routeIndex": 1,
+          "controlled": false,
+          "name": "service-robot-02",
+          "label": "BOT 02",
+          "chestCode": "02"
+        },
+        {
+          "x": 13.4,
+          "y": 0,
+          "z": -13.15,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "zone": "floor",
+          "action": "idle",
+          "routeIndex": 0,
+          "controlled": false,
+          "name": "table-tennis-expert",
+          "label": "PING BOT",
+          "chestCode": "TT"
+        }
+      ],
+      "coffeeArm": {
+        "x": -10.02,
+        "y": 1.18,
+        "z": 4.98,
+        "task": "READY",
+        "cupMode": "home",
+        "cleaningPad": false
+      },
+      "blackjack": {
+        "wallLabel": "BLACKJACK WALL",
+        "rules": "6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4",
+        "phase": "betting",
+        "phaseLabel": "BETTING",
+        "playerCredits": 5000,
+        "bankCredits": 1000000,
+        "currentBet": 100,
+        "shoeRemaining": 312,
+        "message": "Raise or lower the wager, then deal against the banker.",
+        "round": 0,
+        "dealerHoleHidden": false,
+        "roundNet": 0,
+        "result": {
+          "headline": "",
+          "detail": "",
+          "displayHeadline": "",
+          "displayDetail": "",
+          "tone": "neutral",
+          "active": false
+        },
+        "history": [],
+        "dealer": {
+          "total": 0,
+          "cards": []
+        },
+        "hands": [],
+        "availableActions": {
+          "deal": true,
+          "betDown": false,
+          "betUp": true,
+          "betPlusFive": true
+        }
+      },
+      "tableTennis": {
+        "active": true,
+        "phase": "rally",
+        "phaseLabel": "RALLY",
+        "playerScore": 0,
+        "robotScore": 0,
+        "server": "player",
+        "message": "Your serve is live.",
+        "table": {
+          "x": 13.4,
+          "z": -17.4,
+          "width": 2.72,
+          "length": 5.1,
+          "topY": 0.76
+        },
+        "ball": {
+          "active": true,
+          "x": 13.4,
+          "y": 0.99,
+          "z": -17.53,
+          "vx": 0,
+          "vy": -2.8,
+          "vz": 6,
+          "lastHitBy": "player",
+          "lastBounceSide": null,
+          "sideBounces": 0
+        }
+      },
+      "outfit": {
+        "character": "HUMAN",
+        "shades": "OFF",
+        "top": "BIKER BLK",
+        "shirt": "MIDNIGHT",
+        "pants": "BLACK",
+        "hat": "OFF",
+        "face": "NORMAL",
+        "pose": "STAND",
+        "boots": "EQSTRN BLK"
+      },
+      "terrain": {
+        "ramp": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 8,
+          "endZ": 15,
+          "topY": 1.6
+        },
+        "plateau": {
+          "minX": -3.2,
+          "maxX": 3.2,
+          "startZ": 15,
+          "endZ": 22,
+          "y": 1.6
+        },
+        "goal": {
+          "x": 0,
+          "floorY": 1.6,
+          "openingWidth": 3.3,
+          "openingHeight": 1.85,
+          "scoreFrontZ": 22.22,
+          "backZ": 23.55
+        }
+      },
+      "rival": {
+        "active": false,
+        "x": 0,
+        "y": -12,
+        "z": 0,
+        "vx": 0,
+        "vy": 0,
+        "vz": 0,
+        "action": "idle",
+        "targetBall": ""
+      },
+      "dynamicBodies": [
+        {
+          "name": "steel-1",
+          "active": true,
+          "x": -2.2,
+          "y": 1.04,
+          "z": 10.59,
+          "vx": 0,
+          "vy": -0.16,
+          "vz": -0.74,
+          "grounded": false,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-2",
+          "active": true,
+          "x": 0,
+          "y": 2.05,
+          "z": 18.05,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        },
+        {
+          "name": "steel-3",
+          "active": true,
+          "x": 1.9,
+          "y": 0.5,
+          "z": 5.45,
+          "vx": 0,
+          "vy": 0,
+          "vz": 0,
+          "grounded": true,
+          "lastTouchedBy": ""
+        }
+      ],
+      "lastScorer": "",
+      "statusMessage": "LEVEL 1 · CLEAR ALL 3 BALLS",
+      "nearestObstacles": [
+        {
+          "name": "table-tennis-table-solid",
+          "x": 13.4,
+          "z": -17.4,
+          "distance": 4.15
+        },
+        {
+          "name": "rock-6",
+          "x": 8,
+          "z": -10,
+          "distance": 12.75
+        },
+        {
+          "name": "south-wall",
+          "x": 0,
+          "z": -26.5,
+          "distance": 14.29
+        },
+        {
+          "name": "tree-6",
+          "x": 18,
+          "z": -4,
+          "distance": 18.14
+        },
+        {
+          "name": "lamp-3",
+          "x": 19,
+          "z": -2,
+          "distance": 20.34
+        },
+        {
+          "name": "east-wall",
+          "x": 26.5,
+          "z": 0,
+          "distance": 25.22
+        }
+      ]
+    }
+  }
+}

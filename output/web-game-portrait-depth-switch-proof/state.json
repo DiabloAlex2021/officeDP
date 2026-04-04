@@ -1,0 +1,31 @@
+{
+  "errors": [],
+  "captures": [
+    {
+      "scenario": "back-right",
+      "requestedYaw": 0.95,
+      "cameraYaw": 0.95,
+      "cameraPosition": {
+        "x": 5.99,
+        "y": 3.29,
+        "z": -2.28
+      },
+      "portraitSide": "right",
+      "portraitDepth": "front",
+      "portraitAngleDeg": 30
+    },
+    {
+      "scenario": "front-right",
+      "requestedYaw": 2.191592653589793,
+      "cameraYaw": 2.19,
+      "cameraPosition": {
+        "x": 5.99,
+        "y": 3.29,
+        "z": 6.28
+      },
+      "portraitSide": "right",
+      "portraitDepth": "back",
+      "portraitAngleDeg": 30
+    }
+  ]
+}

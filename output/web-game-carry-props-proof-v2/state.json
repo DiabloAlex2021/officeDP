@@ -1,0 +1,120 @@
+{
+  "empty": {
+    "x": -18,
+    "y": 0,
+    "z": 8.85,
+    "vx": 0,
+    "vy": 0,
+    "vz": 0.57,
+    "grounded": true,
+    "zone": "floor",
+    "action": "walk",
+    "specialMove": null,
+    "specialMoveRemaining": 0,
+    "seated": false,
+    "seat": null,
+    "carrying": null,
+    "controlled": true
+  },
+  "boots": {
+    "player": {
+      "x": -18,
+      "y": 0,
+      "z": 8,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "carrying": null,
+      "controlled": true
+    },
+    "carrying": null
+  },
+  "jar": {
+    "player": {
+      "x": -18,
+      "y": 0,
+      "z": 8,
+      "vx": 0,
+      "vy": 0,
+      "vz": 0,
+      "grounded": true,
+      "zone": "floor",
+      "action": "idle",
+      "specialMove": null,
+      "specialMoveRemaining": 0,
+      "seated": false,
+      "seat": null,
+      "carrying": null,
+      "controlled": true
+    },
+    "carrying": null
+  },
+  "heavy": {
+    "mode": "select",
+    "selection": {
+      "type": "object",
+      "kind": "obstacle",
+      "name": "tree-1",
+      "label": "TREE 1",
+      "zone": "floor",
+      "x": -17,
+      "y": 0,
+      "z": 5
+    },
+    "controlPanels": {
+      "expanded": true
+    },
+    "palette": null,
+    "objectActions": null,
+    "carrying": null,
+    "specialMoves": {
+      "expanded": false,
+      "active": false,
+      "current": null,
+      "remaining": 0,
+      "coreOptions": [
+        "JUMP",
+        "WAVE",
+        "RUN",
+        "VIEW",
+        "ZOOM OUT",
+        "ZOOM IN"
+      ],
+      "performanceOptions": [
+        {
+          "name": "KICK",
+          "duration": 0.56
+        },
+        {
+          "name": "BACK KICK",
+          "duration": 0.56
+        },
+        {
+          "name": "FULL KICK",
+          "duration": 1.08
+        },
+        {
+          "name": "MOONWALK",
+          "duration": 3
+        },
+        {
+          "name": "SPIN",
+          "duration": 2
+        }
+      ]
+    },
+    "bootsPrompt": {
+      "active": true,
+      "x": -17.17,
+      "z": 9.33,
+      "targetStyle": "EQSTRN BLK"
+    }
+  }
+}

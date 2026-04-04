@@ -1,0 +1,14 @@
+{
+  "errors": [],
+  "before": {
+    "expanded": false
+  },
+  "afterFirstTap": {
+    "expanded": true,
+    "active": false
+  },
+  "afterSecondTap": {
+    "expanded": false,
+    "active": false
+  }
+}
