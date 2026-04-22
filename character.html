@@ -8534,17 +8534,20 @@ const BLACKJACK_PHASE_LABELS = Object.freeze({
 const BLACKJACK_RULE_LABEL = '6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4';
 const WORLD_BROWSER_DEFAULT_URL = 'https://www.dp0.io/';
 const WORLD_BROWSER_SCREEN = Object.freeze({
-  x: 21.25,
+  x: 13.4,
   y: 2.62,
-  z: -18.4,
-  width: 7.2,
-  height: 3.6,
+  z: -24.25,
+  width: 8.8,
+  height: 3.7,
   depth: 0.30,
-  rotationY: -HALF_PI,
+  rotationY: 0,
   frontSide: 1,
-  playerX: 17.4,
-  playerZ: -18.4,
-  playerRot: HALF_PI
+  playerX: 13.4,
+  playerZ: -20.75,
+  playerRot: Math.PI,
+  cameraYaw: Math.PI,
+  cameraPitch: 0.24,
+  cameraRadius: 7.4
 });
 const TABLE_TENNIS_TABLE = Object.freeze({
   x: 13.4,
@@ -19105,9 +19108,9 @@ window.movePlayerToBrowserScreen = () => {
   onGround = true;
   currentGround = terrain;
   charYRot = WORLD_BROWSER_SCREEN.playerRot;
-  targetCamYaw = 0;
-  targetCamPitch = 0.22;
-  targetCamRadius = 7.6;
+  targetCamYaw = WORLD_BROWSER_SCREEN.cameraYaw ?? Math.PI;
+  targetCamPitch = WORLD_BROWSER_SCREEN.cameraPitch ?? 0.24;
+  targetCamRadius = WORLD_BROWSER_SCREEN.cameraRadius ?? 7.4;
   syncCameraInstant();
   applyScene(FIXED_DT);
   renderScene();
