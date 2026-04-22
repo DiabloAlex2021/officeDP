@@ -8534,15 +8534,17 @@ const BLACKJACK_PHASE_LABELS = Object.freeze({
 const BLACKJACK_RULE_LABEL = '6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4';
 const WORLD_BROWSER_DEFAULT_URL = 'https://www.dp0.io/';
 const WORLD_BROWSER_SCREEN = Object.freeze({
-  x: 0,
-  y: 2.92,
-  z: 23.88,
-  width: 19.4,
-  height: 4.48,
+  x: 21.25,
+  y: 2.62,
+  z: -18.4,
+  width: 7.2,
+  height: 3.6,
   depth: 0.30,
-  playerX: 0,
-  playerZ: 19.25,
-  playerRot: 0
+  rotationY: -HALF_PI,
+  frontSide: 1,
+  playerX: 17.4,
+  playerZ: -18.4,
+  playerRot: HALF_PI
 });
 const TABLE_TENNIS_TABLE = Object.freeze({
   x: 13.4,
@@ -13870,36 +13872,57 @@ function updateBrowserScreenTexture() {
 
 function addWorldBrowserScreen() {
   const screen = WORLD_BROWSER_SCREEN;
-  const frameZ = screen.z + 0.02;
-  const frontZ = screen.z - screen.depth * 0.72;
+  const rotationY = screen.rotationY ?? 0;
+  const frontSide = screen.frontSide ?? -1;
+  const frontZ = frontSide * screen.depth * 0.72;
+  const panelZ = frontZ + frontSide * 0.06;
+  const group = new THREE.Group();
+  group.position.set(screen.x, screen.y, screen.z);
+  group.rotation.y = rotationY;
+  scene.add(group);
 
-  const frame = addWorldBlock(screen.x, screen.y, frameZ, screen.width + 0.7, screen.height + 0.54, screen.depth, 0x071018);
+  const addScreenBlock = (x, y, z, w, h, d, color) => {
+    const mesh = boxMesh(w, h, d, color);
+    mesh.position.set(x, y, z);
+    mesh.receiveShadow = true;
+    group.add(mesh);
+    return mesh;
+  };
+
+  const frame = addScreenBlock(0, 0, 0, screen.width + 0.7, screen.height + 0.54, screen.depth, 0x071018);
   frame.castShadow = false;
   const trimColor = 0x4fa8d0;
-  const topTrim = addWorldBlock(screen.x, screen.y + screen.height * 0.5 + 0.22, frontZ, screen.width + 0.86, 0.16, 0.10, trimColor);
-  const bottomTrim = addWorldBlock(screen.x, screen.y - screen.height * 0.5 - 0.22, frontZ, screen.width + 0.86, 0.16, 0.10, trimColor);
-  const leftTrim = addWorldBlock(screen.x - screen.width * 0.5 - 0.34, screen.y, frontZ, 0.16, screen.height + 0.56, 0.10, trimColor);
-  const rightTrim = addWorldBlock(screen.x + screen.width * 0.5 + 0.34, screen.y, frontZ, 0.16, screen.height + 0.56, 0.10, trimColor);
+  const topTrim = addScreenBlock(0, screen.height * 0.5 + 0.22, frontZ, screen.width + 0.86, 0.16, 0.10, trimColor);
+  const bottomTrim = addScreenBlock(0, -screen.height * 0.5 - 0.22, frontZ, screen.width + 0.86, 0.16, 0.10, trimColor);
+  const leftTrim = addScreenBlock(-screen.width * 0.5 - 0.34, 0, frontZ, 0.16, screen.height + 0.56, 0.10, trimColor);
+  const rightTrim = addScreenBlock(screen.width * 0.5 + 0.34, 0, frontZ, 0.16, screen.height + 0.56, 0.10, trimColor);
   [topTrim, bottomTrim, leftTrim, rightTrim].forEach((trim) => {
     trim.castShadow = false;
   });
 
-  worldBrowserPanel = addTextPanel(screen.x, screen.y, frontZ - 0.06, screen.width, screen.height, browserScreenTexture, 0);
+  worldBrowserPanel = new THREE.Mesh(
+    new THREE.PlaneGeometry(screen.width, screen.height),
+    new THREE.MeshBasicMaterial({ map: browserScreenTexture, transparent: true, side: THREE.DoubleSide })
+  );
+  worldBrowserPanel.position.set(0, 0, panelZ);
+  group.add(worldBrowserPanel);
   const glow = new THREE.Mesh(
     new THREE.PlaneGeometry(screen.width + 0.3, 0.2),
     new THREE.MeshBasicMaterial({ color: 0x5ec9f4, transparent: true, opacity: 0.28, side: THREE.DoubleSide })
   );
-  glow.position.set(screen.x, screen.y - screen.height * 0.5 - 0.36, frontZ - 0.09);
-  scene.add(glow);
+  glow.position.set(0, -screen.height * 0.5 - 0.36, panelZ + frontSide * 0.03);
+  group.add(glow);
+
+  const sideMounted = Math.abs(Math.sin(rotationY)) > 0.5;
 
   worldBrowserCollider = addAabbCollider(
     'world-browser-screen',
     screen.x,
     screen.y,
     screen.z,
-    screen.width + 0.72,
+    sideMounted ? screen.depth + 0.12 : screen.width + 0.72,
     screen.height + 0.58,
-    screen.depth + 0.12,
+    sideMounted ? screen.width + 0.72 : screen.depth + 0.12,
     false
   );
   worldBrowserCollider.selectionKind = 'browser-screen';
