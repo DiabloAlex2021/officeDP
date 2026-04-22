@@ -492,6 +492,130 @@
     min-height: 32px;
   }
 
+  #world-browser {
+    position: fixed;
+    inset: 0;
+    z-index: 44;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    background:
+      radial-gradient(circle at 18% 12%, rgba(63, 168, 224, 0.24) 0%, rgba(63, 168, 224, 0.04) 34%, rgba(0,0,0,0) 58%),
+      linear-gradient(180deg, rgba(4, 9, 14, 0.96) 0%, rgba(7, 12, 18, 0.98) 100%);
+    backdrop-filter: blur(9px);
+  }
+  body.browser-screen-active #world-browser {
+    display: flex;
+  }
+  body.browser-screen-active #hud,
+  body.browser-screen-active #state-label,
+  body.browser-screen-active #portrait-panel,
+  body.browser-screen-active #portrait-arms-panel,
+  body.browser-screen-active #portrait-legs-panel,
+  body.browser-screen-active #scoreboard,
+  body.browser-screen-active #select-panel,
+  body.browser-screen-active #style-menu,
+  body.browser-screen-active #outfit-palette,
+  body.browser-screen-active #object-actions,
+  body.browser-screen-active #dpad,
+  body.browser-screen-active #actions,
+  body.browser-screen-active #panel-actions {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #world-browser-toolbar {
+    display: grid;
+    grid-template-columns: auto minmax(180px, 1fr) auto auto auto auto;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border-radius: 18px;
+    background: rgba(10, 18, 28, 0.94);
+    border: 1px solid rgba(94, 179, 224, 0.32);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.34);
+    font-family: 'Courier New', monospace;
+  }
+  #world-browser-title {
+    color: #93d7ff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    white-space: nowrap;
+  }
+  #world-browser-url {
+    min-width: 0;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid rgba(134, 197, 232, 0.34);
+    border-radius: 14px;
+    outline: none;
+    color: #ecf8ff;
+    background: rgba(2, 8, 14, 0.86);
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+  }
+  #world-browser-url:focus {
+    border-color: rgba(139, 222, 255, 0.84);
+    box-shadow: 0 0 0 3px rgba(86, 178, 224, 0.16);
+  }
+  .world-browser-btn {
+    height: 40px;
+    padding: 0 13px;
+    border-radius: 14px;
+    border: 1px solid rgba(139, 212, 245, 0.34);
+    background: rgba(18, 42, 58, 0.9);
+    color: #d9f3ff;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .world-browser-btn.primary {
+    background: rgba(38, 105, 135, 0.96);
+    border-color: rgba(160, 230, 255, 0.54);
+    color: #ffffff;
+  }
+  .world-browser-btn.danger {
+    background: rgba(66, 28, 30, 0.96);
+    border-color: rgba(255, 152, 152, 0.38);
+    color: #ffd9d9;
+  }
+  #world-browser-frame-wrap {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #f5f7fa;
+    border: 1px solid rgba(142, 215, 245, 0.28);
+    box-shadow:
+      0 24px 56px rgba(0,0,0,0.48),
+      inset 0 0 0 1px rgba(255,255,255,0.08);
+  }
+  #world-browser-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #ffffff;
+  }
+  #world-browser-note {
+    position: absolute;
+    left: 18px;
+    bottom: 14px;
+    max-width: min(560px, calc(100vw - 54px));
+    padding: 8px 10px;
+    border-radius: 12px;
+    color: #cfefff;
+    background: rgba(4, 12, 18, 0.78);
+    border: 1px solid rgba(142, 215, 245, 0.24);
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    pointer-events: none;
+  }
+
   #magic-chess-screen {
     position: fixed;
     inset: 0;
@@ -1286,6 +1410,21 @@
     #object-actions.blackjack-console #object-action-buttons {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+    #world-browser {
+      padding: 8px;
+    }
+    #world-browser-toolbar {
+      grid-template-columns: 1fr 1fr;
+    }
+    #world-browser-title,
+    #world-browser-url {
+      grid-column: 1 / -1;
+    }
+    #world-browser-note {
+      left: 12px;
+      right: 12px;
+      max-width: none;
+    }
     #magic-chess-shell {
       width: calc(100vw - 20px);
       padding: 14px;
@@ -1459,11 +1598,33 @@
     <button type="button" class="object-action-btn" id="btn-table-tennis-serve">SERVE</button>
     <button type="button" class="object-action-btn" id="btn-table-tennis-reset">RESET MATCH</button>
     <button type="button" class="object-action-btn" id="btn-table-tennis-leave">LEAVE TABLE</button>
+    <button type="button" class="object-action-btn" id="btn-browser-open">OPEN BROWSER</button>
+    <button type="button" class="object-action-btn" id="btn-browser-open-tab">OPEN TAB</button>
     <button type="button" class="object-action-btn" id="btn-magic-chess-start">START GAME</button>
     <button type="button" class="object-action-btn" id="btn-magic-chess-confirm">CONFIRM</button>
     <button type="button" class="object-action-btn" id="btn-magic-chess-cancel">CANCEL</button>
     <button type="button" class="object-action-btn" id="btn-magic-chess-reset">RESET BOARD</button>
     <button type="button" class="object-action-btn" id="btn-magic-chess-leave">LEAVE BOARD</button>
+  </div>
+</div>
+
+<div id="world-browser" aria-hidden="true">
+  <div id="world-browser-toolbar">
+    <span id="world-browser-title">WORLD BROWSER</span>
+    <input id="world-browser-url" type="url" value="https://www.dp0.io/" spellcheck="false" autocomplete="off" inputmode="url" aria-label="World browser URL">
+    <button type="button" class="world-browser-btn primary" id="btn-world-browser-load">LOAD</button>
+    <button type="button" class="world-browser-btn" id="btn-world-browser-refresh">REFRESH</button>
+    <button type="button" class="world-browser-btn" id="btn-world-browser-open-tab">OPEN TAB</button>
+    <button type="button" class="world-browser-btn danger" id="btn-world-browser-close">CLOSE</button>
+  </div>
+  <div id="world-browser-frame-wrap">
+    <iframe
+      id="world-browser-frame"
+      title="World browser"
+      referrerpolicy="no-referrer-when-downgrade"
+      allow="fullscreen; clipboard-read; clipboard-write; autoplay; encrypted-media"
+    ></iframe>
+    <div id="world-browser-note">Some websites block iframe embedding. Use OPEN TAB if this page stays blank.</div>
   </div>
 </div>
 
@@ -5889,6 +6050,13 @@ const blackjackConsoleHeadline = document.getElementById('blackjack-console-head
 const blackjackConsoleCopy = document.getElementById('blackjack-console-copy');
 const objectActionsCopy = document.getElementById('object-actions-copy');
 const objectActionButtons = document.getElementById('object-action-buttons');
+const worldBrowserOverlay = document.getElementById('world-browser');
+const worldBrowserUrlInput = document.getElementById('world-browser-url');
+const worldBrowserFrame = document.getElementById('world-browser-frame');
+const worldBrowserLoadButton = document.getElementById('btn-world-browser-load');
+const worldBrowserRefreshButton = document.getElementById('btn-world-browser-refresh');
+const worldBrowserOpenTabButton = document.getElementById('btn-world-browser-open-tab');
+const worldBrowserCloseButton = document.getElementById('btn-world-browser-close');
 const magicChessScreen = document.getElementById('magic-chess-screen');
 const magicChessHeadline = document.getElementById('magic-chess-headline');
 const magicChessSubcopy = document.getElementById('magic-chess-subcopy');
@@ -5928,6 +6096,8 @@ const tableTennisStartButton = document.getElementById('btn-table-tennis-start')
 const tableTennisServeButton = document.getElementById('btn-table-tennis-serve');
 const tableTennisResetButton = document.getElementById('btn-table-tennis-reset');
 const tableTennisLeaveButton = document.getElementById('btn-table-tennis-leave');
+const browserOpenButton = document.getElementById('btn-browser-open');
+const browserOpenTabButton = document.getElementById('btn-browser-open-tab');
 const magicChessStartButton = document.getElementById('btn-magic-chess-start');
 const magicChessConfirmButton = document.getElementById('btn-magic-chess-confirm');
 const magicChessCancelButton = document.getElementById('btn-magic-chess-cancel');
@@ -5960,6 +6130,8 @@ const objectActionButtonList = [
   tableTennisServeButton,
   tableTennisResetButton,
   tableTennisLeaveButton,
+  browserOpenButton,
+  browserOpenTabButton,
   magicChessStartButton,
   magicChessConfirmButton,
   magicChessCancelButton,
@@ -6945,7 +7117,7 @@ function updateObjectActionsPanel(selection) {
   if (
     pointerMode !== 'select' ||
     !selection ||
-    (selection.kind !== 'carryable-prop' && selection.kind !== 'coffee-arm' && selection.kind !== 'coffee-freezer' && selection.kind !== 'movable-chair' && selection.kind !== 'blackjack-board' && selection.kind !== 'table-tennis-table' && selection.kind !== 'magic-chess-board')
+    (selection.kind !== 'carryable-prop' && selection.kind !== 'coffee-arm' && selection.kind !== 'coffee-freezer' && selection.kind !== 'movable-chair' && selection.kind !== 'blackjack-board' && selection.kind !== 'table-tennis-table' && selection.kind !== 'browser-screen' && selection.kind !== 'magic-chess-board')
   ) {
     hideObjectActionsPanel();
     return;
@@ -7009,6 +7181,22 @@ function updateObjectActionsPanel(selection) {
           ? 'ROBOT CLOSING'
           : (actualOpen ? 'CLOSE DOOR' : 'OPEN DOOR')
     );
+    objectActionsPanel.classList.add('active');
+    return;
+  }
+
+  if (selection.kind === 'browser-screen') {
+    objectActionsPanel.classList.add('blackjack-console');
+    blackjackConsoleStatus.classList.add('active');
+    objectActionButtons.style.display = 'grid';
+    objectActionsTitle.textContent = 'BROWSER CONSOLE';
+    blackjackConsoleLabel.textContent = 'WEB READOUT';
+    blackjackConsoleHeadline.textContent = browserState.active ? 'BROWSER LIVE' : 'DP0.IO READY';
+    blackjackConsoleCopy.textContent = browserState.url;
+    setBlackjackConsoleTone(browserState.active ? 'player' : 'neutral');
+    objectActionsCopy.textContent = 'Open the huge wall browser screen. Use the URL bar inside it to load a site, or open the page in a real tab if iframe embedding is blocked.';
+    setObjectActionButtonState(browserOpenButton, true, browserState.active, false, browserState.active ? 'BROWSER OPEN' : 'OPEN BROWSER');
+    setObjectActionButtonState(browserOpenTabButton, true, false, false, 'OPEN TAB');
     objectActionsPanel.classList.add('active');
     return;
   }
@@ -7408,6 +7596,91 @@ function toggleFullscreen() {
   }
 }
 
+function normalizeBrowserUrl(value = '') {
+  const raw = String(value || '').trim();
+  if (!raw) return WORLD_BROWSER_DEFAULT_URL;
+  if (/^[a-z][a-z0-9+.-]*:\/\//i.test(raw)) return raw;
+  return `https://${raw}`;
+}
+
+function syncBrowserScreenUi(loadFrame = true) {
+  document.body.classList.toggle('browser-screen-active', browserState.active);
+  worldBrowserOverlay?.setAttribute('aria-hidden', browserState.active ? 'false' : 'true');
+  if (worldBrowserUrlInput && document.activeElement !== worldBrowserUrlInput) {
+    worldBrowserUrlInput.value = browserState.url;
+  }
+  if (browserState.active && loadFrame && worldBrowserFrame && worldBrowserFrame.src !== browserState.url) {
+    browserState.frameLoaded = false;
+    browserState.lastLoadedAt = performance.now();
+    worldBrowserFrame.src = browserState.url;
+  }
+  updateBrowserScreenTexture();
+  updateHud();
+}
+
+function setWorldBrowserScreenUrl(url = browserState.url, loadFrame = browserState.active) {
+  browserState.url = normalizeBrowserUrl(url);
+  if (worldBrowserUrlInput) worldBrowserUrlInput.value = browserState.url;
+  syncBrowserScreenUi(loadFrame);
+  return browserState.url;
+}
+
+function activateWorldBrowserScreen(url = browserState.url) {
+  browserState.url = normalizeBrowserUrl(url);
+  browserState.active = true;
+  syncBrowserScreenUi(true);
+  setStatusMessage('BROWSER SCREEN OPEN', 1.1);
+  return true;
+}
+
+function dismissWorldBrowserScreen() {
+  if (!browserState.active) return false;
+  browserState.active = false;
+  syncBrowserScreenUi(false);
+  setStatusMessage('BROWSER SCREEN CLOSED', 0.8);
+  return true;
+}
+
+function loadBrowserUrlFromInput() {
+  const nextUrl = normalizeBrowserUrl(worldBrowserUrlInput?.value || browserState.url);
+  browserState.url = nextUrl;
+  browserState.active = true;
+  syncBrowserScreenUi(true);
+  setStatusMessage(`BROWSER LOAD · ${browserDisplayUrl(nextUrl)}`, 1.1);
+  return true;
+}
+
+function refreshBrowserScreen() {
+  if (!worldBrowserFrame) return false;
+  browserState.url = normalizeBrowserUrl(worldBrowserUrlInput?.value || browserState.url);
+  browserState.frameLoaded = false;
+  browserState.lastLoadedAt = performance.now();
+  worldBrowserFrame.src = 'about:blank';
+  requestAnimationFrame(() => {
+    if (browserState.active && worldBrowserFrame) worldBrowserFrame.src = browserState.url;
+  });
+  updateBrowserScreenTexture();
+  return true;
+}
+
+function openBrowserInNewTab() {
+  const nextUrl = setWorldBrowserScreenUrl(worldBrowserUrlInput?.value || browserState.url, false);
+  const opened = window.open(nextUrl, '_blank', 'noopener');
+  setStatusMessage(opened ? `OPENED TAB · ${browserDisplayUrl(nextUrl)}` : 'POPUP BLOCKED · USE BROWSER OPEN TAB', 1.2);
+  return !!opened;
+}
+
+function browserScreenPayload() {
+  return {
+    active: browserState.active,
+    url: browserState.url,
+    defaultUrl: WORLD_BROWSER_DEFAULT_URL,
+    frameLoaded: browserState.frameLoaded,
+    iframeSrc: worldBrowserFrame?.getAttribute('src') || '',
+    note: 'Cross-origin websites may block iframe embedding; OPEN TAB is the fallback.'
+  };
+}
+
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Space') e.preventDefault();
   if (bootPromptActive) {
@@ -7422,6 +7695,14 @@ window.addEventListener('keydown', (e) => {
       resolveBootPrompt(false);
       renderScene();
       return;
+    }
+    return;
+  }
+  if (browserState.active) {
+    if (e.code === 'Escape' && !e.repeat) {
+      e.preventDefault();
+      dismissWorldBrowserScreen();
+      renderScene();
     }
     return;
   }
@@ -7838,6 +8119,46 @@ tableTennisLeaveButton.addEventListener('click', () => {
     renderScene();
   }
 });
+bindStablePressAction(browserOpenButton, () => {
+  activateWorldBrowserScreen(browserState.url);
+  renderScene();
+});
+bindStablePressAction(browserOpenTabButton, () => {
+  openBrowserInNewTab();
+  renderScene();
+});
+bindStablePressAction(worldBrowserLoadButton, () => {
+  loadBrowserUrlFromInput();
+  renderScene();
+});
+bindStablePressAction(worldBrowserRefreshButton, () => {
+  refreshBrowserScreen();
+  renderScene();
+});
+bindStablePressAction(worldBrowserOpenTabButton, () => {
+  openBrowserInNewTab();
+  renderScene();
+});
+bindStablePressAction(worldBrowserCloseButton, () => {
+  dismissWorldBrowserScreen();
+  renderScene();
+});
+worldBrowserUrlInput?.addEventListener('keydown', (event) => {
+  if ((event.code === 'Enter' || event.code === 'NumpadEnter') && !event.repeat) {
+    event.preventDefault();
+    loadBrowserUrlFromInput();
+    renderScene();
+  }
+  if (event.code === 'Escape' && !event.repeat) {
+    event.preventDefault();
+    dismissWorldBrowserScreen();
+    renderScene();
+  }
+});
+worldBrowserFrame?.addEventListener('load', () => {
+  browserState.frameLoaded = true;
+  updateBrowserScreenTexture();
+});
 magicChessStartButton.addEventListener('click', () => {
   if (beginMagicChessMatch(true)) {
     applyScene(FIXED_DT);
@@ -8211,6 +8532,18 @@ const BLACKJACK_PHASE_LABELS = Object.freeze({
   'round-over': 'ROUND OVER'
 });
 const BLACKJACK_RULE_LABEL = '6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4';
+const WORLD_BROWSER_DEFAULT_URL = 'https://www.dp0.io/';
+const WORLD_BROWSER_SCREEN = Object.freeze({
+  x: 0,
+  y: 2.92,
+  z: 23.88,
+  width: 19.4,
+  height: 4.48,
+  depth: 0.30,
+  playerX: 0,
+  playerZ: 19.25,
+  playerRot: 0
+});
 const TABLE_TENNIS_TABLE = Object.freeze({
   x: 13.4,
   z: -17.4,
@@ -8423,6 +8756,18 @@ let activeControlledActor = 'human';
 let specialMovesExpanded = false;
 let controlsPanelsExpanded = true;
 let kickStrikeState = 0;
+const browserScreenCanvas = document.createElement('canvas');
+browserScreenCanvas.width = 1280;
+browserScreenCanvas.height = 720;
+const browserScreenCtx = browserScreenCanvas.getContext('2d');
+const browserScreenTexture = new THREE.CanvasTexture(browserScreenCanvas);
+browserScreenTexture.needsUpdate = true;
+const browserState = {
+  url: WORLD_BROWSER_DEFAULT_URL,
+  active: false,
+  frameLoaded: false,
+  lastLoadedAt: 0
+};
 const USER_SESSION_STORAGE_KEY = 'office3d.userSessions.v1';
 const USER_SESSION_DEFAULT_ID = 'guest';
 const USER_SESSION_SAVE_INTERVAL = 0.45;
@@ -8674,6 +9019,8 @@ let blackjackWallBoard = null;
 let blackjackWallCollider = null;
 let tableTennisCollider = null;
 let magicChessCollider = null;
+let worldBrowserCollider = null;
+let worldBrowserPanel = null;
 let coffeeStorageFreezerCollider = null;
 let magicChessGroup = null;
 let magicChessCursorMesh = null;
@@ -12777,6 +13124,7 @@ function selectionSummaryText(selection) {
   if (selection.kind === 'coffee-freezer') return `${selection.label} · ${coffeeFreezerDoorShouldBeOpen() ? 'OPEN' : 'CLOSED'} · ${coffeeStorageState.freezerCupCount} CUPS`;
   if (selection.kind === 'blackjack-board') return `${selection.label} · ${BLACKJACK_PHASE_LABELS[blackjackState.phase] ?? blackjackState.phase.toUpperCase()}`;
   if (selection.kind === 'table-tennis-table') return `${selection.label} · ${tableTennisPhaseLabel()} · ${tableTennisScoreline()}`;
+  if (selection.kind === 'browser-screen') return `${selection.label} · ${browserState.active ? 'LIVE' : 'READY'} · ${browserDisplayUrl(browserState.url)}`;
   if (selection.kind === 'magic-chess-board') return `${selection.label} · ${magicChessPhaseLabel()} · ${magicChessSquareName(magicChessState.cursorFile, magicChessState.cursorRank)}`;
   if (selection.type === 'area') return `${selection.label} · ${round2(selection.point.x)}, ${round2(selection.point.z)}`;
   return `${selection.label} · ${round2(selection.point.x)}, ${round2(selection.point.z)}`;
@@ -12839,6 +13187,11 @@ function selectionPayload() {
     payload.robotScore = tableTennisState.robotScore;
     payload.server = tableTennisState.server;
   }
+  if (current.kind === 'browser-screen') {
+    payload.active = browserState.active;
+    payload.url = browserState.url;
+    payload.frameLoaded = browserState.frameLoaded;
+  }
   if (current.kind === 'magic-chess-board') {
     payload.phase = magicChessState.phase;
     payload.active = magicChessState.active;
@@ -12880,7 +13233,7 @@ function objectActionsPayload() {
   if (
     pointerMode !== 'select' ||
     !current ||
-    (current.kind !== 'carryable-prop' && current.kind !== 'coffee-arm' && current.kind !== 'coffee-freezer' && current.kind !== 'movable-chair' && current.kind !== 'blackjack-board' && current.kind !== 'table-tennis-table' && current.kind !== 'magic-chess-board')
+    (current.kind !== 'carryable-prop' && current.kind !== 'coffee-arm' && current.kind !== 'coffee-freezer' && current.kind !== 'movable-chair' && current.kind !== 'blackjack-board' && current.kind !== 'table-tennis-table' && current.kind !== 'browser-screen' && current.kind !== 'magic-chess-board')
   ) return null;
   if (current.kind === 'carryable-prop') {
     return {
@@ -12950,6 +13303,16 @@ function objectActionsPayload() {
       server: tableTennisState.server,
       message: tableTennisState.message,
       options: ['START MATCH', 'SERVE', 'RESET MATCH', 'LEAVE TABLE']
+    };
+  }
+  if (current.kind === 'browser-screen') {
+    return {
+      active: true,
+      label: 'BROWSER SCREEN',
+      task: browserState.active ? 'BROWSER OPEN' : 'READY',
+      url: browserState.url,
+      frameLoaded: browserState.frameLoaded,
+      options: ['OPEN BROWSER', 'OPEN TAB']
     };
   }
   if (current.kind === 'magic-chess-board') {
@@ -13428,6 +13791,125 @@ function addTextPanel(x, y, z, w, h, texture, rotationY = 0) {
   mesh.rotation.y = rotationY;
   scene.add(mesh);
   return mesh;
+}
+
+function browserDisplayUrl(url = browserState.url) {
+  return String(url || WORLD_BROWSER_DEFAULT_URL)
+    .replace(/^https?:\/\//i, '')
+    .replace(/\/$/, '');
+}
+
+function updateBrowserScreenTexture() {
+  const ctx = browserScreenCtx;
+  if (!ctx) return;
+  const w = browserScreenCanvas.width;
+  const h = browserScreenCanvas.height;
+  const label = browserDisplayUrl(browserState.url);
+
+  const glow = ctx.createLinearGradient(0, 0, w, h);
+  glow.addColorStop(0, '#082233');
+  glow.addColorStop(0.48, '#101923');
+  glow.addColorStop(1, '#05080d');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, w, h);
+
+  ctx.fillStyle = '#d8edf8';
+  ctx.fillRect(46, 52, w - 92, h - 104);
+  ctx.fillStyle = '#0a1118';
+  ctx.fillRect(46, 52, w - 92, 88);
+
+  ['#ff6b65', '#f7ca4f', '#69d48d'].forEach((color, index) => {
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(88 + index * 34, 96, 11, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  ctx.fillStyle = '#172737';
+  ctx.beginPath();
+  ctx.roundRect(206, 72, w - 300, 48, 18);
+  ctx.fill();
+  ctx.fillStyle = '#bde9ff';
+  ctx.font = '600 26px Courier New';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(browserState.url, 232, 96, w - 350);
+
+  ctx.fillStyle = '#edf7fb';
+  ctx.fillRect(46, 140, w - 92, h - 192);
+  const pageGradient = ctx.createLinearGradient(46, 140, w - 46, h - 52);
+  pageGradient.addColorStop(0, '#f8fcff');
+  pageGradient.addColorStop(0.65, '#d7edf7');
+  pageGradient.addColorStop(1, '#b7d8e8');
+  ctx.fillStyle = pageGradient;
+  ctx.fillRect(46, 140, w - 92, h - 192);
+
+  ctx.fillStyle = '#10283a';
+  ctx.font = '800 92px Courier New';
+  ctx.textAlign = 'center';
+  ctx.fillText(label.toUpperCase(), w * 0.5, h * 0.42, w - 170);
+  ctx.fillStyle = '#244a62';
+  ctx.font = '600 30px Courier New';
+  ctx.fillText(browserState.active ? 'LIVE IN-WORLD BROWSER ACTIVE' : 'SELECT SCREEN TO OPEN BROWSER', w * 0.5, h * 0.53);
+
+  ctx.fillStyle = 'rgba(16, 40, 58, 0.12)';
+  for (let i = 0; i < 5; i += 1) {
+    ctx.beginPath();
+    ctx.roundRect(180 + i * 174, h * 0.64, 128, 52, 16);
+    ctx.fill();
+  }
+
+  ctx.textAlign = 'left';
+  ctx.fillStyle = '#6b8999';
+  ctx.font = '600 24px Courier New';
+  ctx.fillText('URL DEFAULT · HTTPS://WWW.DP0.IO/', 82, h - 82);
+  ctx.fillStyle = browserState.active ? '#64dca1' : '#71cbff';
+  ctx.fillRect(w - 236, h - 98, 150, 16);
+
+  browserScreenTexture.needsUpdate = true;
+}
+
+function addWorldBrowserScreen() {
+  const screen = WORLD_BROWSER_SCREEN;
+  const frameZ = screen.z + 0.02;
+  const frontZ = screen.z - screen.depth * 0.72;
+
+  const frame = addWorldBlock(screen.x, screen.y, frameZ, screen.width + 0.7, screen.height + 0.54, screen.depth, 0x071018);
+  frame.castShadow = false;
+  const trimColor = 0x4fa8d0;
+  const topTrim = addWorldBlock(screen.x, screen.y + screen.height * 0.5 + 0.22, frontZ, screen.width + 0.86, 0.16, 0.10, trimColor);
+  const bottomTrim = addWorldBlock(screen.x, screen.y - screen.height * 0.5 - 0.22, frontZ, screen.width + 0.86, 0.16, 0.10, trimColor);
+  const leftTrim = addWorldBlock(screen.x - screen.width * 0.5 - 0.34, screen.y, frontZ, 0.16, screen.height + 0.56, 0.10, trimColor);
+  const rightTrim = addWorldBlock(screen.x + screen.width * 0.5 + 0.34, screen.y, frontZ, 0.16, screen.height + 0.56, 0.10, trimColor);
+  [topTrim, bottomTrim, leftTrim, rightTrim].forEach((trim) => {
+    trim.castShadow = false;
+  });
+
+  worldBrowserPanel = addTextPanel(screen.x, screen.y, frontZ - 0.06, screen.width, screen.height, browserScreenTexture, 0);
+  const glow = new THREE.Mesh(
+    new THREE.PlaneGeometry(screen.width + 0.3, 0.2),
+    new THREE.MeshBasicMaterial({ color: 0x5ec9f4, transparent: true, opacity: 0.28, side: THREE.DoubleSide })
+  );
+  glow.position.set(screen.x, screen.y - screen.height * 0.5 - 0.36, frontZ - 0.09);
+  scene.add(glow);
+
+  worldBrowserCollider = addAabbCollider(
+    'world-browser-screen',
+    screen.x,
+    screen.y,
+    screen.z,
+    screen.width + 0.72,
+    screen.height + 0.58,
+    screen.depth + 0.12,
+    false
+  );
+  worldBrowserCollider.selectionKind = 'browser-screen';
+  worldBrowserCollider.selectionLabel = 'BROWSER SCREEN';
+  if (worldBrowserCollider.picker?.userData?.pick) {
+    worldBrowserCollider.picker.userData.pick.kind = 'browser-screen';
+    worldBrowserCollider.picker.userData.pick.label = 'BROWSER SCREEN';
+  }
+  updateBrowserScreenTexture();
+  return worldBrowserPanel;
 }
 
 function magicChessPalette(side) {
@@ -14851,6 +15333,7 @@ function addPhysicsSphere(name, x, z, radius, color, mass) {
 
 function buildPhysicalWorld() {
   addOfficeShell();
+  addWorldBrowserScreen();
 
   treePlacements.forEach(([x, z, scale], index) => {
     addCylinderCollider(`tree-${index + 1}`, x, z, 0.46 * scale, 3.1 * scale);
@@ -18083,6 +18566,7 @@ window.render_game_to_text = () => JSON.stringify({
   }),
   coffeeStorage: coffeeStoragePayload(),
   coffeeService: coffeeServicePayload(),
+  browserScreen: browserScreenPayload(),
   blackjack: blackjackPayload(),
   tableTennis: tableTennisPayload(),
   magicChess: magicChessPayload(),
@@ -18400,6 +18884,22 @@ window.selectTableTennisTable = () => {
   renderScene();
   return selectionPayload();
 };
+window.projectBrowserScreenToCanvas = () => {
+  if (!worldBrowserCollider) return null;
+  return window.projectWorldToCanvas(
+    worldBrowserCollider.centerX,
+    (worldBrowserCollider.minY + worldBrowserCollider.maxY) * 0.5,
+    worldBrowserCollider.centerZ
+  );
+};
+window.selectBrowserScreen = () => {
+  if (!worldBrowserCollider?.picker?.userData?.pick) return null;
+  selectedTarget = worldBrowserCollider.picker.userData.pick;
+  updateSelectionVisuals();
+  updateHud();
+  renderScene();
+  return selectionPayload();
+};
 window.projectMagicChessToCanvas = () => {
   if (!magicChessCollider) return null;
   return window.projectWorldToCanvas(
@@ -18505,6 +19005,22 @@ window.leaveMagicChessMatch = () => {
   renderScene();
   return window.render_game_to_text();
 };
+window.openBrowserScreen = (url = browserState.url) => {
+  activateWorldBrowserScreen(url);
+  renderScene();
+  return window.render_game_to_text();
+};
+window.closeBrowserScreen = () => {
+  dismissWorldBrowserScreen();
+  renderScene();
+  return window.render_game_to_text();
+};
+window.setBrowserScreenUrl = (url = WORLD_BROWSER_DEFAULT_URL) => {
+  setWorldBrowserScreenUrl(url, browserState.active);
+  renderScene();
+  return window.render_game_to_text();
+};
+window.getBrowserScreenState = () => JSON.stringify(browserScreenPayload());
 window.moveMagicChessCursor = (fileDelta = 0, rankDelta = 0) => {
   shiftMagicChessCursor(Math.round(fileDelta), Math.round(rankDelta));
   applyScene(FIXED_DT);
@@ -18554,6 +19070,21 @@ window.movePlayerToMagicChess = () => {
   targetCamYaw = 0;
   targetCamPitch = CAM_BASE_PITCH;
   targetCamRadius = CAM_BASE_RADIUS;
+  syncCameraInstant();
+  applyScene(FIXED_DT);
+  renderScene();
+  return window.render_game_to_text();
+};
+window.movePlayerToBrowserScreen = () => {
+  const terrain = sampleTerrain(WORLD_BROWSER_SCREEN.playerX, WORLD_BROWSER_SCREEN.playerZ);
+  pos.set(WORLD_BROWSER_SCREEN.playerX, terrain.height, WORLD_BROWSER_SCREEN.playerZ);
+  vel.set(0, 0, 0);
+  onGround = true;
+  currentGround = terrain;
+  charYRot = WORLD_BROWSER_SCREEN.playerRot;
+  targetCamYaw = 0;
+  targetCamPitch = 0.22;
+  targetCamRadius = 7.6;
   syncCameraInstant();
   applyScene(FIXED_DT);
   renderScene();
