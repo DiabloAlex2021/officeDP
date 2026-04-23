@@ -1071,6 +1071,50 @@
     background: rgba(78,126,228,0.64);
     transform: scale(0.95);
   }
+  #daily-portal-confirm {
+    position: fixed;
+    left: 50%;
+    bottom: 162px;
+    transform: translateX(-50%);
+    width: min(392px, calc(100vw - 32px));
+    padding: 14px 16px 12px;
+    border-radius: 16px;
+    background: rgba(8,18,24,0.95);
+    border: 1px solid rgba(91, 235, 255, 0.38);
+    color: #d8f7ff;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 18px 34px rgba(0,0,0,0.30);
+    z-index: 24;
+    display: none;
+  }
+  #daily-portal-confirm.active { display: block; }
+  #daily-portal-confirm .confirm-title {
+    display: block;
+    color: #f1feff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+  }
+  #daily-portal-confirm .confirm-copy {
+    display: block;
+    margin-top: 8px;
+    color: #9fe6f4;
+    font-size: 11px;
+    line-height: 1.5;
+    min-height: 32px;
+  }
+  #daily-portal-confirm .confirm-row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  #daily-portal-confirm .confirm-btn.primary {
+    background: rgba(22,120,141,0.94);
+    border-color: rgba(121,237,255,0.54);
+  }
 
   /* D-PAD */
   #dpad {
@@ -1598,6 +1642,8 @@
     <button type="button" class="object-action-btn" id="btn-table-tennis-serve">SERVE</button>
     <button type="button" class="object-action-btn" id="btn-table-tennis-reset">RESET MATCH</button>
     <button type="button" class="object-action-btn" id="btn-table-tennis-leave">LEAVE TABLE</button>
+    <button type="button" class="object-action-btn" id="btn-daily-portal-enter">ENTER PORTAL</button>
+    <button type="button" class="object-action-btn" id="btn-daily-portal-open-tab">OPEN TAB</button>
     <button type="button" class="object-action-btn" id="btn-browser-open">OPEN BROWSER</button>
     <button type="button" class="object-action-btn" id="btn-browser-open-tab">OPEN TAB</button>
     <button type="button" class="object-action-btn" id="btn-magic-chess-start">START GAME</button>
@@ -1704,6 +1750,15 @@
   <div class="confirm-row">
     <div class="confirm-btn primary" id="btn-boots-yes">SWITCH</div>
     <div class="confirm-btn" id="btn-boots-no">KEEP</div>
+  </div>
+</div>
+
+<div id="daily-portal-confirm" role="dialog" aria-live="polite" aria-label="Daily portal prompt">
+  <span class="confirm-title">DAILY GROUND PORTAL</span>
+  <span class="confirm-copy" id="daily-portal-confirm-copy">Today's portal is live. Enter it?</span>
+  <div class="confirm-row">
+    <button type="button" class="confirm-btn primary" id="btn-daily-portal-enter-confirm">ENTER PORTAL</button>
+    <button type="button" class="confirm-btn" id="btn-daily-portal-stay">STAY HERE</button>
   </div>
 </div>
 
@@ -6025,6 +6080,10 @@ const bootsConfirm = document.getElementById('boots-confirm');
 const bootsConfirmCopy = document.getElementById('boots-confirm-copy');
 const bootsConfirmYes = document.getElementById('btn-boots-yes');
 const bootsConfirmNo = document.getElementById('btn-boots-no');
+const dailyPortalConfirm = document.getElementById('daily-portal-confirm');
+const dailyPortalConfirmCopy = document.getElementById('daily-portal-confirm-copy');
+const dailyPortalConfirmEnterButton = document.getElementById('btn-daily-portal-enter-confirm');
+const dailyPortalConfirmStayButton = document.getElementById('btn-daily-portal-stay');
 const zoomOutButton = document.getElementById('btn-zoom-out');
 const zoomInButton = document.getElementById('btn-zoom-in');
 const styleCharacterButton = document.getElementById('btn-style-character');
@@ -6096,6 +6155,8 @@ const tableTennisStartButton = document.getElementById('btn-table-tennis-start')
 const tableTennisServeButton = document.getElementById('btn-table-tennis-serve');
 const tableTennisResetButton = document.getElementById('btn-table-tennis-reset');
 const tableTennisLeaveButton = document.getElementById('btn-table-tennis-leave');
+const dailyPortalEnterButton = document.getElementById('btn-daily-portal-enter');
+const dailyPortalOpenTabButton = document.getElementById('btn-daily-portal-open-tab');
 const browserOpenButton = document.getElementById('btn-browser-open');
 const browserOpenTabButton = document.getElementById('btn-browser-open-tab');
 const magicChessStartButton = document.getElementById('btn-magic-chess-start');
@@ -6130,6 +6191,8 @@ const objectActionButtonList = [
   tableTennisServeButton,
   tableTennisResetButton,
   tableTennisLeaveButton,
+  dailyPortalEnterButton,
+  dailyPortalOpenTabButton,
   browserOpenButton,
   browserOpenTabButton,
   magicChessStartButton,
@@ -7117,7 +7180,7 @@ function updateObjectActionsPanel(selection) {
   if (
     pointerMode !== 'select' ||
     !selection ||
-    (selection.kind !== 'carryable-prop' && selection.kind !== 'coffee-arm' && selection.kind !== 'coffee-freezer' && selection.kind !== 'movable-chair' && selection.kind !== 'blackjack-board' && selection.kind !== 'table-tennis-table' && selection.kind !== 'browser-screen' && selection.kind !== 'magic-chess-board')
+    (selection.kind !== 'carryable-prop' && selection.kind !== 'coffee-arm' && selection.kind !== 'coffee-freezer' && selection.kind !== 'movable-chair' && selection.kind !== 'daily-ground-portal' && selection.kind !== 'blackjack-board' && selection.kind !== 'table-tennis-table' && selection.kind !== 'browser-screen' && selection.kind !== 'magic-chess-board')
   ) {
     hideObjectActionsPanel();
     return;
@@ -7181,6 +7244,22 @@ function updateObjectActionsPanel(selection) {
           ? 'ROBOT CLOSING'
           : (actualOpen ? 'CLOSE DOOR' : 'OPEN DOOR')
     );
+    objectActionsPanel.classList.add('active');
+    return;
+  }
+
+  if (selection.kind === 'daily-ground-portal') {
+    objectActionsPanel.classList.add('blackjack-console');
+    blackjackConsoleStatus.classList.add('active');
+    objectActionButtons.style.display = 'grid';
+    objectActionsTitle.textContent = 'PORTAL NODE';
+    blackjackConsoleLabel.textContent = 'DAILY LINK';
+    blackjackConsoleHeadline.textContent = dailyPortalState.candidate?.label ?? 'PORTAL ACTIVE';
+    blackjackConsoleCopy.textContent = `${dailyPortalState.dateKey || dailyPortalDateKey()} · ${DAILY_PORTAL_URL}`;
+    setBlackjackConsoleTone('player');
+    objectActionsCopy.textContent = 'This glowing floor portal changes location each local day. Enter it to open today\'s destination in the world browser, or open the URL in a real tab.';
+    setObjectActionButtonState(dailyPortalEnterButton, true, dailyPortalPromptActive || dailyPortalState.touching, false, 'ENTER PORTAL');
+    setObjectActionButtonState(dailyPortalOpenTabButton, true, false, false, 'OPEN TAB');
     objectActionsPanel.classList.add('active');
     return;
   }
@@ -7681,8 +7760,162 @@ function browserScreenPayload() {
   };
 }
 
+function dailyPortalDateKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function hashDailyPortalKey(key = dailyPortalDateKey()) {
+  let hash = 2166136261;
+  for (let i = 0; i < key.length; i += 1) {
+    hash ^= key.charCodeAt(i);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
+}
+
+function applyDailyPortalPlacement(force = false) {
+  const nextDateKey = dailyPortalDateKey();
+  const nextIndex = hashDailyPortalKey(nextDateKey) % DAILY_PORTAL_CANDIDATES.length;
+  if (!force && dailyPortalState.dateKey === nextDateKey && dailyPortalState.candidateIndex === nextIndex) return false;
+  const candidate = DAILY_PORTAL_CANDIDATES[nextIndex];
+  const terrain = sampleTerrain(candidate.x, candidate.z);
+  dailyPortalState.dateKey = nextDateKey;
+  dailyPortalState.candidateIndex = nextIndex;
+  dailyPortalState.candidate = candidate;
+  dailyPortalState.worldX = candidate.x;
+  dailyPortalState.worldY = terrain.height;
+  dailyPortalState.worldZ = candidate.z;
+  if (dailyPortalGroup) {
+    dailyPortalGroup.position.set(dailyPortalState.worldX, dailyPortalState.worldY + 0.02, dailyPortalState.worldZ);
+  }
+  if (dailyPortalPicker) {
+    dailyPortalPicker.position.set(dailyPortalState.worldX, dailyPortalState.worldY + 0.9, dailyPortalState.worldZ);
+  }
+  dailyPortalPicker?.updateMatrixWorld(true);
+  return true;
+}
+
+function syncDailyPortalVisuals() {
+  applyDailyPortalPlacement();
+  if (!dailyPortalGroup) return;
+  dailyPortalGroup.position.set(dailyPortalState.worldX, dailyPortalState.worldY + 0.02, dailyPortalState.worldZ);
+  const pulse = 1 + Math.sin(animTime * 3.8) * 0.08;
+  const innerPulse = 1 + Math.sin(animTime * 5.2 + 0.7) * 0.12;
+  if (dailyPortalOuterRing) {
+    dailyPortalOuterRing.rotation.z += 0.012;
+    dailyPortalOuterRing.scale.setScalar(pulse);
+    dailyPortalOuterRing.material.opacity = 0.72 + Math.sin(animTime * 3.1) * 0.08;
+  }
+  if (dailyPortalInnerRing) {
+    dailyPortalInnerRing.rotation.z -= 0.016;
+    dailyPortalInnerRing.scale.setScalar(innerPulse);
+    dailyPortalInnerRing.material.opacity = 0.26 + Math.sin(animTime * 4.4 + 0.4) * 0.06;
+  }
+  if (dailyPortalBeam) {
+    dailyPortalBeam.position.y = 1.18 + Math.sin(animTime * 2.4) * 0.06;
+    dailyPortalBeam.material.opacity = 0.18 + Math.sin(animTime * 3.3) * 0.05;
+  }
+  if (dailyPortalSparkle) {
+    dailyPortalSparkle.position.y = 0.08;
+    dailyPortalSparkle.scale.setScalar(1.06 + Math.sin(animTime * 4.8 + 0.5) * 0.08);
+    dailyPortalSparkle.material.opacity = 0.28 + Math.sin(animTime * 5.1) * 0.08;
+  }
+  if (dailyPortalLabel) {
+    dailyPortalLabel.position.y = 2.06 + Math.sin(animTime * 1.8) * 0.05;
+    dailyPortalLabel.lookAt(camera.position.x, dailyPortalState.worldY + 2.0, camera.position.z);
+  }
+}
+
+function playerTouchesDailyPortal() {
+  applyDailyPortalPlacement();
+  return Math.hypot(pos.x - dailyPortalState.worldX, pos.z - dailyPortalState.worldZ) <= DAILY_PORTAL_TOUCH_RADIUS;
+}
+
+function updateDailyPortalConfirmUi() {
+  dailyPortalConfirm.classList.toggle('active', dailyPortalPromptActive);
+  dailyPortalConfirmCopy.textContent = dailyPortalPromptActive
+    ? `Today's portal for ${dailyPortalState.dateKey} opens ${DAILY_PORTAL_URL.replace(/^https?:\/\//i, '')}. Enter it in the world browser or stay on the office floor.`
+    : `Today's portal for ${dailyPortalState.dateKey || dailyPortalDateKey()} is idle.`;
+}
+
+function closeDailyPortalPrompt() {
+  dailyPortalPromptActive = false;
+  updateDailyPortalConfirmUi();
+}
+
+function triggerDailyPortalEntry() {
+  closeDailyPortalPrompt();
+  activateWorldBrowserScreen(DAILY_PORTAL_URL);
+  setStatusMessage('DAILY PORTAL OPEN · DP0.TO/ASD', 1.2);
+  return true;
+}
+
+function openDailyPortalInNewTab() {
+  const opened = window.open(DAILY_PORTAL_URL, '_blank', 'noopener');
+  setStatusMessage(opened ? 'DAILY PORTAL TAB OPENED' : 'PORTAL POPUP BLOCKED', 1.1);
+  return !!opened;
+}
+
+function dailyPortalPayload() {
+  applyDailyPortalPlacement();
+  return {
+    active: true,
+    dateKey: dailyPortalState.dateKey || dailyPortalDateKey(),
+    label: dailyPortalState.candidate?.label ?? 'DAILY PORTAL',
+    url: DAILY_PORTAL_URL,
+    x: round2(dailyPortalState.worldX),
+    y: round2(dailyPortalState.worldY),
+    z: round2(dailyPortalState.worldZ),
+    promptActive: dailyPortalPromptActive,
+    touching: dailyPortalState.touching
+  };
+}
+
+function updateDailyPortalPrompt() {
+  const blocked = (
+    !onGround ||
+    dailyPortalPromptActive ||
+    pointerMode === 'select' ||
+    bootPromptActive ||
+    carriedPropEntry ||
+    activeSeatTarget ||
+    tableTennisState.active ||
+    magicChessState.active ||
+    browserState.active ||
+    jumpPrepTimer > 0 ||
+    jumpTakeoffTimer > 0 ||
+    jumpLandTimer > 0
+  );
+  const touching = playerTouchesDailyPortal();
+  dailyPortalState.touching = touching;
+  if (!blocked && touching && !dailyPortalPromptSeenThisTouch) {
+    dailyPortalPromptActive = true;
+    dailyPortalPromptSeenThisTouch = true;
+    updateDailyPortalConfirmUi();
+  }
+  if (!touching) dailyPortalPromptSeenThisTouch = false;
+}
+
 window.addEventListener('keydown', (e) => {
   if (e.code === 'Space') e.preventDefault();
+  if (dailyPortalPromptActive) {
+    if ((e.code === 'Enter' || e.code === 'NumpadEnter' || e.code === 'KeyY') && !e.repeat) {
+      e.preventDefault();
+      triggerDailyPortalEntry();
+      renderScene();
+      return;
+    }
+    if ((e.code === 'Escape' || e.code === 'KeyN') && !e.repeat) {
+      e.preventDefault();
+      closeDailyPortalPrompt();
+      renderScene();
+      return;
+    }
+    return;
+  }
   if (bootPromptActive) {
     if ((e.code === 'Enter' || e.code === 'NumpadEnter' || e.code === 'KeyY') && !e.repeat) {
       e.preventDefault();
@@ -8042,6 +8275,16 @@ bootsConfirmNo.addEventListener('click', () => {
   resolveBootPrompt(false);
   renderScene();
 });
+bindStablePressAction(dailyPortalConfirmEnterButton, () => {
+  if (triggerDailyPortalEntry()) {
+    applyScene(FIXED_DT);
+    renderScene();
+  }
+});
+bindStablePressAction(dailyPortalConfirmStayButton, () => {
+  closeDailyPortalPrompt();
+  renderScene();
+});
 carryPickupButton.addEventListener('click', () => {
   const selection = currentSelectionInfo();
   if (selection?.kind === 'carryable-prop' && pickUpCarryableProp(selection.prop)) {
@@ -8118,6 +8361,16 @@ tableTennisLeaveButton.addEventListener('click', () => {
     applyScene(FIXED_DT);
     renderScene();
   }
+});
+bindStablePressAction(dailyPortalEnterButton, () => {
+  if (triggerDailyPortalEntry()) {
+    applyScene(FIXED_DT);
+    renderScene();
+  }
+});
+bindStablePressAction(dailyPortalOpenTabButton, () => {
+  openDailyPortalInNewTab();
+  renderScene();
 });
 bindStablePressAction(browserOpenButton, () => {
   activateWorldBrowserScreen(browserState.url);
@@ -8533,6 +8786,16 @@ const BLACKJACK_PHASE_LABELS = Object.freeze({
 });
 const BLACKJACK_RULE_LABEL = '6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT TO 4';
 const WORLD_BROWSER_DEFAULT_URL = 'https://www.dp0.io/';
+const DAILY_PORTAL_URL = 'https://www.dp0.to/asd/';
+const DAILY_PORTAL_TOUCH_RADIUS = 1.16;
+const DAILY_PORTAL_CANDIDATES = Object.freeze([
+  Object.freeze({ name: 'front-open-center', label: 'FRONT OPEN FLOOR', x: 13.4, z: -24.25 }),
+  Object.freeze({ name: 'front-open-west', label: 'FRONT WEST FLOOR', x: 6.2, z: -23.4 }),
+  Object.freeze({ name: 'front-open-east', label: 'FRONT EAST FLOOR', x: 20.6, z: -23.4 }),
+  Object.freeze({ name: 'mid-open-center', label: 'MID OFFICE FLOOR', x: 0.8, z: -15.6 }),
+  Object.freeze({ name: 'pingpong-open-west', label: 'PINGPONG WEST APRON', x: 7.2, z: -17.8 }),
+  Object.freeze({ name: 'pingpong-open-east', label: 'PINGPONG EAST APRON', x: 19.6, z: -17.8 })
+]);
 const WORLD_BROWSER_SCREEN = Object.freeze({
   x: 13.4,
   y: 2.62,
@@ -8743,6 +9006,8 @@ let statusMessage = '';
 let lastScorer = '';
 let bootPromptActive = false;
 let bootPromptSeenThisTouch = false;
+let dailyPortalPromptActive = false;
+let dailyPortalPromptSeenThisTouch = false;
 let activeSeatTarget = null;
 let sitCooldownTimer = 0;
 let sitLockTimer = 0;
@@ -8772,6 +9037,15 @@ const browserState = {
   active: false,
   frameLoaded: false,
   lastLoadedAt: 0
+};
+const dailyPortalState = {
+  dateKey: '',
+  candidateIndex: 0,
+  candidate: DAILY_PORTAL_CANDIDATES[0],
+  worldX: DAILY_PORTAL_CANDIDATES[0].x,
+  worldY: 0,
+  worldZ: DAILY_PORTAL_CANDIDATES[0].z,
+  touching: false
 };
 const USER_SESSION_STORAGE_KEY = 'office3d.userSessions.v1';
 const USER_SESSION_DEFAULT_ID = 'guest';
@@ -9026,6 +9300,13 @@ let tableTennisCollider = null;
 let magicChessCollider = null;
 let worldBrowserCollider = null;
 let worldBrowserPanel = null;
+let dailyPortalGroup = null;
+let dailyPortalOuterRing = null;
+let dailyPortalInnerRing = null;
+let dailyPortalBeam = null;
+let dailyPortalSparkle = null;
+let dailyPortalLabel = null;
+let dailyPortalPicker = null;
 let coffeeStorageFreezerCollider = null;
 let magicChessGroup = null;
 let magicChessCursorMesh = null;
@@ -12792,6 +13073,9 @@ function applyInteractionMode(mode) {
     renderer.domElement.releasePointerCapture(selectPointerId);
   }
   selectPointerId = null;
+  if (pointerMode === 'select' && dailyPortalPromptActive) {
+    closeDailyPortalPrompt();
+  }
   if (pointerMode === 'drag') {
     selectedTarget = null;
     updateSelectionVisuals();
@@ -12977,6 +13261,23 @@ function resolveSelectedTarget(target) {
     };
   }
 
+  if (target.dynamicRef === 'dailyPortal') {
+    applyDailyPortalPlacement();
+    return {
+      type: 'object',
+      kind: 'daily-ground-portal',
+      name: 'daily-ground-portal',
+      label: 'DAILY PORTAL',
+      zone: sampleTerrain(dailyPortalState.worldX, dailyPortalState.worldZ).zone,
+      point: new THREE.Vector3(dailyPortalState.worldX, dailyPortalState.worldY, dailyPortalState.worldZ),
+      radius: DAILY_PORTAL_TOUCH_RADIUS,
+      height: 2.4,
+      dateKey: dailyPortalState.dateKey,
+      destinationUrl: DAILY_PORTAL_URL,
+      portalLabel: dailyPortalState.candidate?.label ?? 'PORTAL FLOOR'
+    };
+  }
+
   if (target.dynamicRef === 'rival') {
     if (!aiState.active) return null;
     return {
@@ -13127,6 +13428,7 @@ function selectionSummaryText(selection) {
   if (selection.kind === 'actor' && selection.controlled) return `${selection.label} · CONTROLLED`;
   if (selection.kind === 'coffee-arm') return `${selection.label} · ${coffeeArmTaskLabel()}`;
   if (selection.kind === 'coffee-freezer') return `${selection.label} · ${coffeeFreezerDoorShouldBeOpen() ? 'OPEN' : 'CLOSED'} · ${coffeeStorageState.freezerCupCount} CUPS`;
+  if (selection.kind === 'daily-ground-portal') return `${selection.label} · ${selection.portalLabel ?? 'OPEN FLOOR'} · ${dailyPortalState.dateKey || dailyPortalDateKey()}`;
   if (selection.kind === 'blackjack-board') return `${selection.label} · ${BLACKJACK_PHASE_LABELS[blackjackState.phase] ?? blackjackState.phase.toUpperCase()}`;
   if (selection.kind === 'table-tennis-table') return `${selection.label} · ${tableTennisPhaseLabel()} · ${tableTennisScoreline()}`;
   if (selection.kind === 'browser-screen') return `${selection.label} · ${browserState.active ? 'LIVE' : 'READY'} · ${browserDisplayUrl(browserState.url)}`;
@@ -13178,6 +13480,13 @@ function selectionPayload() {
     payload.doorOpen = coffeeFreezerDoorShouldBeOpen();
     payload.doorRequestedOpen = !!coffeeStorageState.freezerDoorOpen;
     payload.doorAngle = round2(coffeeStorageState.freezerDoorAngle);
+  }
+  if (current.kind === 'daily-ground-portal') {
+    payload.dateKey = dailyPortalState.dateKey || dailyPortalDateKey();
+    payload.portalLabel = current.portalLabel;
+    payload.url = DAILY_PORTAL_URL;
+    payload.touching = dailyPortalState.touching;
+    payload.promptActive = dailyPortalPromptActive;
   }
   if (current.kind === 'blackjack-board') {
     payload.phase = blackjackState.phase;
@@ -13238,7 +13547,7 @@ function objectActionsPayload() {
   if (
     pointerMode !== 'select' ||
     !current ||
-    (current.kind !== 'carryable-prop' && current.kind !== 'coffee-arm' && current.kind !== 'coffee-freezer' && current.kind !== 'movable-chair' && current.kind !== 'blackjack-board' && current.kind !== 'table-tennis-table' && current.kind !== 'browser-screen' && current.kind !== 'magic-chess-board')
+    (current.kind !== 'carryable-prop' && current.kind !== 'coffee-arm' && current.kind !== 'coffee-freezer' && current.kind !== 'movable-chair' && current.kind !== 'daily-ground-portal' && current.kind !== 'blackjack-board' && current.kind !== 'table-tennis-table' && current.kind !== 'browser-screen' && current.kind !== 'magic-chess-board')
   ) return null;
   if (current.kind === 'carryable-prop') {
     return {
@@ -13275,6 +13584,18 @@ function objectActionsPayload() {
             ? 'ROBOT CLOSING'
             : (coffeeFreezerDoorShouldBeOpen() ? 'CLOSE DOOR' : 'OPEN DOOR')
       ]
+    };
+  }
+  if (current.kind === 'daily-ground-portal') {
+    return {
+      active: true,
+      label: 'DAILY PORTAL',
+      task: current.portalLabel ?? 'OPEN FLOOR',
+      dateKey: dailyPortalState.dateKey || dailyPortalDateKey(),
+      url: DAILY_PORTAL_URL,
+      touching: dailyPortalState.touching,
+      promptActive: dailyPortalPromptActive,
+      options: ['ENTER PORTAL', 'OPEN TAB']
     };
   }
   if (current.kind === 'blackjack-board') {
@@ -13936,6 +14257,115 @@ function addWorldBrowserScreen() {
   }
   updateBrowserScreenTexture();
   return worldBrowserPanel;
+}
+
+function makeDailyPortalLabelTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 512;
+  canvas.height = 192;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return null;
+
+  const bg = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+  bg.addColorStop(0, '#061318');
+  bg.addColorStop(1, '#0a1f29');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  ctx.strokeStyle = '#73e8ff';
+  ctx.lineWidth = 6;
+  ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+  ctx.fillStyle = '#d8fbff';
+  ctx.font = '700 44px Courier New';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('DAILY PORTAL', canvas.width * 0.5, 72);
+
+  ctx.fillStyle = '#8feaff';
+  ctx.font = '600 24px Courier New';
+  ctx.fillText('RANDOM FLOOR LINK', canvas.width * 0.5, 122);
+
+  ctx.fillStyle = '#71c8dc';
+  ctx.font = '600 18px Courier New';
+  ctx.fillText('STEP IN OR SELECT TO ENTER', canvas.width * 0.5, 156);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.needsUpdate = true;
+  return texture;
+}
+
+function addDailyPortal() {
+  const group = new THREE.Group();
+  dailyPortalGroup = group;
+  scene.add(group);
+
+  const outerRing = new THREE.Mesh(
+    new THREE.TorusGeometry(1.02, 0.13, 18, 48),
+    new THREE.MeshBasicMaterial({ color: 0x67e4ff, transparent: true, opacity: 0.74 })
+  );
+  outerRing.rotation.x = -HALF_PI;
+  group.add(outerRing);
+  dailyPortalOuterRing = outerRing;
+
+  const innerRing = new THREE.Mesh(
+    new THREE.CircleGeometry(0.78, 40),
+    new THREE.MeshBasicMaterial({ color: 0x1fd2f0, transparent: true, opacity: 0.28, side: THREE.DoubleSide, depthWrite: false })
+  );
+  innerRing.rotation.x = -HALF_PI;
+  innerRing.position.y = 0.01;
+  group.add(innerRing);
+  dailyPortalInnerRing = innerRing;
+
+  const sparkle = new THREE.Mesh(
+    new THREE.CircleGeometry(1.28, 40),
+    new THREE.MeshBasicMaterial({ color: 0x98f3ff, transparent: true, opacity: 0.22, side: THREE.DoubleSide, depthWrite: false })
+  );
+  sparkle.rotation.x = -HALF_PI;
+  sparkle.position.y = 0.012;
+  group.add(sparkle);
+  dailyPortalSparkle = sparkle;
+
+  const beam = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.46, 0.74, 2.2, 20, 1, true),
+    new THREE.MeshBasicMaterial({ color: 0x5dd8ff, transparent: true, opacity: 0.18, side: THREE.DoubleSide, depthWrite: false })
+  );
+  beam.position.y = 1.18;
+  group.add(beam);
+  dailyPortalBeam = beam;
+
+  const labelTexture = makeDailyPortalLabelTexture();
+  if (labelTexture) {
+    const label = new THREE.Mesh(
+      new THREE.PlaneGeometry(1.68, 0.62),
+      new THREE.MeshBasicMaterial({ map: labelTexture, transparent: true, side: THREE.DoubleSide, depthWrite: false })
+    );
+    label.position.y = 2.06;
+    group.add(label);
+    dailyPortalLabel = label;
+  }
+
+  const picker = new THREE.Mesh(
+    new THREE.CylinderGeometry(DAILY_PORTAL_TOUCH_RADIUS, DAILY_PORTAL_TOUCH_RADIUS, 1.8, 24, 1, false),
+    selectionProxyMaterial
+  );
+  picker.userData.sync = () => {
+    applyDailyPortalPlacement();
+    picker.position.set(dailyPortalState.worldX, dailyPortalState.worldY + 0.9, dailyPortalState.worldZ);
+  };
+  registerSelectionPicker(picker, {
+    type: 'object',
+    kind: 'daily-ground-portal',
+    name: 'daily-ground-portal',
+    label: 'DAILY PORTAL',
+    dynamicRef: 'dailyPortal'
+  }, staticSelectionPickers);
+  dailyPortalPicker = picker;
+
+  applyDailyPortalPlacement(true);
+  syncDailyPortalVisuals();
+  updateDailyPortalConfirmUi();
+  return group;
 }
 
 function magicChessPalette(side) {
@@ -15374,6 +15804,7 @@ function buildPhysicalWorld() {
   addCoffeeShop();
   addBlackjackWall();
   addTableTennisCorner();
+  addDailyPortal();
   addMagicChessBoard();
   addEntertainmentCoffeeRacks();
   addAabbCollider('coffee-shop-main', COFFEE_SHOP.x, 0.6, COFFEE_SHOP.z, COFFEE_SHOP.bodyW + 0.12, 1.22, COFFEE_SHOP.bodyD + 0.08);
@@ -15751,6 +16182,8 @@ function resetGameState() {
   lastScorer = '';
   bootPromptActive = false;
   bootPromptSeenThisTouch = false;
+  dailyPortalPromptActive = false;
+  dailyPortalPromptSeenThisTouch = false;
   selectedTarget = null;
   specialMovesExpanded = false;
   controlsPanelsExpanded = true;
@@ -15761,6 +16194,8 @@ function resetGameState() {
   syncControlPanelsUi();
   applyOutfit();
   updateBootConfirmUi();
+  applyDailyPortalPlacement(true);
+  updateDailyPortalConfirmUi();
   applySkyEnvironment();
   beginLevel(1, 'LEVEL 1 · CLEAR ALL 3 BALLS');
   syncCameraInstant();
@@ -18068,6 +18503,7 @@ function applyScene(dt) {
     tableTennisBallShadow.visible = false;
   }
   syncMagicChessVisuals(dt);
+  syncDailyPortalVisuals();
   applyCoffeeArmPose();
   updateCoffeeFreezerDoor(dt);
   syncCarriedPropVisual();
@@ -18093,6 +18529,7 @@ function stepSimulation(dt) {
   }
   updatePlayer(dt);
   updateCoffeeBootPrompt();
+  updateDailyPortalPrompt();
   updateAi(dt);
   updateServiceRobot(dt);
   updateCoffeeArm(dt);
@@ -18535,6 +18972,13 @@ window.render_game_to_text = () => JSON.stringify({
     objectActions: objectActionsPayload(),
     carrying: carriedPropPayload(),
     specialMoves: specialMovesPayload(),
+    dailyPortalPrompt: dailyPortalPromptActive ? {
+      active: true,
+      dateKey: dailyPortalState.dateKey || dailyPortalDateKey(),
+      x: round2(dailyPortalState.worldX),
+      z: round2(dailyPortalState.worldZ),
+      url: DAILY_PORTAL_URL
+    } : null,
     bootsPrompt: bootPromptActive ? {
       active: true,
       x: round2(coffeeBootCarryProp ? (coffeeBootCarryProp.group.getWorldPosition(carryablePropWorldPos), carryablePropWorldPos.x) : COFFEE_BOOT_PROP.x),
@@ -18592,6 +19036,7 @@ window.render_game_to_text = () => JSON.stringify({
   }),
   coffeeStorage: coffeeStoragePayload(),
   coffeeService: coffeeServicePayload(),
+  dailyPortal: dailyPortalPayload(),
   browserScreen: browserScreenPayload(),
   blackjack: blackjackPayload(),
   tableTennis: tableTennisPayload(),
@@ -18910,6 +19355,22 @@ window.selectTableTennisTable = () => {
   renderScene();
   return selectionPayload();
 };
+window.projectDailyPortalToCanvas = () => {
+  applyDailyPortalPlacement();
+  return window.projectWorldToCanvas(
+    dailyPortalState.worldX,
+    dailyPortalState.worldY + 0.68,
+    dailyPortalState.worldZ
+  );
+};
+window.selectDailyPortal = () => {
+  if (!dailyPortalPicker?.userData?.pick) return null;
+  selectedTarget = dailyPortalPicker.userData.pick;
+  updateSelectionVisuals();
+  updateHud();
+  renderScene();
+  return selectionPayload();
+};
 window.projectBrowserScreenToCanvas = () => {
   if (!worldBrowserCollider) return null;
   return window.projectWorldToCanvas(
@@ -19047,6 +19508,38 @@ window.setBrowserScreenUrl = (url = WORLD_BROWSER_DEFAULT_URL) => {
   return window.render_game_to_text();
 };
 window.getBrowserScreenState = () => JSON.stringify(browserScreenPayload());
+window.getDailyPortalState = () => JSON.stringify(dailyPortalPayload());
+window.enterDailyPortal = () => {
+  triggerDailyPortalEntry();
+  applyScene(FIXED_DT);
+  renderScene();
+  return window.render_game_to_text();
+};
+window.openDailyPortalTab = () => JSON.stringify({ opened: openDailyPortalInNewTab(), portal: dailyPortalPayload() });
+window.movePlayerToDailyPortal = () => {
+  applyDailyPortalPlacement();
+  const terrain = sampleTerrain(dailyPortalState.worldX, dailyPortalState.worldZ);
+  pos.set(dailyPortalState.worldX, terrain.height, dailyPortalState.worldZ + 1.08);
+  vel.set(0, 0, 0);
+  onGround = true;
+  currentGround = terrain;
+  charYRot = Math.PI;
+  targetCamYaw = Math.PI;
+  targetCamPitch = 0.26;
+  targetCamRadius = 5.2;
+  syncCameraInstant();
+  updateDailyPortalPrompt();
+  applyScene(FIXED_DT);
+  renderScene();
+  return window.render_game_to_text();
+};
+window.respondDailyPortalPrompt = (accept = true) => {
+  if (accept) triggerDailyPortalEntry();
+  else closeDailyPortalPrompt();
+  applyScene(FIXED_DT);
+  renderScene();
+  return window.render_game_to_text();
+};
 window.moveMagicChessCursor = (fileDelta = 0, rankDelta = 0) => {
   shiftMagicChessCursor(Math.round(fileDelta), Math.round(rankDelta));
   applyScene(FIXED_DT);
