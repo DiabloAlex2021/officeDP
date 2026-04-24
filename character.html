@@ -7776,11 +7776,39 @@ function hashDailyPortalKey(key = dailyPortalDateKey()) {
   return hash >>> 0;
 }
 
+function dailyPortalCandidateIsAccessible(candidate) {
+  if (!candidate) return false;
+  const terrain = sampleTerrain(candidate.x, candidate.z);
+  if (terrain.zone !== 'floor' || terrain.height > 0.05) return false;
+  dailyPortalPlacementProbe.set(candidate.x, terrain.height, candidate.z);
+  const resolved = resolveStaticCircleCollisions(
+    dailyPortalPlacementProbe,
+    DAILY_PORTAL_CLEARANCE_RADIUS,
+    terrain.height,
+    terrain.height + DAILY_PORTAL_CLEARANCE_HEIGHT
+  );
+  return Math.hypot(resolved.position.x - candidate.x, resolved.position.z - candidate.z) < 1e-3;
+}
+
+function resolveDailyPortalCandidate(dateKey = dailyPortalDateKey()) {
+  const baseIndex = hashDailyPortalKey(dateKey) % DAILY_PORTAL_CANDIDATES.length;
+  for (let offset = 0; offset < DAILY_PORTAL_CANDIDATES.length; offset += 1) {
+    const candidateIndex = (baseIndex + offset) % DAILY_PORTAL_CANDIDATES.length;
+    const candidate = DAILY_PORTAL_CANDIDATES[candidateIndex];
+    if (dailyPortalCandidateIsAccessible(candidate)) {
+      return { candidateIndex, candidate };
+    }
+  }
+  return {
+    candidateIndex: baseIndex,
+    candidate: DAILY_PORTAL_CANDIDATES[baseIndex]
+  };
+}
+
 function applyDailyPortalPlacement(force = false) {
   const nextDateKey = dailyPortalDateKey();
-  const nextIndex = hashDailyPortalKey(nextDateKey) % DAILY_PORTAL_CANDIDATES.length;
+  const { candidateIndex: nextIndex, candidate } = resolveDailyPortalCandidate(nextDateKey);
   if (!force && dailyPortalState.dateKey === nextDateKey && dailyPortalState.candidateIndex === nextIndex) return false;
-  const candidate = DAILY_PORTAL_CANDIDATES[nextIndex];
   const terrain = sampleTerrain(candidate.x, candidate.z);
   dailyPortalState.dateKey = nextDateKey;
   dailyPortalState.candidateIndex = nextIndex;
@@ -8788,13 +8816,17 @@ const BLACKJACK_RULE_LABEL = '6 DECK · S17 · BJ 3:2 · DOUBLE ANY 2 · SPLIT T
 const WORLD_BROWSER_DEFAULT_URL = 'https://www.dp0.io/';
 const DAILY_PORTAL_URL = 'https://www.dp0.to/asd/';
 const DAILY_PORTAL_TOUCH_RADIUS = 1.16;
+const DAILY_PORTAL_CLEARANCE_RADIUS = 1.34;
+const DAILY_PORTAL_CLEARANCE_HEIGHT = 2.6;
 const DAILY_PORTAL_CANDIDATES = Object.freeze([
-  Object.freeze({ name: 'front-open-center', label: 'FRONT OPEN FLOOR', x: 13.4, z: -24.25 }),
   Object.freeze({ name: 'front-open-west', label: 'FRONT WEST FLOOR', x: 6.2, z: -23.4 }),
+  Object.freeze({ name: 'center-left-floor', label: 'CENTER LEFT FLOOR', x: -4.8, z: -16.2 }),
   Object.freeze({ name: 'front-open-east', label: 'FRONT EAST FLOOR', x: 20.6, z: -23.4 }),
+  Object.freeze({ name: 'front-east-aisle', label: 'FRONT EAST AISLE', x: 23.2, z: -22.6 }),
   Object.freeze({ name: 'mid-open-center', label: 'MID OFFICE FLOOR', x: 0.8, z: -15.6 }),
   Object.freeze({ name: 'pingpong-open-west', label: 'PINGPONG WEST APRON', x: 7.2, z: -17.8 }),
-  Object.freeze({ name: 'pingpong-open-east', label: 'PINGPONG EAST APRON', x: 19.6, z: -17.8 })
+  Object.freeze({ name: 'center-right-floor', label: 'CENTER RIGHT FLOOR', x: 4.8, z: -16.2 }),
+  Object.freeze({ name: 'east-mid-floor', label: 'EAST MID FLOOR', x: 24.2, z: -19.8 })
 ]);
 const WORLD_BROWSER_SCREEN = Object.freeze({
   x: 13.4,
@@ -9307,6 +9339,7 @@ let dailyPortalBeam = null;
 let dailyPortalSparkle = null;
 let dailyPortalLabel = null;
 let dailyPortalPicker = null;
+const dailyPortalPlacementProbe = new THREE.Vector3();
 let coffeeStorageFreezerCollider = null;
 let magicChessGroup = null;
 let magicChessCursorMesh = null;
