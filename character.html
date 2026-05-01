@@ -7878,8 +7878,95 @@ function closeDailyPortalPrompt() {
   updateDailyPortalConfirmUi();
 }
 
+function markDailyPortalReturnGuard() {
+  try {
+    window.sessionStorage?.setItem(DAILY_PORTAL_RETURN_SESSION_KEY, JSON.stringify({
+      at: Date.now(),
+      actor: activeControlledActor,
+      dateKey: dailyPortalState.dateKey || dailyPortalDateKey(),
+      x: round2(pos.x),
+      z: round2(pos.z)
+    }));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function consumeDailyPortalReturnGuard() {
+  try {
+    const raw = window.sessionStorage?.getItem(DAILY_PORTAL_RETURN_SESSION_KEY);
+    if (!raw) return null;
+    window.sessionStorage.removeItem(DAILY_PORTAL_RETURN_SESSION_KEY);
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === 'object' ? parsed : { at: Date.now() };
+  } catch {
+    return null;
+  }
+}
+
+function activeControlledActorCollisionProfile() {
+  return activeControlledActor === 'human'
+    ? { radius: PLAYER_RADIUS, height: PLAYER_HEIGHT }
+    : { radius: AI_RADIUS, height: AI_HEIGHT };
+}
+
+function applyDailyPortalReturnGuard() {
+  const guard = consumeDailyPortalReturnGuard();
+  if (!guard) return false;
+  applyDailyPortalPlacement(true);
+  const { radius, height } = activeControlledActorCollisionProfile();
+  const currentDistance = Math.hypot(pos.x - dailyPortalState.worldX, pos.z - dailyPortalState.worldZ);
+  if (currentDistance > DAILY_PORTAL_TOUCH_RADIUS + radius + 0.12) return false;
+
+  let pushX = pos.x - dailyPortalState.worldX;
+  let pushZ = pos.z - dailyPortalState.worldZ;
+  if (Math.hypot(pushX, pushZ) < 1e-4) {
+    pushX = 0;
+    pushZ = 1;
+  }
+  const pushLength = Math.hypot(pushX, pushZ) || 1;
+  pushX /= pushLength;
+  pushZ /= pushLength;
+
+  const targetX = dailyPortalState.worldX + pushX * DAILY_PORTAL_RETURN_PUSH_DISTANCE;
+  const targetZ = dailyPortalState.worldZ + pushZ * DAILY_PORTAL_RETURN_PUSH_DISTANCE;
+  const targetGround = sampleTerrain(targetX, targetZ);
+  dailyPortalReturnPushProbe.set(targetX, targetGround.height, targetZ);
+  const resolved = resolveStaticCircleCollisions(
+    dailyPortalReturnPushProbe,
+    radius,
+    targetGround.height,
+    targetGround.height + height,
+    activeSeatTarget?.collider ?? null
+  );
+  const resolvedGround = sampleTerrain(resolved.position.x, resolved.position.z);
+
+  activeSeatTarget = null;
+  sitCooldownTimer = 0;
+  sitLockTimer = 0;
+  pos.set(resolved.position.x, resolvedGround.height, resolved.position.z);
+  vel.set(0, 0, 0);
+  onGround = true;
+  currentGround = resolvedGround;
+
+  const faceX = pos.x - dailyPortalState.worldX;
+  const faceZ = pos.z - dailyPortalState.worldZ;
+  if (Math.hypot(faceX, faceZ) > 1e-4) {
+    charYRot = Math.atan2(faceX, faceZ);
+  }
+
+  dailyPortalState.touching = false;
+  dailyPortalPromptSeenThisTouch = true;
+  closeDailyPortalPrompt();
+  storeRuntimeIntoActorState(activeControlledActor);
+  return true;
+}
+
 function triggerDailyPortalEntry() {
   closeDailyPortalPrompt();
+  markDailyPortalReturnGuard();
+  if (userSessionPersistenceReady) persistUserSession(true);
   window.location.assign(DAILY_PORTAL_URL);
   return true;
 }
@@ -8880,6 +8967,8 @@ const DAILY_PORTAL_URL = 'https://www.dp0.to/asd/';
 const DAILY_PORTAL_TOUCH_RADIUS = 1.16;
 const DAILY_PORTAL_CLEARANCE_RADIUS = 1.34;
 const DAILY_PORTAL_CLEARANCE_HEIGHT = 2.6;
+const DAILY_PORTAL_RETURN_SESSION_KEY = 'office.dailyPortalReturn.pending';
+const DAILY_PORTAL_RETURN_PUSH_DISTANCE = 1.9;
 const DAILY_PORTAL_CANDIDATES = Object.freeze([
   Object.freeze({ name: 'front-open-west', label: 'FRONT WEST FLOOR', x: 6.2, z: -23.4 }),
   Object.freeze({ name: 'center-left-floor', label: 'CENTER LEFT FLOOR', x: -4.8, z: -16.2 }),
@@ -9402,6 +9491,7 @@ let dailyPortalSparkle = null;
 let dailyPortalLabel = null;
 let dailyPortalPicker = null;
 const dailyPortalPlacementProbe = new THREE.Vector3();
+const dailyPortalReturnPushProbe = new THREE.Vector3();
 let coffeeStorageFreezerCollider = null;
 let magicChessGroup = null;
 let magicChessCursorMesh = null;
@@ -12181,6 +12271,9 @@ function initializeUserSessionPersistence() {
     persistUserSession(true);
   }
   userSessionPersistenceReady = true;
+  if (applyDailyPortalReturnGuard()) {
+    persistUserSession(true);
+  }
 }
 
 function getControlledActorState(actorKey) {
