@@ -1828,6 +1828,9 @@ renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 0.9;
 renderer.domElement.style.cursor = 'grab';
 renderer.domElement.style.touchAction = 'none';
+renderer.domElement.tabIndex = 0;
+renderer.domElement.setAttribute('aria-label', '3D office scene');
+document.body.tabIndex = -1;
 document.body.appendChild(renderer.domElement);
 
 // ─── SCENE ──────────────────────────────────────────────────────────────────
@@ -7695,6 +7698,7 @@ function syncBrowserScreenUi(loadFrame = true) {
   }
   updateBrowserScreenTexture();
   updateHud();
+  if (!browserState.active) requestAnimationFrame(() => focusSceneKeyboardSurface());
 }
 
 function setWorldBrowserScreenUrl(url = browserState.url, loadFrame = browserState.active) {
@@ -7927,7 +7931,59 @@ function updateDailyPortalPrompt() {
   if (!touching) dailyPortalPromptSeenThisTouch = false;
 }
 
+const GAME_CONTROL_KEY_CODES = new Set([
+  'ArrowUp',
+  'ArrowDown',
+  'ArrowLeft',
+  'ArrowRight',
+  'Space',
+  'Escape',
+  'Enter',
+  'NumpadEnter',
+  'Digit1',
+  'Digit2',
+  'Digit3',
+  'Digit4',
+  'KeyW',
+  'KeyA',
+  'KeyS',
+  'KeyD',
+  'KeyQ',
+  'KeyE',
+  'KeyR',
+  'KeyT',
+  'KeyF',
+  'KeyG',
+  'KeyC',
+  'KeyX',
+  'KeyZ',
+  'KeyY',
+  'KeyN'
+]);
+
+function isKeyboardTextEntryTarget(target = document.activeElement) {
+  if (!target) return false;
+  if (target === worldBrowserUrlInput) return true;
+  const tag = target.tagName;
+  return tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || target.isContentEditable;
+}
+
+function shouldConsumeGameKey(event) {
+  if (!GAME_CONTROL_KEY_CODES.has(event.code)) return false;
+  if (event.metaKey || event.ctrlKey || event.altKey) return false;
+  if (!isKeyboardTextEntryTarget()) return true;
+  return event.code === 'Escape' || event.code === 'Enter' || event.code === 'NumpadEnter';
+}
+
+function focusSceneKeyboardSurface() {
+  if (!renderer?.domElement) return;
+  if (browserState.active) return;
+  if (isKeyboardTextEntryTarget()) return;
+  renderer.domElement.focus({ preventScroll: true });
+}
+
 window.addEventListener('keydown', (e) => {
+  if (shouldConsumeGameKey(e)) e.preventDefault();
   if (e.code === 'Space') e.preventDefault();
   if (dailyPortalPromptActive) {
     if ((e.code === 'Enter' || e.code === 'NumpadEnter' || e.code === 'KeyY') && !e.repeat) {
@@ -8051,7 +8107,13 @@ window.addEventListener('keydown', (e) => {
   }
   keys[e.code] = true;
 });
-window.addEventListener('keyup', (e) => { keys[e.code] = false; });
+window.addEventListener('keyup', (e) => {
+  if (shouldConsumeGameKey(e)) e.preventDefault();
+  keys[e.code] = false;
+});
+window.addEventListener('focus', () => {
+  requestAnimationFrame(() => focusSceneKeyboardSurface());
+});
 window.addEventListener('beforeunload', () => {
   persistUserSession(true);
 });
@@ -8493,6 +8555,7 @@ magicChessPromotionButtons.forEach((button) => {
 
 renderer.domElement.addEventListener('pointerdown', (e) => {
   if (e.pointerType === 'mouse' && e.button !== 0) return;
+  renderer.domElement.focus({ preventScroll: true });
   if (pointerMode === 'select') {
     selectPointerId = e.pointerId;
     selectStartX = e.clientX;
@@ -19863,6 +19926,7 @@ function loop(ts) {
 }
 applyScene(FIXED_DT);
 renderScene();
+requestAnimationFrame(() => focusSceneKeyboardSurface());
 requestAnimationFrame(loop);
 
 // ─── RESIZE ─────────────────────────────────────────────────────────────────
