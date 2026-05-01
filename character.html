@@ -7260,7 +7260,7 @@ function updateObjectActionsPanel(selection) {
     blackjackConsoleHeadline.textContent = dailyPortalState.candidate?.label ?? 'PORTAL ACTIVE';
     blackjackConsoleCopy.textContent = `${dailyPortalState.dateKey || dailyPortalDateKey()} · ${DAILY_PORTAL_URL}`;
     setBlackjackConsoleTone('player');
-    objectActionsCopy.textContent = 'This glowing floor portal changes location each local day. Enter it to open today\'s destination in the world browser, or open the URL in a real tab.';
+    objectActionsCopy.textContent = 'This glowing floor portal changes location each local day. Enter it to leave this page and go directly to today\'s destination, or open the URL in a new tab.';
     setObjectActionButtonState(dailyPortalEnterButton, true, dailyPortalPromptActive || dailyPortalState.touching, false, 'ENTER PORTAL');
     setObjectActionButtonState(dailyPortalOpenTabButton, true, false, false, 'OPEN TAB');
     objectActionsPanel.classList.add('active');
@@ -7869,7 +7869,7 @@ function playerTouchesDailyPortal() {
 function updateDailyPortalConfirmUi() {
   dailyPortalConfirm.classList.toggle('active', dailyPortalPromptActive);
   dailyPortalConfirmCopy.textContent = dailyPortalPromptActive
-    ? `Today's portal for ${dailyPortalState.dateKey} opens ${DAILY_PORTAL_URL.replace(/^https?:\/\//i, '')}. Enter it in the world browser or stay on the office floor.`
+    ? `Today's portal for ${dailyPortalState.dateKey} goes to ${DAILY_PORTAL_URL.replace(/^https?:\/\//i, '')}. Enter it to leave this page or stay on the office floor.`
     : `Today's portal for ${dailyPortalState.dateKey || dailyPortalDateKey()} is idle.`;
 }
 
@@ -7880,8 +7880,7 @@ function closeDailyPortalPrompt() {
 
 function triggerDailyPortalEntry() {
   closeDailyPortalPrompt();
-  activateWorldBrowserScreen(DAILY_PORTAL_URL);
-  setStatusMessage('DAILY PORTAL OPEN · DP0.TO/ASD', 1.2);
+  window.location.assign(DAILY_PORTAL_URL);
   return true;
 }
 
