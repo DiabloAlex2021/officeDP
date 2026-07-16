@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Phone Controller</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    height: 100%;
+    background: #0d1117;
+    color: #d7e7ff;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+  }
+  #app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: env(safe-area-inset-top, 10px) 14px env(safe-area-inset-bottom, 14px);
+    gap: 10px;
+  }
+  #header {
+    text-align: center;
+    padding-top: 8px;
+  }
+  #title {
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    color: #8fd7ff;
+  }
+  #status {
+    margin-top: 6px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #7ea2d2;
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: rgba(20,30,55,0.7);
+    display: inline-block;
+  }
+  #status.connected { color: #7cf29b; }
+  #status.error { color: #ff9a8a; }
+  #driving {
+    margin-top: 6px;
+    font-size: 11px;
+    color: #aac8ff;
+    letter-spacing: 0.1em;
+  }
+
+  #actor-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+  .actor-btn {
+    padding: 10px 4px;
+    background: rgba(20,30,55,0.88);
+    border: 1.5px solid rgba(80,130,220,0.35);
+    border-radius: 12px;
+    color: #d7e7ff;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.03em;
+  }
+  .actor-btn.pressed { background: rgba(60,100,200,0.55); }
+  .actor-btn.driving { border-color: rgba(124,242,155,0.75); color: #baffcf; }
+
+  #main-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  #joystick-zone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46%;
+    height: 100%;
+  }
+  #joystick-base {
+    position: relative;
+    width: min(78vw, 260px, 42vh * 1.6);
+    max-width: 260px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: rgba(20,30,55,0.6);
+    border: 2px solid rgba(80,130,220,0.35);
+    touch-action: none;
+  }
+  #joystick-thumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #9fc4ff, #3f6fcf 70%);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  #right-col {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+  }
+  #hold-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .move-btn {
+    padding: 16px 6px;
+    background: rgba(20,30,55,0.88);
+    border: 1.5px solid rgba(80,130,220,0.35);
+    border-radius: 14px;
+    color: #88aaee;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.04em;
+    touch-action: none;
+  }
+  .move-btn.pressed { background: rgba(60,100,200,0.55); color: #ffffff; transform: scale(0.96); }
+  #run-btn.active { background: rgba(200,80,40,0.5); border-color: rgba(255,120,60,0.5); color: #ffaa88; }
+
+  #perf-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .perf-btn {
+    padding: 10px 4px;
+    background: rgba(20,30,55,0.7);
+    border: 1.5px solid rgba(80,130,220,0.28);
+    border-radius: 12px;
+    color: #7ea2d2;
+    font-size: 10px;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.03em;
+    touch-action: none;
+  }
+  .perf-btn.pressed { background: rgba(60,100,200,0.5); color: #ffffff; }
+
+  #retry-hint {
+    text-align: center;
+    font-size: 10px;
+    color: #7ea2d2;
+    letter-spacing: 0.05em;
+  }
+</style>
+</head>
+<body>
+
+<div id="app">
+  <div id="header">
+    <div id="title">OFFICE · PHONE CONTROL</div>
+    <div id="status">Starting…</div>
+    <div id="driving">DRIVING: —</div>
+  </div>
+
+  <div id="actor-row">
+    <div class="actor-btn" id="actor-human" data-actor="human">HUMAN</div>
+    <div class="actor-btn" id="actor-robot" data-actor="robot">ROBOT</div>
+    <div class="actor-btn" id="actor-vrm" data-actor="vrm">WHITE MALE</div>
+    <div class="actor-btn" id="actor-vita" data-actor="vita">VITA</div>
+  </div>
+
+  <div id="main-area">
+    <div id="joystick-zone">
+      <div id="joystick-base">
+        <div id="joystick-thumb"></div>
+      </div>
+    </div>
+
+    <div id="right-col">
+      <div id="hold-row">
+        <div class="move-btn" id="btn-jump">⬆ JUMP</div>
+        <div class="move-btn" id="btn-wave">👋 WAVE</div>
+      </div>
+      <div class="move-btn" id="run-btn">🏃 RUN</div>
+      <div id="perf-grid">
+        <div class="perf-btn" id="btn-kick">KICK</div>
+        <div class="perf-btn" id="btn-back-kick">BACK KICK</div>
+        <div class="perf-btn" id="btn-full-kick">FULL KICK</div>
+        <div class="perf-btn" id="btn-moonwalk">MOONWALK</div>
+        <div class="perf-btn" id="btn-spin">SPIN</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="retry-hint">Tap the status banner to reconnect if it drops.</div>
+</div>
+
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script>
+const sessionCode = new URLSearchParams(location.search).get('session');
+const statusEl = document.getElementById('status');
+const drivingEl = document.getElementById('driving');
+
+let peer = null;
+let conn = null;
+
+function setStatus(text, cls) {
+  statusEl.textContent = text;
+  statusEl.className = cls || '';
+}
+
+function sendMessage(obj) {
+  if (conn && conn.open) {
+    try { conn.send(obj); } catch (err) { /* ignore transient send failure */ }
+  }
+}
+
+function highlightActiveActor(controllerName) {
+  document.querySelectorAll('.actor-btn').forEach((el) => {
+    const label = el.dataset.actor === 'vrm' ? 'VRM' : el.dataset.actor.toUpperCase();
+    el.classList.toggle('driving', controllerName === label);
+  });
+}
+
+function handleDesktopMessage(msg) {
+  if (!msg || typeof msg !== 'object') return;
+  if (msg.type === 'state') {
+    drivingEl.textContent = 'DRIVING: ' + (msg.controller || '?') + (msg.action ? ' · ' + msg.action : '');
+    highlightActiveActor(msg.controller);
+  }
+}
+
+function connectToDesktop() {
+  if (!sessionCode) {
+    setStatus('No session code — scan the QR code on the desktop screen', 'error');
+    return;
+  }
+  if (peer) { try { peer.destroy(); } catch (err) {} }
+  conn = null;
+  setStatus('Connecting…', '');
+  peer = new Peer(undefined, { debug: 0 });
+  peer.on('open', () => {
+    conn = peer.connect('officedp-session-' + sessionCode, { reliable: true, serialization: 'json' });
+    conn.on('open', () => setStatus('Connected — go drive your avatar', 'connected'));
+    conn.on('data', handleDesktopMessage);
+    conn.on('close', () => {
+      conn = null;
+      setStatus('Disconnected — tap to reconnect', 'error');
+    });
+    conn.on('error', () => setStatus('Connection error — tap to reconnect', 'error'));
+  });
+  peer.on('error', (err) => setStatus('Connection error (' + (err?.type || 'unknown') + ') — tap to reconnect', 'error'));
+}
+
+statusEl.addEventListener('click', () => {
+  if (!conn || !conn.open) connectToDesktop();
+});
+
+connectToDesktop();
+
+// ─── Avatar switch buttons ──────────────────────────────────────────────────
+document.querySelectorAll('.actor-btn').forEach((el) => {
+  el.addEventListener('pointerdown', (e) => { e.preventDefault(); el.classList.add('pressed'); });
+  const release = () => el.classList.remove('pressed');
+  el.addEventListener('pointerup', (e) => {
+    e.preventDefault();
+    release();
+    sendMessage({ type: 'switch', actor: el.dataset.actor });
+  });
+  el.addEventListener('pointercancel', release);
+  el.addEventListener('pointerleave', release);
+});
+
+// ─── Hold buttons (jump / wave) ─────────────────────────────────────────────
+function bindHold(el, key) {
+  const press = (e) => { e.preventDefault(); el.classList.add('pressed'); sendMessage({ type: 'input', key, pressed: true }); };
+  const release = (e) => { if (e) e.preventDefault(); el.classList.remove('pressed'); sendMessage({ type: 'input', key, pressed: false }); };
+  el.addEventListener('pointerdown', press);
+  el.addEventListener('pointerup', release);
+  el.addEventListener('pointercancel', release);
+  el.addEventListener('pointerleave', release);
+}
+bindHold(document.getElementById('btn-jump'), 'jump');
+bindHold(document.getElementById('btn-wave'), 'wave');
+
+// ─── Run toggle ──────────────────────────────────────────────────────────────
+let runActive = false;
+const runBtn = document.getElementById('run-btn');
+runBtn.addEventListener('pointerdown', (e) => e.preventDefault());
+runBtn.addEventListener('pointerup', (e) => {
+  e.preventDefault();
+  runActive = !runActive;
+  runBtn.classList.toggle('active', runActive);
+  sendMessage({ type: 'toggle', key: 'run' });
+});
+
+// ─── One-shot performance moves ─────────────────────────────────────────────
+function bindTap(el, name) {
+  el.addEventListener('pointerdown', (e) => { e.preventDefault(); el.classList.add('pressed'); });
+  const release = () => el.classList.remove('pressed');
+  el.addEventListener('pointerup', (e) => {
+    e.preventDefault();
+    release();
+    sendMessage({ type: 'move', name });
+  });
+  el.addEventListener('pointercancel', release);
+  el.addEventListener('pointerleave', release);
+}
+bindTap(document.getElementById('btn-kick'), 'kick');
+bindTap(document.getElementById('btn-back-kick'), 'back-kick');
+bindTap(document.getElementById('btn-full-kick'), 'full-kick');
+bindTap(document.getElementById('btn-moonwalk'), 'moonwalk');
+bindTap(document.getElementById('btn-spin'), 'spin');
+
+// ─── Joystick ────────────────────────────────────────────────────────────────
+const joyBase = document.getElementById('joystick-base');
+const joyThumb = document.getElementById('joystick-thumb');
+let joyPointerId = null;
+let joyX = 0;
+let joyY = 0;
+let joyLastSent = 0;
+
+function updateJoyVisual() {
+  const maxOffset = (joyBase.clientWidth - joyThumb.clientWidth) / 2;
+  joyThumb.style.transform = `translate(-50%, -50%) translate(${joyX * maxOffset}px, ${joyY * maxOffset}px)`;
+}
+
+function sendJoystick(force) {
+  const now = performance.now();
+  if (!force && now - joyLastSent < 50) return;
+  joyLastSent = now;
+  sendMessage({ type: 'joystick', x: joyX, y: joyY });
+}
+
+function updateFromPointer(clientX, clientY) {
+  const rect = joyBase.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const radius = rect.width / 2;
+  let dx = (clientX - cx) / radius;
+  let dy = (clientY - cy) / radius;
+  const len = Math.hypot(dx, dy);
+  if (len > 1) { dx /= len; dy /= len; }
+  joyX = dx;
+  joyY = dy;
+  updateJoyVisual();
+  sendJoystick(false);
+}
+
+joyBase.addEventListener('pointerdown', (e) => {
+  e.preventDefault();
+  joyPointerId = e.pointerId;
+  joyBase.setPointerCapture(e.pointerId);
+  updateFromPointer(e.clientX, e.clientY);
+});
+joyBase.addEventListener('pointermove', (e) => {
+  if (e.pointerId !== joyPointerId) return;
+  e.preventDefault();
+  updateFromPointer(e.clientX, e.clientY);
+});
+function endJoy(e) {
+  if (e.pointerId !== joyPointerId) return;
+  joyPointerId = null;
+  joyX = 0;
+  joyY = 0;
+  updateJoyVisual();
+  sendJoystick(true);
+}
+joyBase.addEventListener('pointerup', endJoy);
+joyBase.addEventListener('pointercancel', endJoy);
+
+updateJoyVisual();
+</script>
+</body>
+</html>
