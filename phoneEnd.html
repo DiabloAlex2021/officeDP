@@ -2,24 +2,24 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Phone Controller</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
   html, body {
-    min-height: 100%;
+    height: 100%;
     background: #0d1117;
     color: #d7e7ff;
     font-family: 'Courier New', monospace;
-    overflow-x: hidden;
-    overflow-y: auto;
-    touch-action: pan-y;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
     user-select: none;
   }
   #app {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    height: 100%;
     padding: env(safe-area-inset-top, 10px) 14px env(safe-area-inset-bottom, 14px);
     gap: 8px;
   }
@@ -79,8 +79,9 @@
   #main-area {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 8px;
+    justify-content: center;
+    gap: 24px;
+    padding-top: 4px;
   }
   .stick-zone {
     display: flex;
@@ -94,7 +95,6 @@
     color: #6f93c2;
   }
 
-  #joystick-zone, #orbit-zone { width: 36%; }
   #joystick-base, #orbit-base {
     position: relative;
     width: min(34vw, 170px);
@@ -119,44 +119,80 @@
   #joystick-thumb { background: radial-gradient(circle at 35% 30%, #9fc4ff, #3f6fcf 70%); }
   #orbit-thumb { background: radial-gradient(circle at 35% 30%, #d3aaff, #7c4fcf 70%); }
 
-  #zoom-zone { width: 18%; }
+  #orbit-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  #zoom-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+  }
   #zoom-track {
     position: relative;
-    width: 34px;
-    height: min(34vw, 170px);
-    border-radius: 17px;
+    width: min(34vw, 170px);
+    height: 32px;
+    border-radius: 16px;
     background: rgba(20,30,55,0.6);
-    border: 2px solid rgba(80,130,220,0.35);
+    border: 2px solid rgba(160,120,220,0.4);
     touch-action: none;
   }
   #zoom-track::before, #zoom-track::after {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 13px;
     font-weight: 700;
     color: #547099;
     pointer-events: none;
   }
-  #zoom-track::before { content: '+'; top: 4px; }
-  #zoom-track::after { content: '\2212'; bottom: 4px; }
+  #zoom-track::before { content: '\2212'; left: 8px; }
+  #zoom-track::after { content: '+'; right: 8px; }
   #zoom-thumb {
     position: absolute;
-    left: 50%;
-    width: 26px;
-    height: 26px;
+    top: 50%;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, #9fc4ff, #3f6fcf 70%);
+    background: radial-gradient(circle at 35% 30%, #d3aaff, #7c4fcf 70%);
     box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-    transform: translateX(-50%);
+    transform: translateY(-50%);
     pointer-events: none;
   }
 
-  #bottom-area {
+  #actions-toggle-row {
     display: flex;
+    justify-content: center;
+  }
+  #btn-actions-toggle {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 9px 22px;
+    background: rgba(20,30,55,0.88);
+    border: 1.5px solid rgba(80,130,220,0.35);
+    border-radius: 20px;
+    color: #88aaee;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-family: 'Courier New', monospace;
+  }
+  #btn-actions-toggle.active {
+    background: rgba(76,110,212,0.56);
+    border-color: rgba(150,190,255,0.46);
+    color: #f5fbff;
+  }
+
+  #bottom-area {
+    display: none;
     flex-direction: column;
     gap: 8px;
   }
+  #bottom-area.expanded { display: flex; }
   #hold-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -229,23 +265,27 @@
       <div class="stick-label">MOVE</div>
     </div>
 
-    <div id="zoom-zone" class="stick-zone">
-      <div id="zoom-track">
-        <div id="zoom-thumb"></div>
+    <div id="orbit-column">
+      <div id="orbit-zone" class="stick-zone">
+        <div id="orbit-base">
+          <div id="orbit-thumb"></div>
+        </div>
+        <div class="stick-label">VIEW</div>
       </div>
-      <div class="stick-label">ZOOM</div>
-    </div>
 
-    <div id="orbit-zone" class="stick-zone">
-      <div id="orbit-base">
-        <div id="orbit-thumb"></div>
+      <div id="zoom-zone">
+        <div id="zoom-track">
+          <div id="zoom-thumb"></div>
+        </div>
+        <div class="stick-label">ZOOM</div>
       </div>
-      <div class="stick-label">VIEW</div>
     </div>
   </div>
 
+  <div id="actions-toggle-row">
+    <button type="button" id="btn-actions-toggle">☰ ACTIONS ▼</button>
+  </div>
   <div id="bottom-area">
-    <div class="section-label">ACTIONS</div>
     <div id="hold-row">
       <div class="move-btn" id="btn-jump">⬆ JUMP</div>
       <div class="move-btn" id="btn-wave">👋 WAVE</div>
@@ -265,6 +305,18 @@
 
 <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
 <script>
+// ─── Block pinch-zoom and the double-tap/double-tap-drag zoom gesture. The
+// viewport meta (user-scalable=no) covers most browsers; this is a fallback
+// for the ones that still honor a fast double-tap as a zoom trigger. ────────
+document.addEventListener('gesturestart', (e) => e.preventDefault());
+document.addEventListener('dblclick', (e) => e.preventDefault());
+let lastTouchEnd = 0;
+document.addEventListener('touchend', (e) => {
+  const now = Date.now();
+  if (now - lastTouchEnd <= 300) e.preventDefault();
+  lastTouchEnd = now;
+}, { passive: false });
+
 const sessionCode = new URLSearchParams(location.search).get('session');
 const statusEl = document.getElementById('status');
 const drivingEl = document.getElementById('driving');
@@ -339,6 +391,23 @@ document.querySelectorAll('.actor-btn').forEach((el) => {
   el.addEventListener('pointercancel', release);
   el.addEventListener('pointerleave', release);
 });
+
+// ─── Actions panel toggle ────────────────────────────────────────────────────
+const actionsToggleBtn = document.getElementById('btn-actions-toggle');
+const bottomArea = document.getElementById('bottom-area');
+let actionsExpanded = false;
+function syncActionsUi() {
+  bottomArea.classList.toggle('expanded', actionsExpanded);
+  actionsToggleBtn.classList.toggle('active', actionsExpanded);
+  actionsToggleBtn.textContent = actionsExpanded ? '☰ ACTIONS ▲' : '☰ ACTIONS ▼';
+}
+actionsToggleBtn.addEventListener('pointerdown', (e) => e.preventDefault());
+actionsToggleBtn.addEventListener('pointerup', (e) => {
+  e.preventDefault();
+  actionsExpanded = !actionsExpanded;
+  syncActionsUi();
+});
+syncActionsUi();
 
 // ─── Hold buttons (jump / wave) ─────────────────────────────────────────────
 function bindHold(el, key) {
@@ -498,10 +567,13 @@ setInterval(() => {
 
 updateOrbitVisual();
 
-// ─── Zoom bar — vertical slider, absolute position like a volume control.
-// Top = zoomed in, bottom = zoomed out. Passively follows the desktop's
-// actual zoom (via the state heartbeat) whenever it isn't being touched, so
-// connecting mid-session doesn't yank the camera to an arbitrary position. ──
+// ─── Zoom bar — horizontal slider below the VIEW stick, absolute position
+// like a volume control. Left = zoomed out ("−"), right = zoomed in ("+").
+// Passively follows the desktop's actual zoom (via the state heartbeat)
+// whenever it isn't being touched, so connecting mid-session doesn't yank
+// the camera to an arbitrary position. zoomValue itself stays in the same
+// 0=zoomed-in..1=zoomed-out convention the desktop already expects; only the
+// on-screen left/right placement is mirrored to read left-to-right. ────────
 const zoomTrack = document.getElementById('zoom-track');
 const zoomThumb = document.getElementById('zoom-thumb');
 let zoomPointerId = null;
@@ -510,8 +582,8 @@ let zoomLastSent = 0;
 
 function updateZoomVisual(value) {
   zoomValue = Math.min(1, Math.max(0, value));
-  const usable = Math.max(1, zoomTrack.clientHeight - zoomThumb.clientHeight);
-  zoomThumb.style.top = (usable * zoomValue) + 'px';
+  const usable = Math.max(1, zoomTrack.clientWidth - zoomThumb.clientWidth);
+  zoomThumb.style.left = (usable * (1 - zoomValue)) + 'px';
 }
 
 function sendZoom(force) {
@@ -521,11 +593,11 @@ function sendZoom(force) {
   sendMessage({ type: 'zoom', value: zoomValue });
 }
 
-function updateZoomFromPointer(clientY) {
+function updateZoomFromPointer(clientX) {
   const rect = zoomTrack.getBoundingClientRect();
-  const usable = Math.max(1, rect.height - zoomThumb.clientHeight);
-  const t = (clientY - rect.top - zoomThumb.clientHeight / 2) / usable;
-  updateZoomVisual(t);
+  const usable = Math.max(1, rect.width - zoomThumb.clientWidth);
+  const posFrac = (clientX - rect.left - zoomThumb.clientWidth / 2) / usable;
+  updateZoomVisual(1 - posFrac);
   sendZoom(false);
 }
 
@@ -533,12 +605,12 @@ zoomTrack.addEventListener('pointerdown', (e) => {
   e.preventDefault();
   zoomPointerId = e.pointerId;
   zoomTrack.setPointerCapture(e.pointerId);
-  updateZoomFromPointer(e.clientY);
+  updateZoomFromPointer(e.clientX);
 });
 zoomTrack.addEventListener('pointermove', (e) => {
   if (e.pointerId !== zoomPointerId) return;
   e.preventDefault();
-  updateZoomFromPointer(e.clientY);
+  updateZoomFromPointer(e.clientX);
 });
 function endZoom(e) {
   if (e.pointerId !== zoomPointerId) return;
