@@ -239,19 +239,24 @@
     letter-spacing: 0.05em;
   }
 
-  /* ─── Landscape: condense the 3 header labels onto one line and lay the
-     controls out in a single wide row (avatar | move+view+zoom | actions)
-     instead of stacking everything vertically, so the limited height goes
-     to the controllers instead of labels. ────────────────────────────── */
+  /* ─── Landscape: condense the 3 header labels onto one line, pin the MOVE
+     stick to the left edge and the VIEW stick + zoom bar to the right edge
+     (natural two-thumb reach when holding the phone in both hands), and
+     cluster the avatar switcher + actions toggle in the top-left corner out
+     of the way. `#main-area` is unwrapped via `display:contents` so its two
+     children (`#joystick-zone`, `#orbit-column`) can be placed into the
+     outer grid independently instead of staying paired in the center. ──── */
   @media (orientation: landscape) {
     #app {
       display: grid;
-      grid-template-columns: 76px 1fr 96px;
-      grid-template-rows: auto 1fr;
+      grid-template-columns: auto 1fr auto;
+      grid-template-rows: auto auto auto 1fr;
       grid-template-areas:
         "header header header"
-        "avatar main   toggle";
-      column-gap: 12px;
+        "avatar .      view"
+        "toggle .      view"
+        "move   .      view";
+      column-gap: 14px;
       row-gap: 6px;
       padding: calc(env(safe-area-inset-top, 6px) + 4px) calc(env(safe-area-inset-right, 8px) + 10px) calc(env(safe-area-inset-bottom, 6px) + 4px) calc(env(safe-area-inset-left, 8px) + 10px);
       position: relative;
@@ -288,35 +293,24 @@
 
     #actor-row {
       grid-area: avatar;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
-      gap: 6px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
     }
-    .actor-btn { padding: 7px 3px; font-size: 8px; }
+    .actor-btn { padding: 6px 3px; font-size: 9px; }
 
-    #main-area {
-      grid-area: main;
-      height: 100%;
-      align-items: center;
-      justify-content: center;
-      padding-top: 0;
-      gap: 16px;
-    }
-    #joystick-base, #orbit-base, #zoom-track { width: min(20vw, 140px); }
+    #actions-toggle-row { grid-area: toggle; }
+    #btn-actions-toggle { font-size: 9px; padding: 7px 8px; width: 100%; }
 
-    #actions-toggle-row {
-      grid-area: toggle;
-      height: 100%;
-      align-items: center;
-    }
-    #btn-actions-toggle { font-size: 9px; padding: 8px 8px; }
+    #main-area { display: contents; }
+    #joystick-zone { grid-area: move; justify-content: center; }
+    #orbit-column { grid-area: view; justify-content: center; }
+    #joystick-base, #orbit-base, #zoom-track { width: min(20vw, 130px); }
 
     #bottom-area.expanded {
       position: absolute;
-      right: calc(env(safe-area-inset-right, 8px) + 10px);
-      bottom: calc(env(safe-area-inset-bottom, 8px) + 8px);
+      left: calc(env(safe-area-inset-left, 8px) + 10px);
+      top: calc(env(safe-area-inset-top, 8px) + 4px);
       width: min(64vw, 280px);
       max-height: calc(100% - 16px);
       background: rgba(10,16,28,0.97);
